@@ -17,11 +17,11 @@ Make easy TO USE ....
 datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 -->
 
-## Usage  
+### Installation  
 
 ```bash
 git clone https://github.com/CVMLmu/FMOX.git branch main
-cd ExistingFMODataAnalysis
+cd FMOX
 # for conda, create the environment using:
 conda env create -n fmo_data_env -f environment.yml
 conda activate fmo_data_env
@@ -32,7 +32,6 @@ conda activate fmo_data_env
 
 The dataset is downloaded and extracted into a folder named "fmo_data".
 
-##### Usage 
 ```bash 
 # download_datasets_zip_files.py 
 download_datasets_zip_files.download_unzip_data()
@@ -58,7 +57,6 @@ Contour detection is applied to the segmentation images located in "./fmo_data/F
 The outputs of this process are saved as a video in "fmov2_outputs" folder. While obtaining the bounding boxes,
 object size labels are calculated and saved in a JSON file as "fmov2_json_annotations.json" in "jsons_anns" folder. 
 
-##### Usage 
 ```bash 
 # create_fmov2_json.py
 create_fmov2_json.get_fmov2_json()
@@ -71,7 +69,6 @@ some modifications made to fit our specific use case. For more details, please v
 - The json file called "three_fmo_data_annotations.json" saved in "json_anns" folder.
 - However if you want to regenerate it, please refer below file:
 
-##### Usage 
 ```bash 
 # create_json_for_three_dataset.py
 json_ann.create_json_for_three_dataset() 
@@ -79,7 +76,6 @@ json_ann.create_json_for_three_dataset()
 
 ### Access Bounding Boxes from a JSON Annotation File
 
-##### Usage 
 ```bash 
 
 # access_json_bboxes.py
@@ -125,7 +121,6 @@ csv_to_graphics.cvs_viz2()
 Below code could be utilized to visualize the trajectories of the object(s) on a single image. Since the FMOv2 dataset directly shares segmentation mask images, the path related to this dataset 
 is provided below as input. Each single mask image corresponding to a subsequence will be saved in the "fmov2_outputs" directory as "{subfolder}_combined_segmentation_image.png". 
 
-##### Usage 
 ```bash  
 #  combine_all_mask_to_single_img.py 
 input_directory = './fmo_data/FMOv2/FMOv2_gt' 
@@ -136,12 +131,10 @@ combine_all_mask_to_single_img.combine_segmentation_images(input_directory)
 
 The segmentation mask images for the FMOv2 dataset have been compressed into text files using the Run-Length Encoding (RLE) data compression technique. The following code can be used to convert these compressed files back into black and white segmentation images.
 
-##### Usage 
 ```bash 
 # rle_to_seg_mask_img.py
 rle_to_seg_mask_img.rle_to_mask_img()
 ```
-
 
 ### Metadata File
 
