@@ -17,6 +17,27 @@ Make easy TO USE ....
 datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 -->
 
+## Usage  
+
+```bash
+git clone https://github.com/CVMLmu/FMOX.git branch main
+cd ExistingFMODataAnalysis
+# for conda, create the environment using:
+conda env create -n fmo_data_env -f environment.yml
+conda activate fmo_data_env
+```
+
+
+### Download Datasets 
+
+The dataset is downloaded and extracted into a folder named "fmo_data".
+
+##### Usage 
+```bash 
+# download_datasets_zip_files.py 
+download_datasets_zip_files.download_unzip_data()
+```
+
 ### Object Size Category Assignment
 
 The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
@@ -31,28 +52,6 @@ A total of five distinct level definitions were illustrated as figure below and 
 <img src="ExistingFMODataAnalysis/figures/proof_of_consept_obj_size.png" alt="object size image"	width="700" height="300" /> 
 
 
-## Usage  
-
-```bash
-git clone https://github.com/CVMLmu/FMOX.git branch main
-cd ExistingFMODataAnalysis
-# for conda, create the environment using:
-conda env create -n fmo_data_env -f environment.yml
-conda activate fmo_data_env
-```
-
-# ----------------------------------------------------------
-### Download Datasets 
-
-The dataset is downloaded and extracted into a folder named "fmo_data".
-
-##### Usage 
-```bash 
-# download_datasets_zip_files.py 
-download_datasets_zip_files.download_unzip_data()
-```
-
-# ----------------------------------------------------------
 ### Create FMOv2 JSON Annotation File 
 
 Contour detection is applied to the segmentation images located in "./fmo_data/FMOv2/FMOv2_gt" to obtain bounding boxes. 
@@ -65,7 +64,6 @@ object size labels are calculated and saved in a JSON file as "fmov2_json_annota
 create_fmov2_json.get_fmov2_json()
 ```
 
-# ----------------------------------------------------------
 ### Create JSON Annotation File For Falling Object, TbD, TbD-3D Datasets
 - Acknowledgments: The code is provided (in "create_json_for_three_dataset" folder) adapted from the
 [fmo-deblurring-benchmark](https://github.com/rozumden/fmo-deblurring-benchmark) and
@@ -79,7 +77,17 @@ some modifications made to fit our specific use case. For more details, please v
 json_ann.create_json_for_three_dataset() 
 ```
 
-# ----------------------------------------------------------
+### Access Bounding Boxes from a JSON Annotation File
+
+##### Usage 
+```bash 
+
+# access_json_bboxes.py
+access_json_bboxes.access_bboxes()
+```
+<img src="ExistingFMODataAnalysis/figures/json_to_bbox.png" alt="json_to_bbox" width="700" height="500" /> 
+
+
 ### JSON Annotation Analysis - Visualizations
 
 Combine the 2 json annotation files created.
@@ -111,18 +119,7 @@ csv_to_graphics.visualize_object_size_levels()
 csv_to_graphics.cvs_viz2() 
 ```
 
-# ----------------------------------------------------------
-### Access Bounding Boxes from a JSON Annotation File
 
-##### Usage 
-```bash 
-
-# access_json_bboxes.py
-access_json_bboxes.access_bboxes()
-```
-<img src="ExistingFMODataAnalysis/figures/json_to_bbox.png" alt="json_to_bbox" width="700" height="500" /> 
-
-# ----------------------------------------------------------
 ### Merge Mask Images to Visualize Trajectories
 
 Below code could be utilized to visualize the trajectories of the object(s) on a single image. Since the FMOv2 dataset directly shares segmentation mask images, the path related to this dataset 
@@ -135,7 +132,6 @@ input_directory = './fmo_data/FMOv2/FMOv2_gt'
 combine_all_mask_to_single_img.combine_segmentation_images(input_directory)
 ```
 
-# ----------------------------------------------------------
 ### Convert FMOv2 Run-Length Encoded (RLE) Text Files to Mask Images
 
 The segmentation mask images for the FMOv2 dataset have been compressed into text files using the Run-Length Encoding (RLE) data compression technique. The following code can be used to convert these compressed files back into black and white segmentation images.
@@ -146,7 +142,7 @@ The segmentation mask images for the FMOv2 dataset have been compressed into tex
 rle_to_seg_mask_img.rle_to_mask_img()
 ```
 
-# ----------------------------------------------------------
+
 ### Metadata File
 
 The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that contains essential information for understanding the work context, including its attributes, original dataset papers, and other relevant details.  Please refer to the JSON metadata file for more information.
