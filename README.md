@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # FMOX
 Extending the ground truth labels associated with FMO datasets
 =======
@@ -175,5 +174,3 @@ I would like to thank the following sources for providing the datasets used in t
 
 Your contributions have been invaluable to the success of this project!
 
-
->>>>>>> f5ced6f (Initial commit)
