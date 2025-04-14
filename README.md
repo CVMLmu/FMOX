@@ -1,7 +1,5 @@
-# FMOX
-Extending the ground truth labels associated with FMO datasets
+# FMOX: Extending the ground truth labels associated with FMO datasets
 =======
-### FMOX: Extending the ground truth labels associated with FMO datasets
 
 purpose of this repo
 
@@ -16,8 +14,10 @@ Make easy TO USE ....
 [[`BibTex`](#citing-imagebind)]
 
 
-To appear at IMVIP 2025. For details, see the paper: **[FMOX : Extending the ground truth labels associated with FMO datasets](https://facebookresearch.github.io/ImageBind/paper)**.
-
+<!-- To appear at IMVIP 2025. For details, see the paper: 
+**[FMOX : Extending the ground truth labels associated with FMO
+datasets](https://facebookresearch.github.io/ImageBind/paper)**.
+-->
 
 ### Object Size Category Assignment
 
