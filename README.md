@@ -1,11 +1,4 @@
 # FMOX: Extending the ground truth labels associated with FMO datasets
-=======
-
-purpose of this repo
-
-FMO VS NON-FMO LABELING
-OBJECT SIZE LABELLING
-Make easy TO USE ....
 
 [[`Paper`](https://xxxxxxxxxxxxx)] 
 [[`Notebook`](https://xxxxxxxxxxxxx)] 
@@ -13,6 +6,11 @@ Make easy TO USE ....
 [[`CSV`](https://xxxxxxxxxxxxx)] 
 [[`BibTex`](#citing-imagebind)]
 
+purpose of this repo
+
+FMO VS NON-FMO LABELING
+OBJECT SIZE LABELLING
+Make easy TO USE ....
 
 <!-- To appear at IMVIP 2025. For details, see the paper: 
 **[FMOX : Extending the ground truth labels associated with FMO
