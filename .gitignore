@@ -1,0 +1,26 @@
+.idea/
+*.DS_Store
+.DS_Store
+
+# dotenv
+.env
+env/
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+*.egg-info
+*.egg
+.eggs
+__pycache__/
+/venv3.*/
+
+# mypy
+.mypy_cache/
+
+setup.py
+FMOX-code/fmo_data/
+FMOX-code/fmov2_outputs/contour_videos/
+FMOX-code/fmov2_outputs/rleTXT_to_video/

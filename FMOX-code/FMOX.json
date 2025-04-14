@@ -1,0 +1,145 @@
+{
+  "title": "FMOX : Extending the ground truth labels associated with FMO datasets",
+  "description": "This file contains information for FMOX, and Falling Object, FMOV2, TbD, TbD-3D datasets.",
+  "version": "1.0",
+  "date_created": "2025-03-20",
+  "date_modified": "2025-03-24",
+  "keywords": ["fmo", "datasets", "FallingObject", "FMOV2", "TbD", "TbD-3D"],
+  "license": {
+    "name": "",
+    "url": ""
+  },
+  "file_creators": [
+    {
+      "name": "Senem Aktas",
+      "affiliation": "Maynooth University",
+      "orcid_doi": "https://orcid.org/0000-0002-3996-2771"
+    }
+  ],
+  "code_repo": [
+    {
+      "name": "FMOX Repo",
+      "url": "https://exampledatarepository.org"
+    }
+  ],
+  "dataset_sources": [
+    {
+      "name": "Original Dataset Website",
+      "url": "https://cmp.felk.cvut.cz/fmo/"
+    }
+  ],
+  "files": [
+    {
+      "name": "FMOX_All4.json",
+      "file_definition": "All Falling Object, FMOV2, TbD and TbD-3D dataset annotations in a JSON file.",
+      "format": "JSON",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "FMOX_fmov2.json",
+      "file_definition": "Only FMOV2 dataset annotations in a JSON file due to annotation format differences.",
+      "format": "JSON",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "FMOX_three.json",
+      "file_definition": "Only Falling Object, TbD and TbD-3D dataset annotations in a JSON file.",
+      "format": "JSON",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "FMOX_json_statistics.csv",
+      "file_definition": "CSV file from FMOX json to analysis.",
+      "format": "JSON",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "download_datasets.py",
+      "file_definition": "The dataset is downloaded and extracted into a folder named \"fmo_data\". .",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "create_fmov2_json.py",
+      "file_definition": "Apply contour detection to obtain bounding boxes. Calculate object size labels, create a JSON file for FMOv2 dataset.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "create_json_via_benchmark_loader.py",
+      "file_definition": "Calculate object size labels, create a JSON file for Falling Object, Tbd and TbD-3D datasets.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "json_annotation_analysis.py",
+      "file_definition": "Combine the 2 json annotation files created. Create csv file to save information.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "csv_to_graphics.py",
+      "file_definition": "Different kind of visualization functions : Bar plot, Scatter plot, Box plot etc.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "access_json_bboxes.py",
+      "file_definition": "Access bounding boxes from a JSON annotation file.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "combine_all_mask_to_single_img.py",
+      "file_definition": "To analysis the segmentation masks (FMOv2 dataset) (e.g. trajectory) combine all into single mask image.",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "rle_to_seg_mask_img.py",
+      "file_definition": "Convert FMOv2 Run-Length Encoded (RLE) text files to mask images",
+      "format": "python",
+      "url": "https://example.com/metadata.json"
+    }
+  ],
+  "object_size_labels" : {"extremely_tiny": [[1, 1], [8, 8]],
+                          "tiny": [[8, 8], [16, 16]],
+                          "small": [[16, 16], [32, 32]],
+                          "medium": [[32, 32], [96, 96]],
+                          "large": [[96, 96], [1000000, 1000000]]},
+  "languages": ["en"],
+  "dataset_papers": [
+    {
+      "dataset_name": "Falling Object",
+      "title": "Restoration of fast moving objects.",
+      "authors": ["Jan Kotera", "Jirí Matas", "Filip Sroubek"],
+      "publisher": "IEEE Transactions on Image Processing",
+      "year": 2020,
+      "doi": "10.1109/TIP.2020.3016490"
+    },
+    {
+      "dataset_name": "FMOv2",
+      "title": "The world of fast moving objects",
+      "authors": ["Denys Rozumnyi", "Jan Kotera", "Filip Sroubek", "Lukas Novotny", "Jirí Matas"],
+      "publisher": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "year": 2017,
+      "doi": "10.1109/CVPR.2017.514"
+    },
+    {
+      "dataset_name": "TbD",
+      "title": "Intra-frame object tracking by deblatting",
+      "authors": ["Jan Kotera", "Denys Rozumnyi", "Filip Sroubek", "Jirí Matas"],
+      "publisher": "IEEE/CVF International Conference on Computer Vision Workshops",
+      "year": 2019,
+      "doi": "10.1109/iccvw.2019.00283"
+    },
+    {
+      "dataset_name": "Tbd-3D",
+      "title": "Sub-Frame Appearance and 6D Pose Estimation of Fast Moving Objects",
+      "authors": ["Denys Rozumnyi", "Jan Kotera", "Filip Sroubek", "Jirí Matas"],
+      "publisher": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "year": 2020,
+      "doi": "10.1109/cvpr42600.2020.00681"
+    }
+  ]
+}
