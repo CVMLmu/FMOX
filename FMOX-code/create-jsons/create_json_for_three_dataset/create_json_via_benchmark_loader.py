@@ -66,12 +66,12 @@ def create_json_for_three_dataset():
 	data1 = evaluate_on(data, files)
 	files = get_tbd3d_dataset(tbd3d_path)
 	data2 = evaluate_on(data1, files)
-	files = get_tbd_dataset(tbd_path)   # fall_coin ping_wall not inside the annotation ....
-	data3 = evaluate_on(data2, files)
+	# files = get_tbd_dataset(tbd_path)   # fall_coin ping_wall not inside the annotation ....
+	# data3 = evaluate_on(data2, files)
 
 	# Save the data to a JSON file
 	with open('./json_anns/three_fmo_data_annotations.json', 'w') as json_file:
-		json.dump(data3, json_file, indent=4)  # indent for pretty printing
+		json.dump(data2, json_file, indent=4)  # indent for pretty printing
 
 	
 def evaluate_on(data, files, callback=None):
