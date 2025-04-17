@@ -3,16 +3,24 @@
 [[`Paper`](https://xxxxxxxxxxxxx)] 
 [[`Notebook`](https://xxxxxxxxxxxxx)] 
 [[`JSONS`](https://xxxxxxxxxxxxx)] 
+[[`Metadata`](https://xxxxxxxxxxxxx)] 
 [[`CSV`](https://xxxxxxxxxxxxx)] 
 [[`BibTex`](#citing-imagebind)]
 
-purpose of this repo
+This repository is dedicated to enhancing a dataset by adding detailed labels and providing
+structured JSON annotations for easy integration and usage in machine learning projects. 
+The primary goal is to facilitate the labeling process, ensuring that each data point is
+accurately annotated with relevant information, such as object categories and bounding box
+coordinates. The JSON format allows for seamless compatibility with various machine learning
+frameworks, making it easier for developers and researchers to utilize the dataset in their 
+applications.
 
+<!--  purpose of this repo
 FMO VS NON-FMO LABELING
 OBJECT SIZE LABELLING
 Make easy TO USE ....
 
-<!-- To appear at IMVIP 2025. For details, see the paper: 
+To appear at IMVIP 2025. For details, see the paper: 
 **[FMOX : Extending the ground truth labels associated with FMO
 datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 -->
@@ -152,7 +160,7 @@ The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that c
 ```
 
 # Thank You Message for the Matas Team Regarding the Dataset ? something like below
-## Acknowledgments
+### Acknowledgments
 
 I would like to thank the following sources for providing the datasets used in this project:
 
