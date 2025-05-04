@@ -118,13 +118,17 @@ class GroundTruthProcessorX:
 
         self.nsplits = 12 if '-12' in seqname else 8
 
-        nfrms = len(bboxes[0]) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
+        nfrms = len(bboxes) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
         start_ind = 0
         end_ind = nfrms
 
         pars = []
         # bounding boxes might be in the format [x, y, width, height].
         print("bboxes", bboxes)
+        # Convert bboxes to a NumPy array
+        bboxes = np.array(bboxes)
+        print("bboxes", bboxes)
+        print("bboxes", type(bboxes))
         pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
         pars = np.reshape(pars,(-1,self.nsplits))
         rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
@@ -163,10 +167,6 @@ class GroundTruthProcessorX:
 
 
 def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, callback=None):
-
-    # files : 	files = np.array(glob.glob(os.path.join(folder, 'imgs/*_GTgamma')))
-    #           files.sort()
-
     gt_bboxes = fmox_bboxes
     est_bboxes = efficienttam_bboxes
 
