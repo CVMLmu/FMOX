@@ -72,15 +72,14 @@ def calciou(p1, p2, rad):
 #######################################################################################################################
 
 class AverageScoreTracker:
-    def __init__(self, nfiles, algname):
+    def __init__(self, nfiles):
         self.av_ious = np.zeros(nfiles)
         self.av_times = []
         self.seqi = 0
-        self.algname = algname
 
     def next(self, seqname, means):
         self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
-        print('{}: Finished seq {}, avg. TIoU {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi]))
+        print('Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
         self.seqi += 1
 
     def next_time(self, tm):
@@ -89,16 +88,15 @@ class AverageScoreTracker:
     def close(self):
        print('AVERAGES')
        means = np.nanmean(self.av_ious)
-       print('{}: TIoU {:.3f}'.format(self.algname, *means))
-       print('{}: time {:.3f} seconds'.format(self.algname, np.nanmean(np.array(self.av_times))))
+       print('TIoU {:.3f}'.format(*means))
+       print('time {:.3f} seconds'.format(np.nanmean(np.array(self.av_times))))
        return means
 
 #######################################################################################################################
 
 class SequenceScoreTracker:
-    def __init__(self, nfrms, algname):
+    def __init__(self, nfrms):
         self.all_ious = {}
-        self.algname = algname
 
     def next_traj(self,kk,gt_traj,est_traj,minor_axis_length):
         ious = calciou(gt_traj, est_traj, minor_axis_length)
@@ -108,7 +106,7 @@ class SequenceScoreTracker:
         return iou
 
     def report(self, seqname, kk):
-        print('{}: Seq {}, frm {}, TIoU {:.3f}'.format(self.algname, seqname, kk, self.all_ious.get(kk, 0)))
+        print('Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
 
     def close(self):
         return np.mean(list(self.all_ious.values())) if self.all_ious else 0
@@ -126,6 +124,7 @@ class GroundTruthProcessorX:
 
         pars = []
         # bounding boxes might be in the format [x, y, width, height].
+        print("bboxes", bboxes)
         pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
         pars = np.reshape(pars,(-1,self.nsplits))
         rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
@@ -163,7 +162,7 @@ class GroundTruthProcessorX:
         return par.T, radius, bbox
 
 
-def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, args, callback=None):
+def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, callback=None):
 
     # files : 	files = np.array(glob.glob(os.path.join(folder, 'imgs/*_GTgamma')))
     #           files.sort()
@@ -172,14 +171,15 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, args, callback=None):
     est_bboxes = efficienttam_bboxes
 
     # av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
-    av_score_tracker = AverageScoreTracker(len(gt_bboxes), args.method_name)
+    av_score_tracker = AverageScoreTracker(len(gt_bboxes))
 
     # for kkf, ff in enumerate(files):
     for kkf in range(len(gt_bboxes)):
         gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes)
 
-        seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
+        # seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
+        seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms)
         for kk in range(gt_gtp.nfrms):
             # TODO: need to provide box seperately one for gt one for estimated ....
             gt_traj, radius, bbox = gt_gtp.get_trajgt(kk)
@@ -192,8 +192,8 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, args, callback=None):
             if not est_traj is None:
                 iou = seq_score_tracker.next_traj(kk, gt_traj, est_traj, radius)
 
-            if args.verbose:
-                seq_score_tracker.report(gt_gtp.seqname, kk)
+            # if args.verbose:
+            seq_score_tracker.report(gt_gtp.seqname, kk)
 
         means = seq_score_tracker.close()
         av_score_tracker.next(gt_gtp.seqname, means)
