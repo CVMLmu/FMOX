@@ -118,9 +118,16 @@ class SequenceScoreTracker:
 class GroundTruthProcessorX:
 	def __init__(self, seqname, kkf, medn, bboxes):
 
+        # seqname = os.path.split(seqpath)[-1]
+        # folder = os.path.split(os.path.split(seqpath)[0])[0]
+
+        # roi_frames = None
+        # if os.path.exists(os.path.join(folder,'roi_frames.txt')):
+        # 	roi_frames = np.loadtxt(os.path.join(folder,'roi_frames.txt')).astype(int)
+
 		if '-12' in seqname:
             self.nsplits = 12
-        else:
+		else:
 			self.nsplits = 8
 
 		nfrms = 5  # len(glob.glob(os.path.join(seqpath,'*.png')))
@@ -134,18 +141,54 @@ class GroundTruthProcessorX:
 		# 	start_ind += 1
 
 		pars = []
+		# w_trajgt = False
+
+        # # tbd , tbd-3d
+		# if os.path.exists(os.path.join(seqpath,'gt.txt')):
+		# 	w_trajgt = True
+		# 	pars = np.loadtxt(os.path.join(seqpath,'gt.txt'))
+		#
+        # # tbd-3d
+		# rads = []
+		# if os.path.exists(os.path.join(seqpath,'gtr.txt')):
+		# 	rads = np.loadtxt(os.path.join(seqpath,'gtr.txt'))
+		#
+        # # tbd
+		# elif os.path.exists(os.path.join(folder,'templates')):
+		# 	template_path = os.path.join(folder,'templates',seqname + '_template.mat')
+		# 	data = scipy.io.loadmat(template_path)
+		# 	template = data['template']
+		# 	rads = (template.shape[0]/2)/data['scale']
+		#
+        # # falling object dataset: gt_bbox folder -> X_GTgamma.txt + roi_frames.txt
+		# if not w_trajgt and os.path.exists(os.path.join(folder,'gt_bbox',seqname + '.txt')):
+		# 	  w_trajgt = True
+        #     # bounding boxes might be in the format [x, y, width, height].
+		# 	bboxes = np.loadtxt(os.path.join(folder,'gt_bbox',seqname + '.txt'))
+		# 	pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
+		# 	pars = np.reshape(pars,(-1,self.nsplits))
+		# 	rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
+		# 	pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
+		# 	rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
+
 		# bounding boxes might be in the format [x, y, width, height].
+        # bboxes = np.loadtxt(os.path.join(folder,'gt_bbox',seqname + '.txt'))
 		pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
 		pars = np.reshape(pars,(-1,self.nsplits))
 		rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
 		pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
 		rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
 
+		# self.hspath_base = os.path.join(folder,'imgs_gt',seqname)
+		# self.use_hs = os.path.exists(os.path.join(self.hspath_base,"{:08d}.png".format(1)))
+		# self.start_zero = 1-int(os.path.exists(os.path.join(self.hspath_base,"{:08d}.png".format(0))))
 		self.pars = pars
 		self.rads = rads
 		self.start_ind = start_ind
 		self.nfrms = nfrms
 		self.seqname = seqname
+		# self.seqpath = seqpath
+		# self.w_trajgt = w_trajgt
 		print('Sequence {} has {} frames'.format(seqname, nfrms))
 
     def get_trajgt(self, kk):
@@ -184,8 +227,8 @@ def evaluate_on(files, args, callback=None):
     av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
 
     for kkf, ff in enumerate(files):
-        gt_gtp = GroundTruthProcessorX(seqname, kkf, medn, gt_bboxes)
-        est_gtp = GroundTruthProcessorX(seqname, kkf, medn, est_bboxes)
+        gt_gtp = GroundTruthProcessorX(ff, kkf, medn, gt_bboxes)
+        est_gtp = GroundTruthProcessorX(ff, kkf, medn, est_bboxes)
 
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         for kk in range(gt_gtp.nfrms):
