@@ -174,7 +174,8 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, args, callback=None):
     # av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
     av_score_tracker = AverageScoreTracker(len(gt_bboxes), args.method_name)
 
-    for kkf, ff in enumerate(files):
+    # for kkf, ff in enumerate(files):
+    for kkf in range(len(gt_bboxes)):
         gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes)
 
