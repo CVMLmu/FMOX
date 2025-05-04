@@ -72,46 +72,46 @@ def calciou(p1, p2, rad):
 #######################################################################################################################
 
 class AverageScoreTracker:
-	def __init__(self, nfiles, algname):
-		self.av_ious = np.zeros(nfiles)
-		self.av_times = []
-		self.seqi = 0
-		self.algname = algname
+    def __init__(self, nfiles, algname):
+        self.av_ious = np.zeros(nfiles)
+        self.av_times = []
+        self.seqi = 0
+        self.algname = algname
 
-	def next(self, seqname, means):
-		self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
-		print('{}: Finished seq {}, avg. TIoU {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi]))
-		self.seqi += 1
+    def next(self, seqname, means):
+        self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
+        print('{}: Finished seq {}, avg. TIoU {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi]))
+        self.seqi += 1
 
-	def next_time(self, tm):
-		self.av_times.append(tm)
+    def next_time(self, tm):
+        self.av_times.append(tm)
 
-	def close(self):
-		print('AVERAGES')
-		means = np.nanmean(self.av_ious)
-		print('{}: TIoU {:.3f}'.format(self.algname, *means))
-		print('{}: time {:.3f} seconds'.format(self.algname, np.nanmean(np.array(self.av_times))))
-		return means
+    def close(self):
+       print('AVERAGES')
+       means = np.nanmean(self.av_ious)
+       print('{}: TIoU {:.3f}'.format(self.algname, *means))
+       print('{}: time {:.3f} seconds'.format(self.algname, np.nanmean(np.array(self.av_times))))
+       return means
 
 #######################################################################################################################
 
 class SequenceScoreTracker:
-	def __init__(self, nfrms, algname):
-		self.all_ious = {}
-		self.algname = algname
+    def __init__(self, nfrms, algname):
+        self.all_ious = {}
+        self.algname = algname
 
-	def next_traj(self,kk,gt_traj,est_traj,minor_axis_length):
-		ious = calciou(gt_traj, est_traj, minor_axis_length)
-		ious2 = calciou(gt_traj, est_traj[:,-1::-1], minor_axis_length)
-		iou = np.max([np.mean(ious), np.mean(ious2)])
-		self.all_ious[kk] = iou
-		return iou
+    def next_traj(self,kk,gt_traj,est_traj,minor_axis_length):
+        ious = calciou(gt_traj, est_traj, minor_axis_length)
+        ious2 = calciou(gt_traj, est_traj[:,-1::-1], minor_axis_length)
+        iou = np.max([np.mean(ious), np.mean(ious2)])
+        self.all_ious[kk] = iou
+        return iou
 
-	def report(self, seqname, kk):
-		print('{}: Seq {}, frm {}, TIoU {:.3f}'.format(self.algname, seqname, kk, self.all_ious.get(kk, 0)))
+    def report(self, seqname, kk):
+        print('{}: Seq {}, frm {}, TIoU {:.3f}'.format(self.algname, seqname, kk, self.all_ious.get(kk, 0)))
 
-	def close(self):
-		return np.mean(list(self.all_ious.values())) if self.all_ious else 0
+    def close(self):
+        return np.mean(list(self.all_ious.values())) if self.all_ious else 0
 
 #######################################################################################################################
 
@@ -121,29 +121,23 @@ class GroundTruthProcessorX:
         self.nsplits = 12 if '-12' in seqname else 8
 
         nfrms = len(bboxes[0]) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
-		start_ind = 0
-		end_ind = nfrms
-		# if not roi_frames is None:
-		# 	start_ind = roi_frames[kkf,0]
-		# 	end_ind = roi_frames[kkf,1]
-		# 	nfrms = end_ind - start_ind + 1
-		# if not os.path.exists(os.path.join(seqpath,"{:08d}.png".format(0))):
-		# 	start_ind += 1
+        start_ind = 0
+        end_ind = nfrms
 
-		pars = []
-		# bounding boxes might be in the format [x, y, width, height].
-		pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
-		pars = np.reshape(pars,(-1,self.nsplits))
-		rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
-		pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
-		rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
+        pars = []
+        # bounding boxes might be in the format [x, y, width, height].
+        pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
+        pars = np.reshape(pars,(-1,self.nsplits))
+        rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
+        pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
+        rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
 
-		self.pars = pars
-		self.rads = rads
-		self.start_ind = start_ind
-		self.nfrms = nfrms
-		self.seqname = seqname
-		print('Sequence {} has {} frames'.format(seqname, nfrms))
+        self.pars = pars
+        self.rads = rads
+        self.start_ind = start_ind
+        self.nfrms = nfrms
+        self.seqname = seqname
+        print('Sequence {} has {} frames'.format(seqname, nfrms))
 
     def get_trajgt(self, kk):
         par = self.pars[2 * (kk + self.start_ind):2 * (kk + self.start_ind + 1), :].T
@@ -169,20 +163,20 @@ class GroundTruthProcessorX:
         return par.T, radius, bbox
 
 
-def evaluate_on(files, args, callback=None):
+def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, args, callback=None):
 
     # files : 	files = np.array(glob.glob(os.path.join(folder, 'imgs/*_GTgamma')))
-    #               	files.sort()
+    #           files.sort()
 
-    gt_bboxes = ""
-    est_bboxes = ""
+    gt_bboxes = fmox_bboxes
+    est_bboxes = efficienttam_bboxes
 
-    medn = 50
-    av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
+    # av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
+    av_score_tracker = AverageScoreTracker(len(gt_bboxes), args.method_name)
 
     for kkf, ff in enumerate(files):
-        gt_gtp = GroundTruthProcessorX(seqname, kkf, medn, gt_bboxes)
-        est_gtp = GroundTruthProcessorX(seqname, kkf, medn, est_bboxes)
+        gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
+        est_gtp = GroundTruthProcessorX(seqname, est_bboxes)
 
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         for kk in range(gt_gtp.nfrms):
