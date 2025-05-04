@@ -13,6 +13,14 @@ def find_correspondence_in_json(search_json, db_name, subdb_name, image_file_nam
                             return image["image_file_name"], bbox
     return None, None
 
+def convert_bbox_xyxy_to_xywh(bbox_xyxy):
+    # Convert bbox from [x_min, y_min, x_max, y_max] to [x_min, y_min, width, height].
+    if bbox_xyxy is None or len(bbox_xyxy) != 4:
+        return None
+    x_min, y_min, x_max, y_max = bbox_xyxy
+    width = x_max - x_min
+    height = y_max - y_min
+    return [x_min, y_min, width, height]
 
 fmox_json_path = "../FMOX-Jsons/FMOX_All4.json"
 efficienttam_json_path = "../EfficientTAM-Jsons/efficienttam_All4.json"
@@ -59,6 +67,8 @@ for database in fmox_data["databases"]:
 
                         # convert box formats, might be in the format [x, y, width, height].
                         # as in defined	bboxes = np.loadtxt(os.path.join(folder,'gt_bbox',seqname + '.txt'))
+                        bboxes = convert_bbox_xyxy_to_xywh(bboxes)
+                        effcientbbox = convert_bbox_xyxy_to_xywh(effcientbbox)
 
                         fmox_bboxes.append(bboxes)
                         efficienttam_bboxes.append(effcientbbox)
