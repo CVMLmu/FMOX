@@ -31,7 +31,7 @@ datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 git clone https://github.com/CVMLmu/FMOX.git branch main
 cd FMOX
 # for conda, create the environment using:
-conda env create -n fmo_data_env -f environment.yml
+conda env create -n fmox_env -f environment.yml
 conda activate fmo_data_env
 ```
 

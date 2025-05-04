@@ -1,28 +1,28 @@
 import os
 import json
 
+
 def find_correspondence_in_json(search_json, db_name, subdb_name, image_file_name):
-    for database in search_json["databases"]:
-        if database.get("db_name") == db_name:
+    for database in search_json.get("databases", []):
+        if database.get("dataset_name") == db_name:
             for sub_dataset in database.get("sub_datasets", []):
                 if sub_dataset.get("subdb_name") == subdb_name:
                     for image in sub_dataset.get("images", []):
                         if image.get("image_file_name") == image_file_name:
-                            # Found the image, return both image_file_name and bbox
-                            bbox = image.get("annotations", [{}])[0].get("bbox_xyxy", None)  # first annotation's bbox
+                            bbox = image.get("annotations", [{}])[0].get("bbox_xyxy", None)
                             return image["image_file_name"], bbox
-    return None,None
+    return None, None
 
 
 fmox_json_path = "../FMOX-Jsons/FMOX_All4.json"
-efficienttam_json_path = "../EfficientTAM-Jsons/efficienttam_All4.json "
+efficienttam_json_path = "../EfficientTAM-Jsons/efficienttam_All4.json"
 
 # Open both JSON files simultaneously
 with open(efficienttam_json_path, 'r') as file1, open(fmox_json_path, 'r') as file2:
     efficienttam_data = json.load(file1)
     fmox_data = json.load(file2)
 
-# keep both data as [[fmox_data_bbox][efficienttam_data_bbox]] according to image base match
+# keep both data as [[fmox_data_bboxes][efficienttam_data_bboxes]] according to image base match
 fmox_plus_efficienttam_bbox = []
 
 # Iterate through the databases - on fmox_data
@@ -38,6 +38,7 @@ for database in fmox_data["databases"]:
         if sub_dataset["subdb_name"] == "more_balls":
             continue  # Skip this iteration
         else:
+            # note: some sequences does not have annotations (e.g. fmov2 swaying) so skip them.
             if len(sub_dataset["images"]) != 0:
                 for image in sub_dataset["images"]:
 
@@ -63,7 +64,10 @@ for database in fmox_data["databases"]:
                         efficienttam_bboxes.append(effcientbbox)
 
         # after this - calciou processes will be called ....
-        fmox_plus_efficienttam_bbox.append(fmox_bboxes,efficienttam_bboxes)
-        print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
-        print("fmox_plus_efficienttam_bbox", fmox_plus_efficienttam_bbox)
+        if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
+            fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
+            print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
+            print("len(efficienttam_bboxes)", len(efficienttam_bboxes), "len(fmox_bboxes)", len(fmox_bboxes),
+                  '\n\n\n\n\n\n\n')
+
 
