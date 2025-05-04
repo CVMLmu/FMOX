@@ -1,0 +1,3001 @@
+{
+    "databases": [
+        {
+            "dataset_name": "Falling_Object",
+            "version": "1.0",
+            "description": " EfficientTAM - Falling_Object containing images and their annotations.",
+            "sub_datasets": [
+                {
+                    "subdb_name": "v_box_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000027.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        176,
+                                        277,
+                                        240,
+                                        318
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        41
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000028.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        176,
+                                        285,
+                                        240,
+                                        332
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        47
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000029.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        299,
+                                        240,
+                                        350
+                                    ],
+                                    "object_wh": [
+                                        63,
+                                        51
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000030.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        322,
+                                        242,
+                                        372
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        50
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000031.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        178,
+                                        349,
+                                        243,
+                                        402
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        53
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 5,
+                            "image_file_name": "00000032.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        178,
+                                        392,
+                                        243,
+                                        451
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        59
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 6,
+                            "image_file_name": "00000033.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        178,
+                                        420,
+                                        244,
+                                        495
+                                    ],
+                                    "object_wh": [
+                                        66,
+                                        75
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 7,
+                            "image_file_name": "00000034.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        180,
+                                        461,
+                                        245,
+                                        543
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        82
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 8,
+                            "image_file_name": "00000035.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        180,
+                                        512,
+                                        246,
+                                        575
+                                    ],
+                                    "object_wh": [
+                                        66,
+                                        63
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 9,
+                            "image_file_name": "00000036.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        179,
+                                        569,
+                                        248,
+                                        665
+                                    ],
+                                    "object_wh": [
+                                        69,
+                                        96
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 10,
+                            "image_file_name": "00000037.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        180,
+                                        637,
+                                        250,
+                                        729
+                                    ],
+                                    "object_wh": [
+                                        70,
+                                        92
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 11,
+                            "image_file_name": "00000038.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        181,
+                                        713,
+                                        250,
+                                        807
+                                    ],
+                                    "object_wh": [
+                                        69,
+                                        94
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 12,
+                            "image_file_name": "00000039.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        185,
+                                        779,
+                                        251,
+                                        853
+                                    ],
+                                    "object_wh": [
+                                        66,
+                                        74
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 13,
+                            "image_file_name": "00000040.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        174,
+                                        818,
+                                        246,
+                                        852
+                                    ],
+                                    "object_wh": [
+                                        72,
+                                        34
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 14,
+                            "image_file_name": "00000041.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        795,
+                                        242,
+                                        838
+                                    ],
+                                    "object_wh": [
+                                        71,
+                                        43
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 15,
+                            "image_file_name": "00000042.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        167,
+                                        784,
+                                        237,
+                                        830
+                                    ],
+                                    "object_wh": [
+                                        70,
+                                        46
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 16,
+                            "image_file_name": "00000043.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        165,
+                                        781,
+                                        231,
+                                        817
+                                    ],
+                                    "object_wh": [
+                                        66,
+                                        36
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 17,
+                            "image_file_name": "00000044.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        161,
+                                        781,
+                                        225,
+                                        817
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        36
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 18,
+                            "image_file_name": "00000045.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        157,
+                                        785,
+                                        222,
+                                        821
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        36
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 19,
+                            "image_file_name": "00000046.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        153,
+                                        796,
+                                        217,
+                                        830
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        34
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 20,
+                            "image_file_name": "00000047.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        150,
+                                        815,
+                                        212,
+                                        838
+                                    ],
+                                    "object_wh": [
+                                        62,
+                                        23
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 21,
+                            "image_file_name": "00000048.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        148,
+                                        820,
+                                        210,
+                                        838
+                                    ],
+                                    "object_wh": [
+                                        62,
+                                        18
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 22,
+                            "image_file_name": "00000049.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        150,
+                                        819,
+                                        211,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        61,
+                                        15
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 23,
+                            "image_file_name": "00000050.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        148,
+                                        819,
+                                        211,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        63,
+                                        15
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 24,
+                            "image_file_name": "00000051.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        147,
+                                        820,
+                                        212,
+                                        835
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        15
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 25,
+                            "image_file_name": "00000052.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        146,
+                                        820,
+                                        211,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        14
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 26,
+                            "image_file_name": "00000053.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        145,
+                                        821,
+                                        210,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        65,
+                                        13
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 27,
+                            "image_file_name": "00000054.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        144,
+                                        820,
+                                        210,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        66,
+                                        14
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 28,
+                            "image_file_name": "00000055.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        144,
+                                        819,
+                                        208,
+                                        833
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        14
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 29,
+                            "image_file_name": "00000056.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        148,
+                                        821,
+                                        205,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        57,
+                                        13
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 30,
+                            "image_file_name": "00000057.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        153,
+                                        826,
+                                        177,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        8
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subdb_name": "v_cell_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000012.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        140,
+                                        279,
+                                        170,
+                                        334
+                                    ],
+                                    "object_wh": [
+                                        30,
+                                        55
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000013.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        158,
+                                        299,
+                                        171,
+                                        347
+                                    ],
+                                    "object_wh": [
+                                        13,
+                                        48
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000014.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        158,
+                                        321,
+                                        172,
+                                        378
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        57
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000015.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        159,
+                                        347,
+                                        174,
+                                        413
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        66
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000016.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        159,
+                                        375,
+                                        175,
+                                        451
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        76
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 5,
+                            "image_file_name": "00000017.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        162,
+                                        415,
+                                        176,
+                                        490
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        75
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 6,
+                            "image_file_name": "00000018.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        163,
+                                        465,
+                                        177,
+                                        534
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        69
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 7,
+                            "image_file_name": "00000019.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        164,
+                                        525,
+                                        178,
+                                        571
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        46
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 9,
+                            "image_file_name": "00000021.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        166,
+                                        652,
+                                        179,
+                                        746
+                                    ],
+                                    "object_wh": [
+                                        13,
+                                        94
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 10,
+                            "image_file_name": "00000022.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        167,
+                                        718,
+                                        180,
+                                        829
+                                    ],
+                                    "object_wh": [
+                                        13,
+                                        111
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 11,
+                            "image_file_name": "00000023.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        169,
+                                        796,
+                                        184,
+                                        859
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        63
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 12,
+                            "image_file_name": "00000024.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        170,
+                                        813,
+                                        193,
+                                        848
+                                    ],
+                                    "object_wh": [
+                                        23,
+                                        35
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 13,
+                            "image_file_name": "00000025.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        175,
+                                        793,
+                                        194,
+                                        839
+                                    ],
+                                    "object_wh": [
+                                        19,
+                                        46
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 14,
+                            "image_file_name": "00000026.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        182,
+                                        780,
+                                        198,
+                                        830
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        50
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 15,
+                            "image_file_name": "00000027.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        184,
+                                        776,
+                                        204,
+                                        819
+                                    ],
+                                    "object_wh": [
+                                        20,
+                                        43
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 16,
+                            "image_file_name": "00000028.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        186,
+                                        776,
+                                        209,
+                                        815
+                                    ],
+                                    "object_wh": [
+                                        23,
+                                        39
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 17,
+                            "image_file_name": "00000029.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        188,
+                                        783,
+                                        212,
+                                        812
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        29
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 18,
+                            "image_file_name": "00000030.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        192,
+                                        800,
+                                        214,
+                                        827
+                                    ],
+                                    "object_wh": [
+                                        22,
+                                        27
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 19,
+                            "image_file_name": "00000031.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        198,
+                                        806,
+                                        213,
+                                        831
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        25
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 20,
+                            "image_file_name": "00000032.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        203,
+                                        820,
+                                        215,
+                                        831
+                                    ],
+                                    "object_wh": [
+                                        12,
+                                        11
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subdb_name": "v_key_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000030.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        175,
+                                        335,
+                                        189,
+                                        390
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        55
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000031.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        172,
+                                        382,
+                                        192,
+                                        425
+                                    ],
+                                    "object_wh": [
+                                        20,
+                                        43
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000032.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        414,
+                                        193,
+                                        485
+                                    ],
+                                    "object_wh": [
+                                        22,
+                                        71
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000033.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        450,
+                                        192,
+                                        536
+                                    ],
+                                    "object_wh": [
+                                        21,
+                                        86
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000034.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        497,
+                                        192,
+                                        572
+                                    ],
+                                    "object_wh": [
+                                        21,
+                                        75
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 8,
+                            "image_file_name": "00000038.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        173,
+                                        749,
+                                        188,
+                                        841
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        92
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 9,
+                            "image_file_name": "00000039.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        143,
+                                        811,
+                                        186,
+                                        853
+                                    ],
+                                    "object_wh": [
+                                        43,
+                                        42
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 10,
+                            "image_file_name": "00000040.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        143,
+                                        805,
+                                        178,
+                                        832
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        27
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 11,
+                            "image_file_name": "00000041.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        125,
+                                        787,
+                                        154,
+                                        820
+                                    ],
+                                    "object_wh": [
+                                        29,
+                                        33
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 12,
+                            "image_file_name": "00000042.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        106,
+                                        784,
+                                        134,
+                                        810
+                                    ],
+                                    "object_wh": [
+                                        28,
+                                        26
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 13,
+                            "image_file_name": "00000043.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        87,
+                                        784,
+                                        133,
+                                        820
+                                    ],
+                                    "object_wh": [
+                                        46,
+                                        36
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 14,
+                            "image_file_name": "00000044.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        71,
+                                        790,
+                                        124,
+                                        808
+                                    ],
+                                    "object_wh": [
+                                        53,
+                                        18
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 15,
+                            "image_file_name": "00000045.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        58,
+                                        797,
+                                        103,
+                                        823
+                                    ],
+                                    "object_wh": [
+                                        45,
+                                        26
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 16,
+                            "image_file_name": "00000046.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        51,
+                                        815,
+                                        67,
+                                        837
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        22
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 17,
+                            "image_file_name": "00000047.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        47,
+                                        785,
+                                        65,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        18,
+                                        49
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 18,
+                            "image_file_name": "00000048.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        46,
+                                        779,
+                                        59,
+                                        828
+                                    ],
+                                    "object_wh": [
+                                        13,
+                                        49
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 19,
+                            "image_file_name": "00000049.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        44,
+                                        800,
+                                        53,
+                                        822
+                                    ],
+                                    "object_wh": [
+                                        9,
+                                        22
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 20,
+                            "image_file_name": "00000050.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        42,
+                                        803,
+                                        51,
+                                        823
+                                    ],
+                                    "object_wh": [
+                                        9,
+                                        20
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 21,
+                            "image_file_name": "00000051.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        39,
+                                        808,
+                                        51,
+                                        830
+                                    ],
+                                    "object_wh": [
+                                        12,
+                                        22
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 22,
+                            "image_file_name": "00000052.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        35,
+                                        810,
+                                        50,
+                                        831
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        21
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 23,
+                            "image_file_name": "00000053.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        31,
+                                        806,
+                                        47,
+                                        829
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        23
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 24,
+                            "image_file_name": "00000054.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        17,
+                                        805,
+                                        44,
+                                        830
+                                    ],
+                                    "object_wh": [
+                                        27,
+                                        25
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 25,
+                            "image_file_name": "00000055.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        14,
+                                        810,
+                                        41,
+                                        831
+                                    ],
+                                    "object_wh": [
+                                        27,
+                                        21
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 26,
+                            "image_file_name": "00000056.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        23,
+                                        813,
+                                        39,
+                                        831
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        18
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 27,
+                            "image_file_name": "00000057.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        22,
+                                        812,
+                                        36,
+                                        832
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 28,
+                            "image_file_name": "00000058.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        20,
+                                        815,
+                                        35,
+                                        832
+                                    ],
+                                    "object_wh": [
+                                        15,
+                                        17
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 29,
+                            "image_file_name": "00000059.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        19,
+                                        821,
+                                        35,
+                                        832
+                                    ],
+                                    "object_wh": [
+                                        16,
+                                        11
+                                    ],
+                                    "size_category": "tiny",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subdb_name": "v_marker_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000030.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        163,
+                                        284,
+                                        189,
+                                        384
+                                    ],
+                                    "object_wh": [
+                                        26,
+                                        100
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000031.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        165,
+                                        300,
+                                        189,
+                                        411
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        111
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000032.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        165,
+                                        336,
+                                        191,
+                                        429
+                                    ],
+                                    "object_wh": [
+                                        26,
+                                        93
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000033.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        166,
+                                        362,
+                                        191,
+                                        469
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        107
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000034.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        167,
+                                        410,
+                                        192,
+                                        518
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        108
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 5,
+                            "image_file_name": "00000035.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        469,
+                                        193,
+                                        561
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        92
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 6,
+                            "image_file_name": "00000036.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        172,
+                                        538,
+                                        193,
+                                        574
+                                    ],
+                                    "object_wh": [
+                                        21,
+                                        36
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 7,
+                            "image_file_name": "00000037.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        172,
+                                        614,
+                                        195,
+                                        706
+                                    ],
+                                    "object_wh": [
+                                        23,
+                                        92
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 8,
+                            "image_file_name": "00000038.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        678,
+                                        197,
+                                        792
+                                    ],
+                                    "object_wh": [
+                                        26,
+                                        114
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 9,
+                            "image_file_name": "00000039.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        172,
+                                        741,
+                                        197,
+                                        856
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        115
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 10,
+                            "image_file_name": "00000040.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        173,
+                                        811,
+                                        198,
+                                        856
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        45
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 11,
+                            "image_file_name": "00000041.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        172,
+                                        820,
+                                        196,
+                                        853
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        33
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 12,
+                            "image_file_name": "00000042.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        812,
+                                        195,
+                                        849
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        37
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 13,
+                            "image_file_name": "00000043.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        170,
+                                        804,
+                                        194,
+                                        848
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        44
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 14,
+                            "image_file_name": "00000044.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        169,
+                                        811,
+                                        194,
+                                        847
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        36
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 15,
+                            "image_file_name": "00000045.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        818,
+                                        193,
+                                        847
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        29
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 16,
+                            "image_file_name": "00000046.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        827,
+                                        193,
+                                        847
+                                    ],
+                                    "object_wh": [
+                                        25,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 17,
+                            "image_file_name": "00000047.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        825,
+                                        192,
+                                        845
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 18,
+                            "image_file_name": "00000048.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 19,
+                            "image_file_name": "00000049.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 20,
+                            "image_file_name": "00000050.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 21,
+                            "image_file_name": "00000051.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 22,
+                            "image_file_name": "00000052.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 23,
+                            "image_file_name": "00000053.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 24,
+                            "image_file_name": "00000054.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 25,
+                            "image_file_name": "00000055.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 26,
+                            "image_file_name": "00000056.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        191,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        23,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 27,
+                            "image_file_name": "00000057.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 28,
+                            "image_file_name": "00000058.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 29,
+                            "image_file_name": "00000059.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 30,
+                            "image_file_name": "00000060.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 31,
+                            "image_file_name": "00000061.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        826,
+                                        192,
+                                        846
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        20
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subdb_name": "v_pen_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000033.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        162,
+                                        288,
+                                        243,
+                                        367
+                                    ],
+                                    "object_wh": [
+                                        81,
+                                        79
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000034.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        159,
+                                        291,
+                                        234,
+                                        392
+                                    ],
+                                    "object_wh": [
+                                        75,
+                                        101
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000035.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        164,
+                                        304,
+                                        225,
+                                        425
+                                    ],
+                                    "object_wh": [
+                                        61,
+                                        121
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000036.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        324,
+                                        215,
+                                        463
+                                    ],
+                                    "object_wh": [
+                                        47,
+                                        139
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000037.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        173,
+                                        351,
+                                        203,
+                                        505
+                                    ],
+                                    "object_wh": [
+                                        30,
+                                        154
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 5,
+                            "image_file_name": "00000038.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        173,
+                                        391,
+                                        190,
+                                        545
+                                    ],
+                                    "object_wh": [
+                                        17,
+                                        154
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 6,
+                            "image_file_name": "00000039.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        163,
+                                        433,
+                                        196,
+                                        599
+                                    ],
+                                    "object_wh": [
+                                        33,
+                                        166
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 7,
+                            "image_file_name": "00000040.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        150,
+                                        488,
+                                        203,
+                                        655
+                                    ],
+                                    "object_wh": [
+                                        53,
+                                        167
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 8,
+                            "image_file_name": "00000041.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        146,
+                                        552,
+                                        210,
+                                        701
+                                    ],
+                                    "object_wh": [
+                                        64,
+                                        149
+                                    ],
+                                    "size_category": "large",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subdb_name": "v_rubber_GTgamma",
+                    "images": [
+                        {
+                            "img_index": 0,
+                            "image_file_name": "00000029.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        152,
+                                        267,
+                                        211,
+                                        320
+                                    ],
+                                    "object_wh": [
+                                        59,
+                                        53
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 1,
+                            "image_file_name": "00000030.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        164,
+                                        292,
+                                        208,
+                                        327
+                                    ],
+                                    "object_wh": [
+                                        44,
+                                        35
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 2,
+                            "image_file_name": "00000031.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        160,
+                                        298,
+                                        204,
+                                        346
+                                    ],
+                                    "object_wh": [
+                                        44,
+                                        48
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 3,
+                            "image_file_name": "00000032.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        165,
+                                        321,
+                                        199,
+                                        372
+                                    ],
+                                    "object_wh": [
+                                        34,
+                                        51
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 4,
+                            "image_file_name": "00000033.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        168,
+                                        346,
+                                        189,
+                                        404
+                                    ],
+                                    "object_wh": [
+                                        21,
+                                        58
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 5,
+                            "image_file_name": "00000034.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        171,
+                                        367,
+                                        185,
+                                        443
+                                    ],
+                                    "object_wh": [
+                                        14,
+                                        76
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 6,
+                            "image_file_name": "00000035.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        164,
+                                        403,
+                                        187,
+                                        485
+                                    ],
+                                    "object_wh": [
+                                        23,
+                                        82
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 7,
+                            "image_file_name": "00000036.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        158,
+                                        446,
+                                        190,
+                                        525
+                                    ],
+                                    "object_wh": [
+                                        32,
+                                        79
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 8,
+                            "image_file_name": "00000037.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        162,
+                                        498,
+                                        192,
+                                        563
+                                    ],
+                                    "object_wh": [
+                                        30,
+                                        65
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 13,
+                            "image_file_name": "00000042.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        143,
+                                        823,
+                                        178,
+                                        848
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        25
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 14,
+                            "image_file_name": "00000043.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        144,
+                                        806,
+                                        182,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        38,
+                                        28
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 15,
+                            "image_file_name": "00000044.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        148,
+                                        791,
+                                        186,
+                                        829
+                                    ],
+                                    "object_wh": [
+                                        38,
+                                        38
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 16,
+                            "image_file_name": "00000045.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        153,
+                                        783,
+                                        188,
+                                        825
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        42
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 17,
+                            "image_file_name": "00000046.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        159,
+                                        781,
+                                        189,
+                                        829
+                                    ],
+                                    "object_wh": [
+                                        30,
+                                        48
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 18,
+                            "image_file_name": "00000047.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        166,
+                                        785,
+                                        190,
+                                        834
+                                    ],
+                                    "object_wh": [
+                                        24,
+                                        49
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 19,
+                            "image_file_name": "00000048.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        173,
+                                        795,
+                                        193,
+                                        842
+                                    ],
+                                    "object_wh": [
+                                        20,
+                                        47
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 20,
+                            "image_file_name": "00000049.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        174,
+                                        796,
+                                        200,
+                                        841
+                                    ],
+                                    "object_wh": [
+                                        26,
+                                        45
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 21,
+                            "image_file_name": "00000050.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        175,
+                                        796,
+                                        206,
+                                        837
+                                    ],
+                                    "object_wh": [
+                                        31,
+                                        41
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 22,
+                            "image_file_name": "00000051.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        176,
+                                        804,
+                                        210,
+                                        838
+                                    ],
+                                    "object_wh": [
+                                        34,
+                                        34
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 23,
+                            "image_file_name": "00000052.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        213,
+                                        837
+                                    ],
+                                    "object_wh": [
+                                        36,
+                                        11
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 24,
+                            "image_file_name": "00000053.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        825,
+                                        213,
+                                        837
+                                    ],
+                                    "object_wh": [
+                                        36,
+                                        12
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 25,
+                            "image_file_name": "00000054.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        824,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        12
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 26,
+                            "image_file_name": "00000055.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        212,
+                                        837
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        11
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 27,
+                            "image_file_name": "00000056.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 28,
+                            "image_file_name": "00000057.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 29,
+                            "image_file_name": "00000058.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        178,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        34,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 30,
+                            "image_file_name": "00000059.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        178,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        34,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 31,
+                            "image_file_name": "00000060.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 32,
+                            "image_file_name": "00000061.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        177,
+                                        826,
+                                        212,
+                                        836
+                                    ],
+                                    "object_wh": [
+                                        35,
+                                        10
+                                    ],
+                                    "size_category": "small",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

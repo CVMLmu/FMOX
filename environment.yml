@@ -1,4 +1,4 @@
-name: fmo_data_env
+name: fmox_env
 channels:
   - pytorch
   - conda-forge
