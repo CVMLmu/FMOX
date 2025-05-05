@@ -112,28 +112,84 @@ class SequenceScoreTracker:
         return np.mean(list(self.all_ious.values())) if self.all_ious else 0
 
 #######################################################################################################################
+# def renders2traj(renders,device):
+#     masks = renders[:,:,-1]
+#     sumx = torch.sum(masks,-2)
+#     sumy = torch.sum(masks,-1)
+#     cenx = torch.sum(sumy*torch.arange(1,sumy.shape[-1]+1)[None,None].float().to(device),-1) / torch.sum(sumy,-1)
+#     ceny = torch.sum(sumx*torch.arange(1,sumx.shape[-1]+1)[None,None].float().to(device),-1) / torch.sum(sumx,-1)
+#     est_traj = torch.cat((cenx.unsqueeze(-1),ceny.unsqueeze(-1)),-1)
+#     return est_traj
 
 class GroundTruthProcessorX:
     def __init__(self, seqname, bboxes):
 
-        self.nsplits = 12 if '-12' in seqname else 8
+        # self.nsplits = 12 if '-12' in seqname else 8
 
+        if '-12' in seqname:
+            self.nsplits = 12
+        else:
+            self.nsplits = 8
+
+        print("calc segname", seqname)
         nfrms = len(bboxes) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
         start_ind = 0
         end_ind = nfrms
 
         pars = []
         # bounding boxes might be in the format [x, y, width, height].
-        print("bboxes", bboxes)
         # Convert bboxes to a NumPy array
         bboxes = np.array(bboxes)
+        bboxes = bboxes.astype(float)
+
         print("bboxes", bboxes)
+        import torch
+        # Calculate center coordinates from bounding boxes
+        cenx = bboxes[:, 0]  # x_center
+        ceny = bboxes[:, 1]  # y_center
+        # Concatenate the center coordinates to form the estimated trajectory
+        est_traj = torch.cat((cenx.unsqueeze(-1), ceny.unsqueeze(-1)), dim=-1)
+        # Output the estimated trajectory
+        print("Estimated Trajectory (est_traj):")
+        print(est_traj)
+        
+
         print("bboxes", type(bboxes))
-        pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1))
-        pars = np.reshape(pars,(-1,self.nsplits))
-        rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits))
+        print("self.nsplits", self.nsplits)
+        # there is 176 value split make it 22 but i give 22 bboxes already
+        pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
+        print("my pars 11", pars)
+        # Calculate the center coordinates of each bounding box
+        centers = (bboxes[:, :2] + 0.5 * bboxes[:, 2:]).transpose((0,2,1))
+        # centers = np.reshape(centers, (-1, self.nsplits))
+        print("centers",centers)
+        pars = np.reshape(bboxes,(-1,self.nsplits))
+        print("my pars", pars)
+        # rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits)) original
+        # Calculate the radius (max dimension / 2) without reshaping into splits
+        rads = np.max(0.5 * bboxes[:, 2:], axis=1)
         pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
         rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
+
+        # --------------------------
+        # # Calculate center points of bboxes: x + width/2, y + height/2
+        # centers = bboxes[:, :2] + 0.5 * bboxes[:, 2:]
+        # # Confirm that nfrms is divisible by nsplits
+        # total_elements = nfrms
+        # if total_elements % self.nsplits != 0:
+        #     raise ValueError(
+        #         f"Number of bounding boxes ({total_elements}) is not divisible by nsplits ({self.nsplits}).")
+        #
+        # # Reshape centers to (-1, nsplits, 2)
+        # pars = np.reshape(centers, (-1, self.nsplits, 2)).transpose((0, 2, 1))
+        # # Flatten pars to (-1, nsplits)
+        # pars = np.reshape(pars, (-1, self.nsplits))
+        # # Calculate radii: max(width, height)/2 per bbox
+        # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], axis=1), (-1, self.nsplits))
+        # # Pad with zeros at the start if start_ind > 0 (not in this case)
+        # pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
+        # rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
+        # --------------------------
 
         self.pars = pars
         self.rads = rads
@@ -175,8 +231,8 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, callback=None):
 
     # for kkf, ff in enumerate(files):
     for kkf in range(len(gt_bboxes)):
-        gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes)
+        gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
 
         # seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms)
