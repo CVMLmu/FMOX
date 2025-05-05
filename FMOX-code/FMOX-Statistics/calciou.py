@@ -121,6 +121,32 @@ class SequenceScoreTracker:
 #     est_traj = torch.cat((cenx.unsqueeze(-1),ceny.unsqueeze(-1)),-1)
 #     return est_traj
 
+def interpolate_points(points, num_intermediate=8):
+    """
+    Given an array of points (N x 2),
+    returns a list where each element corresponds to a pair of consecutive points,
+    containing the start point, 7 intermediate points, and the end point.
+
+    Parameters:
+    points : array-like of shape (N, 2)
+    num_intermediate : int, number of intermediate points between consecutive points
+
+    Returns:
+    List of numpy arrays of shape (num_intermediate + 2, 2)
+    Each array corresponds to interpolated points between one pair of points.
+    """
+    points = np.array(points)
+    interpolated_segments = []
+    for i in range(len(points) - 1):
+        start = points[i]
+        end = points[i + 1]
+        # Create linear interpolation including start and end
+        # t goes from 0 to 1 with (num_intermediate+2) points
+        t_values = np.linspace(0, 1, num_intermediate + 2)
+        segment_points = np.array([start * (1 - t) + end * t for t in t_values])
+        interpolated_segments.append(segment_points)
+    return np.array(interpolated_segments)
+
 class GroundTruthProcessorX:
     def __init__(self, seqname, bboxes):
 
@@ -131,7 +157,6 @@ class GroundTruthProcessorX:
         else:
             self.nsplits = 8
 
-        print("calc segname", seqname)
         nfrms = len(bboxes) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
         start_ind = 0
         end_ind = nfrms
@@ -143,29 +168,37 @@ class GroundTruthProcessorX:
         bboxes = bboxes.astype(float)
 
         print("bboxes", bboxes)
-        import torch
+        # ------------------------------------------------------------------------
+        # import torch
+        # # Calculate center coordinates from bounding boxes
+        # cenx = bboxes[:, 0]  # x_center
+        # ceny = bboxes[:, 1]  # y_center
+        # # Concatenate the center coordinates to form the estimated trajectory
+        # est_traj = torch.cat((cenx.unsqueeze(-1), ceny.unsqueeze(-1)), dim=-1)
+        # # Output the estimated trajectory
+        # print("Estimated Trajectory (est_traj):")
+        # print(est_traj)
+        # ------------------------------------------------------------------------
         # Calculate center coordinates from bounding boxes
-        cenx = bboxes[:, 0]  # x_center
-        ceny = bboxes[:, 1]  # y_center
-        # Concatenate the center coordinates to form the estimated trajectory
-        est_traj = torch.cat((cenx.unsqueeze(-1), ceny.unsqueeze(-1)), dim=-1)
+        centers = []
+        for bbox in bboxes:
+            x_center = bbox[0] + bbox[2] / 2  # x_min + width/2
+            y_center = bbox[1] + bbox[3] / 2  # y_min + height/2
+            centers.append((x_center, y_center))
         # Output the estimated trajectory
-        print("Estimated Trajectory (est_traj):")
-        print(est_traj)
-        
-
-        print("bboxes", type(bboxes))
-        print("self.nsplits", self.nsplits)
+        print("Estimated Trajectory (centers):")
+        # Convert to standard Python floats
+        centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
+        centers_as_floats = np.array(centers_as_floats)
+        pars = interpolate_points(centers_as_floats, (self.nsplits-2))
+        pars = pars.transpose((0, 2, 1))
+        pars = np.reshape(pars, (-1, self.nsplits))
+        print("pars", pars)
+        # ------------------------------------------------------------------------
         # there is 176 value split make it 22 but i give 22 bboxes already
-        pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
-        print("my pars 11", pars)
-        # Calculate the center coordinates of each bounding box
-        centers = (bboxes[:, :2] + 0.5 * bboxes[:, 2:]).transpose((0,2,1))
-        # centers = np.reshape(centers, (-1, self.nsplits))
-        print("centers",centers)
-        pars = np.reshape(bboxes,(-1,self.nsplits))
-        print("my pars", pars)
-        # rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits)) original
+        # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
+        # pars = np.reshape(pars,(-1,self.nsplits))  # original
+        rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits)) # original
         # Calculate the radius (max dimension / 2) without reshaping into splits
         rads = np.max(0.5 * bboxes[:, 2:], axis=1)
         pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
