@@ -147,6 +147,38 @@ def interpolate_points(points, num_intermediate=8):
         interpolated_segments.append(segment_points)
     return np.array(interpolated_segments)
 
+
+import numpy as np
+
+
+def interpolate_radii(radii, num_intermediate=6):
+    """
+    Given an array of radii (N,),
+    returns a 2D array where each row corresponds to a pair of consecutive radii,
+    containing the start radius, intermediate radii, and the end radius.
+
+    Parameters:
+    radii : array-like of shape (N,)
+    num_intermediate : int, number of intermediate radii between consecutive radii
+
+    Returns:
+    numpy array of shape (N-1, num_intermediate + 2)
+    Each row corresponds to interpolated radii between one pair of radii.
+    """
+    radii = np.array(radii)
+    interpolated_segments = []
+
+    for i in range(len(radii) - 1):
+        start = radii[i]
+        end = radii[i + 1]
+        # Create linear interpolation including start and end
+        t_values = np.linspace(0, 1, num_intermediate + 2)
+        segment_radii = np.array([start * (1 - t) + end * t for t in t_values])
+        interpolated_segments.append(segment_radii)
+
+    return np.array(interpolated_segments)
+
+
 class GroundTruthProcessorX:
     def __init__(self, seqname, bboxes, start_ind):
         if '-12' in seqname:
@@ -155,7 +187,6 @@ class GroundTruthProcessorX:
             self.nsplits = 8
 
         nfrms = len(bboxes) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
-        start_ind = 27
         end_ind = nfrms
 
         pars = []
@@ -191,19 +222,48 @@ class GroundTruthProcessorX:
         pars = interpolate_points(centers_as_floats, (self.nsplits-2))
         pars = pars.transpose((0, 2, 1))
         pars = np.reshape(pars, (-1, self.nsplits))
+        print("pars", pars)
         # ------------------------------------------------------------------------
-        # there is 176 value split make it 22 but i give 22 bboxes already
         # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
         # pars = np.reshape(pars,(-1,self.nsplits))  # original
         # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, self.nsplits))  # original
 
-        print("sss", np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0)
-        rads = np.max(0.5 * pars[:, 2:], 1)
+        rads = np.max(0.5 * bboxes[:, 2:], 1)  # == np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0
+        print("rads", rads)
 
-        print("rads radsradsradsradsradsrads", rads)
+        # Example usage
+        # radii = np.array([32.0, 32.0, 31.5, 32.5, 32.5, 32.5, 37.5, 41.0, 33.0, 48.0, 46.0, 47.0, 37.0, 36.0,
+        #                   35.5, 35.0, 33.0, 32.0, 32.5, 32.0, 31.0, 31.0])
+        interpolated_radii = interpolate_radii(rads, num_intermediate=6)
+        print("interpolated_radii", interpolated_radii)
+
+        kkkkkkk = np.zeros((start_ind, self.nsplits))
+
+        # rads_dummy = [[38.5  38.5   38.5   38.5   38.5   39.27  38.5   38.5  ]
+        #              [38.5  38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]
+        #              [38.5   38.5   38.5   38.5   39.27  39.27  38.5   39.27 ]
+        #              [39.27  40.855 39.27  38.5   38.5   38.5   38.5   38.5  ]
+        #              [38.5   38.5   38.5   38.5   37.745 37.745 38.5   38.5  ]
+        #              [38.5   38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 38.5   38.5   37.745 37.745]
+        #              [38.5   38.5   39.27  39.27  38.5   37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
+        #              [37.745 37.005 37.745 37.005 37.005 37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
+        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 36.28  37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
+        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]]
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
-        rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
+        rads = np.r_[np.zeros((start_ind, self.nsplits)), interpolated_radii]
 
         self.pars = pars
         self.rads = rads
