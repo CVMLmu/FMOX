@@ -65,6 +65,8 @@ for database in fmox_data["databases"]:
                     for annotation in image["annotations"]:
                         bboxes = annotation["bbox_xyxy"]
 
+                        print("bboxes", bboxes)
+
                         # convert box formats, might be in the format [x, y, width, height].
                         # as in defined	bboxes = np.loadtxt(os.path.join(folder,'gt_bbox',seqname + '.txt'))
                         bboxes = convert_bbox_xyxy_to_xywh(bboxes)

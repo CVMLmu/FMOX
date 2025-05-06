@@ -149,9 +149,6 @@ def interpolate_points(points, num_intermediate=8):
 
 class GroundTruthProcessorX:
     def __init__(self, seqname, bboxes):
-
-        # self.nsplits = 12 if '-12' in seqname else 8
-
         if '-12' in seqname:
             self.nsplits = 12
         else:
@@ -162,10 +159,10 @@ class GroundTruthProcessorX:
         end_ind = nfrms
 
         pars = []
-        # bounding boxes might be in the format [x, y, width, height].
-        # Convert bboxes to a NumPy array
         bboxes = np.array(bboxes)
         bboxes = bboxes.astype(float)
+
+        print("sss", np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0)
 
         print("bboxes", bboxes)
         # ------------------------------------------------------------------------
@@ -190,8 +187,9 @@ class GroundTruthProcessorX:
         # Convert to standard Python floats
         centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
         centers_as_floats = np.array(centers_as_floats)
-        pars1 = interpolate_points(centers_as_floats, (self.nsplits-2))
-        pars = pars1.transpose((0, 2, 1))
+        print("centers_as_floats", centers_as_floats)
+        pars = interpolate_points(centers_as_floats, (self.nsplits-2))
+        pars = pars.transpose((0, 2, 1))
         pars = np.reshape(pars, (-1, self.nsplits))
         print("pars", pars)
         # ------------------------------------------------------------------------
@@ -199,7 +197,11 @@ class GroundTruthProcessorX:
         # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
         # pars = np.reshape(pars,(-1,self.nsplits))  # original
         # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, self.nsplits))  # original
-        rads = np.reshape(np.max(0.5 * pars1[:, 2:], 1), (-1, self.nsplits))
+
+        print("sss", np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0)
+        rads = np.max(0.5 * pars[:, 2:], 1)
+
+        print("rads radsradsradsradsradsrads", rads)
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
         rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
