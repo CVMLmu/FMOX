@@ -98,8 +98,13 @@ print("pars2", pars)
  [324.75  327.41  329.5   332.59  336.15  339.62  344.16  346.56 ]"""
 
 rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, nsplits))
+
+print("rads 1", rads)
+
 pars = np.r_[np.zeros((start_ind * 2, nsplits)), pars]
 rads = np.r_[np.zeros((start_ind, nsplits)), rads]
+
+print("rads 2", rads)
 
 import numpy as np
 

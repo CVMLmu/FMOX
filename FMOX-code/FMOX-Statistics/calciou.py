@@ -190,19 +190,19 @@ class GroundTruthProcessorX:
         # Convert to standard Python floats
         centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
         centers_as_floats = np.array(centers_as_floats)
-        pars = interpolate_points(centers_as_floats, (self.nsplits-2))
-        pars = pars.transpose((0, 2, 1))
+        pars1 = interpolate_points(centers_as_floats, (self.nsplits-2))
+        pars = pars1.transpose((0, 2, 1))
         pars = np.reshape(pars, (-1, self.nsplits))
         print("pars", pars)
         # ------------------------------------------------------------------------
         # there is 176 value split make it 22 but i give 22 bboxes already
         # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
         # pars = np.reshape(pars,(-1,self.nsplits))  # original
-        rads = np.reshape(np.max(0.5*bboxes[:,2:],1), (-1,self.nsplits)) # original
-        # Calculate the radius (max dimension / 2) without reshaping into splits
-        rads = np.max(0.5 * bboxes[:, 2:], axis=1)
-        pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
-        rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
+        # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, self.nsplits))  # original
+        rads = np.reshape(np.max(0.5 * pars1[:, 2:], 1), (-1, self.nsplits))
+
+        pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
+        rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
 
         # --------------------------
         # # Calculate center points of bboxes: x + width/2, y + height/2
