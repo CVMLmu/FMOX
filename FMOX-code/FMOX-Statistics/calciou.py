@@ -234,10 +234,8 @@ class GroundTruthProcessorX:
         # Example usage
         # radii = np.array([32.0, 32.0, 31.5, 32.5, 32.5, 32.5, 37.5, 41.0, 33.0, 48.0, 46.0, 47.0, 37.0, 36.0,
         #                   35.5, 35.0, 33.0, 32.0, 32.5, 32.0, 31.0, 31.0])
-        interpolated_radii = interpolate_radii(rads, num_intermediate=6)
+        interpolated_radii = interpolate_radii(rads, num_intermediate=(self.nsplits-2))
         print("interpolated_radii", interpolated_radii)
-
-        kkkkkkk = np.zeros((start_ind, self.nsplits))
 
         # rads_dummy = [[38.5  38.5   38.5   38.5   38.5   39.27  38.5   38.5  ]
         #              [38.5  38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]

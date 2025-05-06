@@ -113,7 +113,6 @@ rads 1 [[38.5   38.5   38.5   38.5   38.5   39.27  38.5   38.5  ]
 """
 
 pars = np.r_[np.zeros((start_ind * 2, nsplits)), pars]
-print("lllll", pars)
 rads = np.r_[np.zeros((start_ind, nsplits)), rads]
 
 print("rads 2", rads)
@@ -125,79 +124,6 @@ print("rads 2", rads)
  [39.27  40.855 39.27  38.5   38.5   38.5   38.5   38.5  ]
  [38.5   38.5   38.5   38.5   37.745 37.745 38.5   38.5  ]
  [38.5   38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]"""
-
-import numpy as np
-
-
-def interpolate_points(points, num_intermediate=7):
-    """
-    Given an array of points (N x 2),
-    returns a list where each element corresponds to a pair of consecutive points,
-    containing the start point, 7 intermediate points, and the end point.
-
-    Parameters:
-    points : array-like of shape (N, 2)
-    num_intermediate : int, number of intermediate points between consecutive points
-
-    Returns:
-    List of numpy arrays of shape (num_intermediate + 2, 2)
-    Each array corresponds to interpolated points between one pair of points.
-    """
-    points = np.array(points)
-    interpolated_segments = []
-    for i in range(len(points) - 1):
-        start = points[i]
-        end = points[i + 1]
-        # Create linear interpolation including start and end
-        # t goes from 0 to 1 with (num_intermediate+2) points
-        t_values = np.linspace(0, 1, num_intermediate + 2)
-        segment_points = np.array([start * (1 - t) + end * t for t in t_values])
-        interpolated_segments.append(segment_points)
-    return np.array(interpolated_segments)
-
-
-def flatten_coords(coords):
-    # Convert to numpy array if it is not already
-    arr = np.array(coords)
-    # Reshape to (-1, 2) since each point has 2 coordinates (x, y)
-    flat_coords = arr.reshape(-1, 2)
-    return flat_coords
-
-
-
-# Example usage
-if __name__ == "__main__":
-    points = np.array([[208., 297.5],
-                       [208., 308.5],
-                       [208.5, 324.5],
-                       [209.5, 347.],
-                       [210.5, 375.5],
-                       [210.5, 421.5],
-                       [211., 457.5],
-                       [212.5, 502.],
-                       [213., 543.5],
-                       [213.5, 617.],
-                       [215., 683.],
-                       [215.5, 760.],
-                       [218., 816.],
-                       [210., 835.],
-                       [206.5, 816.5],
-                       [202., 807.],
-                       [198., 799.],
-                       [193., 799.],
-                       [189.5, 803.],
-                       [185., 813.],
-                       [181., 826.5],
-                       [179., 829.]])
-
-    result = interpolate_points(points, num_intermediate=7)
-
-    # Print first segment as example
-    print("First segment (start, intermediates, end):")
-    print(result)
-    flat_coords = result.reshape(-1, 2)
-    print("flat_coords", flat_coords)
-
 
 
 import numpy as np
