@@ -48,6 +48,8 @@ for database in fmox_data["databases"]:
         else:
             # note: some sequences does not have annotations (e.g. fmov2 swaying) so skip them.
             if len(sub_dataset["images"]) != 0:
+                first_img_name = sub_dataset["images"][0]["image_file_name"]
+                start_ind = int(first_img_name.split('.')[0])
                 for image in sub_dataset["images"]:
 
                     # ==============================================================================================
@@ -65,17 +67,13 @@ for database in fmox_data["databases"]:
                     for annotation in image["annotations"]:
                         bboxes = annotation["bbox_xyxy"]
 
-                        print("bboxes", bboxes)
-
-                        # convert box formats, might be in the format [x, y, width, height].
-                        # as in defined	bboxes = np.loadtxt(os.path.join(folder,'gt_bbox',seqname + '.txt'))
                         bboxes = convert_bbox_xyxy_to_xywh(bboxes)
                         effcientbbox = convert_bbox_xyxy_to_xywh(effcientbbox)
 
                         fmox_bboxes.append(bboxes)
                         efficienttam_bboxes.append(effcientbbox)
 
-        # after this - calciou processes will be called ....
+        # call TIoU ......
         if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
             fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
             print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
@@ -84,6 +82,6 @@ for database in fmox_data["databases"]:
 
             print("out segname", sub_dataset["subdb_name"])
             import calciou
-            calciou.evaluate_on(sub_dataset["subdb_name"], fmox_bboxes, efficienttam_bboxes)
+            calciou.evaluate_on(sub_dataset["subdb_name"], fmox_bboxes, efficienttam_bboxes, start_ind)
 
 

@@ -148,14 +148,14 @@ def interpolate_points(points, num_intermediate=8):
     return np.array(interpolated_segments)
 
 class GroundTruthProcessorX:
-    def __init__(self, seqname, bboxes):
+    def __init__(self, seqname, bboxes, start_ind):
         if '-12' in seqname:
             self.nsplits = 12
         else:
             self.nsplits = 8
 
         nfrms = len(bboxes) # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
-        start_ind = 0
+        start_ind = 27
         end_ind = nfrms
 
         pars = []
@@ -191,7 +191,6 @@ class GroundTruthProcessorX:
         pars = interpolate_points(centers_as_floats, (self.nsplits-2))
         pars = pars.transpose((0, 2, 1))
         pars = np.reshape(pars, (-1, self.nsplits))
-        print("pars", pars)
         # ------------------------------------------------------------------------
         # there is 176 value split make it 22 but i give 22 bboxes already
         # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
@@ -205,26 +204,6 @@ class GroundTruthProcessorX:
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
         rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
-
-        # --------------------------
-        # # Calculate center points of bboxes: x + width/2, y + height/2
-        # centers = bboxes[:, :2] + 0.5 * bboxes[:, 2:]
-        # # Confirm that nfrms is divisible by nsplits
-        # total_elements = nfrms
-        # if total_elements % self.nsplits != 0:
-        #     raise ValueError(
-        #         f"Number of bounding boxes ({total_elements}) is not divisible by nsplits ({self.nsplits}).")
-        #
-        # # Reshape centers to (-1, nsplits, 2)
-        # pars = np.reshape(centers, (-1, self.nsplits, 2)).transpose((0, 2, 1))
-        # # Flatten pars to (-1, nsplits)
-        # pars = np.reshape(pars, (-1, self.nsplits))
-        # # Calculate radii: max(width, height)/2 per bbox
-        # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], axis=1), (-1, self.nsplits))
-        # # Pad with zeros at the start if start_ind > 0 (not in this case)
-        # pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
-        # rads = np.r_[np.zeros((start_ind, self.nsplits)), rads]
-        # --------------------------
 
         self.pars = pars
         self.rads = rads
@@ -257,7 +236,7 @@ class GroundTruthProcessorX:
         return par.T, radius, bbox
 
 
-def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, callback=None):
+def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
     gt_bboxes = fmox_bboxes
     est_bboxes = efficienttam_bboxes
 
@@ -266,8 +245,8 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, callback=None):
 
     # for kkf, ff in enumerate(files):
     for kkf in range(len(gt_bboxes)):
-        est_gtp = GroundTruthProcessorX(seqname, est_bboxes)
-        gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes)
+        est_gtp = GroundTruthProcessorX(seqname, est_bboxes, start_ind)
+        gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes, start_ind)
 
         # seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms)

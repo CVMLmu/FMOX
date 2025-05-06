@@ -14,15 +14,23 @@ else:
     nsplits = 8
 
 nfrms = len(bboxes)  # fmox len - len(glob.glob(os.path.join(seqpath,'*.png')))
-start_ind = 0
+start_ind = 27
 end_ind = nfrms
 nsplits = 8
 
+calculate_centers = bboxes[:, :2] + 0.5 * bboxes[:, 2:]
+print("calculate_centers", calculate_centers)
+"""[[210.5   297.   ]
+ [210.65  297.59 ]
+ [210.82  299.   ]
+ [211.12  299.08 ]
+ [210.71  300.55 ]
+ [210.92  302.46 ] ....."""
 
-kkk = np.reshape(bboxes[:, :2] + 0.5 * bboxes[:, 2:], (-1, nsplits, 2))
-print("kkk", kkk)
-
-"""kkk [[[210.5   297.   ]
+reshape_center_calculations = np.reshape(calculate_centers, (-1, nsplits, 2))
+print("reshape_center_calculations", reshape_center_calculations)
+print("reshape_center_calculations", len(reshape_center_calculations))  # 22
+"""[[[210.5   297.   ]
   [210.65  297.59 ]
   [210.82  299.   ]
   [211.12  299.08 ]
@@ -41,36 +49,29 @@ print("kkk", kkk)
   [211.28  321.73 ]]
 """
 
+center_transpose = reshape_center_calculations.transpose((0, 2, 1))
+print("center_transpose", center_transpose)
+print("center_transpose", len(center_transpose))  # 22
+
 """
-[
+[[[210.5   210.65  210.82  211.12  210.71  210.92  211.47  211.28 ]
+  [297.    297.59  299.    299.08  300.55  302.46  304.17  304.62 ]]
 
-[[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.  297.5]
-[208.6  308.0]]
+ [[211.26  211.12  211.14  210.89  211.47  211.2   211.4   211.28 ]
+  [307.1   308.47  311.23  312.75  315.61  317.68  320.1   321.73 ]]
 
-[208.9  308.5]
- 
- 
- [208.5 324.5]
- 
- 
- [209.5 347. ]
+ [[211.3   211.4   211.33  211.58  212.03  212.36  212.85  212.39 ]
+  [324.75  327.41  329.5   332.59  336.15  339.62  344.16  346.56 ]]
+
+ [[212.85  213.145 212.56  212.74  212.45  212.11  211.72  212.12 ]
+  [351.36  354.745 358.38  361.43  363.89  367.53  371.32  375.08 ]]
 """
+print(start_ind)
+# pars = np.r_[np.zeros((start_ind * 2, nsplits)), center_transpose]
+print("xxxx")
 
-
-pars = []
+# pars = []
 pars = np.reshape(bboxes[:, :2] + 0.5 * bboxes[:, 2:], (-1, nsplits, 2)).transpose((0, 2, 1))
-
-# 4 point to (8,2) yapilmis- 176 degerden (bboxes) 22 pars cikmissss???
-print("len(bboxes)", len(bboxes))
-print("len(pars)", len(pars))
-print("pars", pars)
 
 """ pars [[[210.5   210.65  210.82  211.12  210.71  210.92  211.47  211.28 ]  x
   [297.    297.59  299.    299.08  300.55  302.46  304.17  304.62 ]] y
@@ -112,6 +113,7 @@ rads 1 [[38.5   38.5   38.5   38.5   38.5   39.27  38.5   38.5  ]
 """
 
 pars = np.r_[np.zeros((start_ind * 2, nsplits)), pars]
+print("lllll", pars)
 rads = np.r_[np.zeros((start_ind, nsplits)), rads]
 
 print("rads 2", rads)
