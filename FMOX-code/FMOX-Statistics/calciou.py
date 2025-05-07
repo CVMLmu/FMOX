@@ -275,26 +275,9 @@ class GroundTruthProcessorX:
         bbox = np.array(bbox).astype(int)
         return par.T, radius, bbox
 
-def draw_legend(image, gt_color, est_color, pos=(10, 30), spacing=20):
-    img = image.copy()
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    font_scale = 0.4
-    thickness = 1
-    line_length = 40
-    x, y = pos
-    # Ground truth line and label
-    cv2.line(img, (x, y), (x + line_length, y), gt_color, thickness)
-    cv2.putText(img, "Ground Truth Trajectory", (x + line_length + 10, y + 5), font, font_scale,
-                gt_color, thickness, cv2.LINE_AA)
-    # Estimated line and label below
-    y += spacing
-    cv2.line(img, (x, y), (x + line_length, y), est_color, thickness)
-    cv2.putText(img, "Defmo Estimated Trajectory", (x + line_length + 10, y + 5), font, font_scale,
-                est_color, thickness, cv2.LINE_AA)
-    return img
+import vis_trajectory
 
-
-def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
+def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
     gt_bboxes = fmox_bboxes
     est_bboxes = efficienttam_bboxes
 
@@ -308,6 +291,9 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=N
 
         # seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms)
+
+        white_img = np.ones(original_I.shape, dtype=original_I.dtype) * 255
+
         for kk in range(gt_gtp.nfrms):
             gt_traj, radius, bbox = gt_gtp.get_trajgt(kk)
             est_traj, est_radius, est_bbox = est_gtp.get_trajgt(kk)
@@ -321,6 +307,17 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=N
 
             # if args.verbose:
             seq_score_tracker.report(gt_gtp.seqname, kk)
+
+            white_img = vis_trajectory.write_trajectory(white_img, gt_traj, (0, 255, 0))
+            white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
+            white_img = vis_trajectory.draw_legend(white_img, (0, 255, 0), (0, 0, 255), pos=(10, 30), spacing=20)
+
+        if kk == len(gt_bboxes) - 1:
+            folder_path = "./efficientTAM_traj_vis/"
+            cv2.imwrite(folder_path + "efficientTAM_traj_" + str(dataset_name) + "_" + str(seqname) + ".jpg", white_img)
+        # cv2.imshow("white_img", white_img)
+        # cv2.imshow("original_I", original_I)
+        # cv2.waitKey(0)
 
         means = seq_score_tracker.close()
         print("gt_gtp.seqname, means", gt_gtp.seqname, means)

@@ -85,7 +85,8 @@ def main():
 
                 # Save annotated image
                 output_path = os.path.join(output_dir, f'{i:08d}_annotated.png')
-                cv2.imwrite(output_path, img_annotated)
+                cv2.imshow()
+                # cv2.imwrite(output_path, img_annotated)
                 print(f"Processed image {i+1}/{len(gt_data)}: {output_path}")
             else:
                 print(f"Could not read image: {img_path}")

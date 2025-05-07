@@ -1,6 +1,8 @@
 import os
 import json
 
+import cv2
+
 
 def find_correspondence_in_json(search_json, db_name, subdb_name, image_file_name):
     for database in search_json.get("databases", []):
@@ -82,7 +84,20 @@ for database in fmox_data["databases"]:
 
             print("out segname", sub_dataset["subdb_name"])
             print("start_ind", start_ind)
+
+            dataset_path = "C:\\Users\\user\PycharmProjects\Datasets\data_public/"
+            subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
+            all_files = os.listdir(subseq_folder)
+            image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
+            image_files = [f for f in all_files if f.lower().endswith(image_extensions)]
+            original_first_Img = None
+            if image_files:
+                first_image = image_files[0]  # Get the first image file name
+                first_image_path = os.path.join(subseq_folder, first_image)  # Full path to the first image
+
+                original_first_Img = cv2.imread(first_image_path)
+
             import calciou
-            calciou.evaluate_on(sub_dataset["subdb_name"], fmox_bboxes, efficienttam_bboxes, start_ind)
+            calciou.evaluate_on(database["dataset_name"], sub_dataset["subdb_name"], original_first_Img, fmox_bboxes, efficienttam_bboxes, start_ind)
 
 
