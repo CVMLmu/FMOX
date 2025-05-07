@@ -73,7 +73,7 @@ for database in fmox_data["databases"]:
                         fmox_bboxes.append(bboxes)
                         efficienttam_bboxes.append(effcientbbox)
 
-        # call TIoU ......
+        # call TIoU for calc ......
         if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
             fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
             print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
