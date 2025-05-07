@@ -1,4 +1,5 @@
 import os
+import cv2
 import json
 import time
 import numpy as np
@@ -163,9 +164,6 @@ def interpolate_points(points, increment=0.15, num_intermediate=8):
 
     return np.array(interpolated_segments)
 
-
-
-
 def interpolate_radii1(radii, num_intermediate=6):
     """
     Given an array of radii (N,),
@@ -276,6 +274,24 @@ class GroundTruthProcessorX:
             radius = np.round(self.rads[0, 0]).astype(int)
         bbox = np.array(bbox).astype(int)
         return par.T, radius, bbox
+
+def draw_legend(image, gt_color, est_color, pos=(10, 30), spacing=20):
+    img = image.copy()
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.4
+    thickness = 1
+    line_length = 40
+    x, y = pos
+    # Ground truth line and label
+    cv2.line(img, (x, y), (x + line_length, y), gt_color, thickness)
+    cv2.putText(img, "Ground Truth Trajectory", (x + line_length + 10, y + 5), font, font_scale,
+                gt_color, thickness, cv2.LINE_AA)
+    # Estimated line and label below
+    y += spacing
+    cv2.line(img, (x, y), (x + line_length, y), est_color, thickness)
+    cv2.putText(img, "Defmo Estimated Trajectory", (x + line_length + 10, y + 5), font, font_scale,
+                est_color, thickness, cv2.LINE_AA)
+    return img
 
 
 def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
