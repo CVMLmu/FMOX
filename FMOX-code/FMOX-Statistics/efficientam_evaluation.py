@@ -73,7 +73,7 @@ for database in fmox_data["databases"]:
                         fmox_bboxes.append(bboxes)
                         efficienttam_bboxes.append(effcientbbox)
 
-        # call TIoU for calc ......
+        # call TIoU ......
         if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
             fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
             print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
@@ -81,6 +81,7 @@ for database in fmox_data["databases"]:
                   '\n\n')
 
             print("out segname", sub_dataset["subdb_name"])
+            print("start_ind", start_ind)
             import calciou
             calciou.evaluate_on(sub_dataset["subdb_name"], fmox_bboxes, efficienttam_bboxes, start_ind)
 

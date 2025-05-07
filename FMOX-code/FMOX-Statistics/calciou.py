@@ -78,8 +78,8 @@ class AverageScoreTracker:
         self.seqi = 0
 
     def next(self, seqname, means):
-        self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
-        print('Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
+        self.av_ious[self.seqi] = means
+        print('AverageScoreTracker, Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
         self.seqi += 1
 
     def next_time(self, tm):
@@ -87,8 +87,10 @@ class AverageScoreTracker:
 
     def close(self):
        print('AVERAGES')
+       print("self.av_ious", self.av_ious)
        means = np.nanmean(self.av_ious)
-       print('TIoU {:.3f}'.format(*means))
+       print("means", means)
+       print('TIoU {:.3f}'.format(means))
        print('time {:.3f} seconds'.format(np.nanmean(np.array(self.av_times))))
        return means
 
@@ -106,7 +108,7 @@ class SequenceScoreTracker:
         return iou
 
     def report(self, seqname, kk):
-        print('Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
+        print('SequenceScoreTracker, Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
 
     def close(self):
         return np.mean(list(self.all_ious.values())) if self.all_ious else 0
@@ -121,14 +123,15 @@ class SequenceScoreTracker:
 #     est_traj = torch.cat((cenx.unsqueeze(-1),ceny.unsqueeze(-1)),-1)
 #     return est_traj
 
-def interpolate_points(points, num_intermediate=8):
+def interpolate_points(points, increment=0.15, num_intermediate=8):
     """
-    Given an array of points (N x 2),
-    returns a list where each element corresponds to a pair of consecutive points,
-    containing the start point, 7 intermediate points, and the end point.
+    Given an array of points (N x 2), returns a list where each element corresponds to a pair of consecutive points,
+    containing the start point, intermediate points, and the end point. A new point is added that is increment units
+    more than the last point in `points`.
 
     Parameters:
     points : array-like of shape (N, 2)
+    increment : float, the amount to add to the last point to create a new endpoint
     num_intermediate : int, number of intermediate points between consecutive points
 
     Returns:
@@ -137,21 +140,33 @@ def interpolate_points(points, num_intermediate=8):
     """
     points = np.array(points)
     interpolated_segments = []
+
+    # Interpolate between consecutive points
     for i in range(len(points) - 1):
         start = points[i]
         end = points[i + 1]
         # Create linear interpolation including start and end
-        # t goes from 0 to 1 with (num_intermediate+2) points
         t_values = np.linspace(0, 1, num_intermediate + 2)
         segment_points = np.array([start * (1 - t) + end * t for t in t_values])
         interpolated_segments.append(segment_points)
+
+    # Calculate the new point based on the last point
+    if len(points) > 0:
+        last_point = points[-1]
+        # Create a new point that is increment units more than the last point
+        new_point = last_point + np.array([increment, increment])  # Adjust as needed for your use case
+
+        # Interpolate between the last point and the new point
+        t_values = np.linspace(0, 1, num_intermediate + 2)
+        segment_points = np.array([last_point * (1 - t) + new_point * t for t in t_values])
+        interpolated_segments.append(segment_points)
+
     return np.array(interpolated_segments)
 
 
-import numpy as np
 
 
-def interpolate_radii(radii, num_intermediate=6):
+def interpolate_radii1(radii, num_intermediate=6):
     """
     Given an array of radii (N,),
     returns a 2D array where each row corresponds to a pair of consecutive radii,
@@ -176,6 +191,13 @@ def interpolate_radii(radii, num_intermediate=6):
         segment_radii = np.array([start * (1 - t) + end * t for t in t_values])
         interpolated_segments.append(segment_radii)
 
+    # Last segment interpolation
+    last_start = radii[-1]
+    last_end = last_start + 0.15 * (num_intermediate + 1)
+    t_values = np.linspace(0, 1, num_intermediate + 2)
+    last_segment = np.array([last_start * (1 - t) + last_end * t for t in t_values])
+    interpolated_segments.append(last_segment)
+
     return np.array(interpolated_segments)
 
 
@@ -193,20 +215,6 @@ class GroundTruthProcessorX:
         bboxes = np.array(bboxes)
         bboxes = bboxes.astype(float)
 
-        print("sss", np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0)
-
-        print("bboxes", bboxes)
-        # ------------------------------------------------------------------------
-        # import torch
-        # # Calculate center coordinates from bounding boxes
-        # cenx = bboxes[:, 0]  # x_center
-        # ceny = bboxes[:, 1]  # y_center
-        # # Concatenate the center coordinates to form the estimated trajectory
-        # est_traj = torch.cat((cenx.unsqueeze(-1), ceny.unsqueeze(-1)), dim=-1)
-        # # Output the estimated trajectory
-        # print("Estimated Trajectory (est_traj):")
-        # print(est_traj)
-        # ------------------------------------------------------------------------
         # Calculate center coordinates from bounding boxes
         centers = []
         for bbox in bboxes:
@@ -218,47 +226,23 @@ class GroundTruthProcessorX:
         # Convert to standard Python floats
         centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
         centers_as_floats = np.array(centers_as_floats)
-        print("centers_as_floats", centers_as_floats)
-        pars = interpolate_points(centers_as_floats, (self.nsplits-2))
+
+        pars = interpolate_points(centers_as_floats, 0.15, (self.nsplits-2))
         pars = pars.transpose((0, 2, 1))
         pars = np.reshape(pars, (-1, self.nsplits))
-        print("pars", pars)
+
         # ------------------------------------------------------------------------
         # pars = np.reshape(bboxes[:,:2] + 0.5*bboxes[:,2:], (-1,self.nsplits,2)).transpose((0,2,1)) # original
         # pars = np.reshape(pars,(-1,self.nsplits))  # original
         # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, self.nsplits))  # original
 
         rads = np.max(0.5 * bboxes[:, 2:], 1)  # == np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0
-        print("rads", rads)
-
-        # Example usage
         # radii = np.array([32.0, 32.0, 31.5, 32.5, 32.5, 32.5, 37.5, 41.0, 33.0, 48.0, 46.0, 47.0, 37.0, 36.0,
         #                   35.5, 35.0, 33.0, 32.0, 32.5, 32.0, 31.0, 31.0])
-        interpolated_radii = interpolate_radii(rads, num_intermediate=(self.nsplits-2))
-        print("interpolated_radii", interpolated_radii)
+        interpolated_radii = interpolate_radii1(rads, num_intermediate=(self.nsplits-2))
 
-        # rads_dummy = [[38.5  38.5   38.5   38.5   38.5   39.27  38.5   38.5  ]
-        #              [38.5  38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]
-        #              [38.5   38.5   38.5   38.5   39.27  39.27  38.5   39.27 ]
-        #              [39.27  40.855 39.27  38.5   38.5   38.5   38.5   38.5  ]
-        #              [38.5   38.5   38.5   38.5   37.745 37.745 38.5   38.5  ]
-        #              [38.5   38.5   38.5   38.5   38.5   38.5   38.5   38.5  ]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 38.5   38.5   37.745 37.745]
-        #              [38.5   38.5   39.27  39.27  38.5   37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
-        #              [37.745 37.005 37.745 37.005 37.005 37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.745 37.745]
-        #              [37.745 37.745 37.745 37.745 37.745 37.745 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 36.28  37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]
-        #              [37.005 37.005 37.005 37.005 37.005 37.005 37.005 37.005]]
+        np.savetxt('interpolated_radii.txt', interpolated_radii, fmt='%.3f', delimiter=' ')
+        np.savetxt('pars.txt', pars, fmt='%.3f', delimiter=' ')
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
         rads = np.r_[np.zeros((start_ind, self.nsplits)), interpolated_radii]
@@ -309,7 +293,6 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=N
         # seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms, args.method_name)
         seq_score_tracker = SequenceScoreTracker(gt_gtp.nfrms)
         for kk in range(gt_gtp.nfrms):
-            # TODO: need to provide box seperately one for gt one for estimated ....
             gt_traj, radius, bbox = gt_gtp.get_trajgt(kk)
             est_traj, est_radius, est_bbox = est_gtp.get_trajgt(kk)
 
@@ -324,6 +307,7 @@ def evaluate_on(seqname, fmox_bboxes, efficienttam_bboxes, start_ind, callback=N
             seq_score_tracker.report(gt_gtp.seqname, kk)
 
         means = seq_score_tracker.close()
+        print("gt_gtp.seqname, means", gt_gtp.seqname, means)
         av_score_tracker.next(gt_gtp.seqname, means)
 
         if callback:
