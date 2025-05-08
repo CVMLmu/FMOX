@@ -172,9 +172,18 @@ def read_all_images_points(filename):
             yield points
 
 if __name__ == "__main__":
-    filename = "pars.txt"  # Path to the file with points data
-    img_path = "../fmo_data_extracted_files/Falling_Object/imgs/v_box_GTgamma/"
-    image_start_name = "00000027.png"  # Starting image filename to begin drawing points
+    # filename = "pars.txt"  # Path to the file with points data
+    # img_path = "../../../fmo_data_extracted_files/Falling_Object/imgs/v_box_GTgamma/"
+    # image_start_name = "00000027.png"  # Starting image filename to begin drawing points
+
+    filename = "HighFPS_GT_depth2_pars.txt"  # Path to the file with points data
+    img_path = "../../../fmo_data_extracted_files/TbD-3D/imgs/HighFPS_GT_depth2/"
+    image_start_name = "00000000.png"  # Starting image filename to begin drawing points
+
+    output_dir = "../../../fmo_data_extracted_files/TbD-3D/output2_from_interpolated_par"
+    # Create output directory if it doesn't exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     # Extract the starting index from the image_start_name (assumes zero-padded format)
     start_index = int(image_start_name.split('.')[0])
@@ -205,7 +214,11 @@ if __name__ == "__main__":
 
         # Draw all points on the image
         for x, y in points:
-            cv2.circle(img, (int(x), int(y)), radius=5, color=(0, 255, 0), thickness=-1)  # Green filled circle
+            img = cv2.circle(img, (int(x), int(y)), radius=5, color=(0, 255, 0), thickness=-1)  # Green filled circle
+
+        # Save annotated image
+        output_path = os.path.join(output_dir, f"{current_image_index:08d}_par.png")
+        cv2.imwrite(output_path, img)
 
         # Display the image with points
         cv2.imshow(f"Image {image_name}", img)

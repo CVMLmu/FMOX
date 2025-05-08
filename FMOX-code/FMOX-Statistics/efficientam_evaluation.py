@@ -78,14 +78,9 @@ for database in fmox_data["databases"]:
         # call TIoU ......
         if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
             fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
-            print("db_name", database["dataset_name"], "subdb_name", sub_dataset["subdb_name"])
-            print("len(efficienttam_bboxes)", len(efficienttam_bboxes), "len(fmox_bboxes)", len(fmox_bboxes),
-                  '\n\n')
+            print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
 
-            print("out segname", sub_dataset["subdb_name"])
-            print("start_ind", start_ind)
-
-            dataset_path = "C:\\Users\\user\PycharmProjects\Datasets\data_public/"
+            dataset_path = "../../../fmo_data_extracted_files/"
             subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
             all_files = os.listdir(subseq_folder)
             image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
