@@ -11,8 +11,11 @@ def read_ground_truth(gt_file):
     gt_data = []
     for i in range(0, len(lines), 2):
         if i + 1 < len(lines):
-            x_coords = list(map(int, lines[i].strip().split()))
-            y_coords = list(map(int, lines[i + 1].strip().split()))
+            # x_coords1 = list(map(int, lines[i].strip().split()))  # tbd
+            x_coords = list(map(lambda x: int(float(x)), lines[i].strip().split()))  # tbd-3d
+
+            # y_coords1 = list(map(int, lines[i + 1].strip().split()))   # tbd
+            y_coords = list(map(lambda x: int(float(x)), lines[i + 1].strip().split()))   # tbd-3d
 
             # Each bounding box consists of 4 points (x,y coordinates)
             bbox = []
@@ -61,8 +64,8 @@ def draw_bounding_box(img, bbox, color=(0, 255, 0), thickness=2):
 
 
 def main():
-    input_dir = r'C:\Users\user\PycharmProjects\Datasets\data_public\TbD\imgs\fall_cube/'
-    output_dir = r'C:\Users\user\PycharmProjects\Datasets\data_public\TbD\imgs/output'
+    input_dir = "../../../fmo_data_extracted_files/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2  fall_cube
+    output_dir = "../../../fmo_data_extracted_files/TbD-3D/output"
     gt_file = os.path.join(input_dir, 'gt.txt')
 
     # Create output directory if it doesn't exist
@@ -85,8 +88,9 @@ def main():
 
                 # Save annotated image
                 output_path = os.path.join(output_dir, f'{i:08d}_annotated.png')
-                cv2.imshow()
-                # cv2.imwrite(output_path, img_annotated)
+                cv2.imshow("img_annotated", img_annotated)
+                cv2.waitKey(0)
+                cv2.imwrite(output_path, img_annotated)
                 print(f"Processed image {i+1}/{len(gt_data)}: {output_path}")
             else:
                 print(f"Could not read image: {img_path}")

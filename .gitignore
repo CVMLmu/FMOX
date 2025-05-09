@@ -23,4 +23,5 @@ __pycache__/
 setup.py
 FMOX-code/Original_Dataset/
 FMOX-code/Videos/
+FMOX-code/efficientTAM_traj_vis/
 FMOX-code/fmov2_outputs/rleTXT_to_video/

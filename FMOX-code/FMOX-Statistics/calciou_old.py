@@ -88,6 +88,7 @@ class AverageScoreTracker:
 
     def close(self):
        print('AVERAGES')
+       print("self.av_ious", self.av_ious)
        means = np.nanmean(self.av_ious)
        print("means", means)
        print('TIoU {:.3f}'.format(means))
@@ -108,7 +109,7 @@ class SequenceScoreTracker:
         return iou
 
     def report(self, seqname, kk):
-        print('Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
+        print('SequenceScoreTracker, Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
 
     def close(self):
         return np.mean(list(self.all_ious.values())) if self.all_ious else 0
@@ -123,7 +124,7 @@ class SequenceScoreTracker:
 #     est_traj = torch.cat((cenx.unsqueeze(-1),ceny.unsqueeze(-1)),-1)
 #     return est_traj
 
-def interpolate_points(points, increment=0.15, num_intermediate=6):
+def interpolate_points(points, increment=0.15, num_intermediate=8):
     """
     Given an array of points (N x 2), returns a list where each element corresponds to a pair of consecutive points,
     containing the start point, intermediate points, and the end point. A new point is added that is increment units
@@ -219,7 +220,7 @@ class GroundTruthProcessorX:
             y_center = bbox[1] + bbox[3] / 2  # y_min + height/2
             centers.append((x_center, y_center))
         # Output the estimated trajectory
-        # print("Estimated Trajectory (centers):")
+        print("Estimated Trajectory (centers):")
         # Convert to standard Python floats
         centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
         centers_as_floats = np.array(centers_as_floats)
@@ -238,9 +239,8 @@ class GroundTruthProcessorX:
         #                   35.5, 35.0, 33.0, 32.0, 32.5, 32.0, 31.0, 31.0])
         interpolated_radii = interpolate_radii1(rads, num_intermediate=(self.nsplits-2))
 
-        if seqname == "HighFPS_GT_depth2":
-            np.savetxt('HighFPS_GT_depth2_interpolated_radii.txt', interpolated_radii, fmt='%.3f', delimiter=' ')
-            np.savetxt('HighFPS_GT_depth2_pars.txt', pars, fmt='%.3f', delimiter=' ')
+        np.savetxt('interpolated_radii.txt', interpolated_radii, fmt='%.3f', delimiter=' ')
+        np.savetxt('pars.txt', pars, fmt='%.3f', delimiter=' ')
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
         rads = np.r_[np.zeros((start_ind, self.nsplits)), interpolated_radii]
@@ -285,8 +285,7 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
     av_score_tracker = AverageScoreTracker(len(gt_bboxes))
 
     # for kkf, ff in enumerate(files):
-    # for kkf in range(len(gt_bboxes)):
-    for kkf in range(1):
+    for kkf in range(len(gt_bboxes)):
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes, start_ind)
         gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes, start_ind)
 
@@ -307,7 +306,7 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
                 iou = seq_score_tracker.next_traj(kk, gt_traj, est_traj, radius)
 
             # if args.verbose:
-            # seq_score_tracker.report(gt_gtp.seqname, kk)
+            seq_score_tracker.report(gt_gtp.seqname, kk)
 
             white_img = vis_trajectory.write_trajectory(white_img, gt_traj, (0, 255, 0))
             white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
@@ -321,7 +320,7 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
         # cv2.waitKey(0)
 
         means = seq_score_tracker.close()
-        # print("gt_gtp.seqname, means", gt_gtp.seqname, means)
+        print("gt_gtp.seqname, means", gt_gtp.seqname, means)
         av_score_tracker.next(gt_gtp.seqname, means)
 
         if callback:
