@@ -8,15 +8,23 @@ import json_annotation_analysis
 import csv_to_graphics
 import access_json_bboxes
 
+import importlib.util
+import sys
+# Define the path to the parent script
+script_name = 'parent_script'  # Name of the script without .py
+script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', f'{script_name}.py'))
+
 
 def main():
 
-    # ---------------------------------
-    # Download Datasets
-    # ---------------------------------
+    # ----------------------------------------------
+    # Check if dataset is not downloaded - download
+    # ---------------------------------------------
     """ The dataset is downloaded and extracted into a folder named "fmo_data". """
-
-    # download_datasets_zip_files.download_unzip_data()
+    data_path = "../Original_Dataset"
+    # Check if the directory exists
+    if not data_path.exists():
+        download_datasets_zip_files.download_unzip_data()
 
     # ----------------------------------------------------------
     # Create FMOv2 JSON Annotation File

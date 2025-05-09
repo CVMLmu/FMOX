@@ -59,6 +59,38 @@ def calc_tiou(gt_traj, traj, rad):
     ious2 = calciou(gt_traj, est_traj2, rad)
     return np.max([np.mean(ious), np.mean(ious2)])
 
+
+def calciou2(p1, p2, rad):
+    # Check for zero radius to avoid division by zero
+    if rad <= 0:
+        raise ValueError("Radius must be greater than zero.")
+
+    # Calculate the distance between points p1 and p2
+    dists = np.sqrt(np.sum(np.square(p1 - p2), axis=0))
+
+    # Clamp distances to a maximum of 2 * rad
+    dists[dists > 2 * rad] = 2 * rad
+
+    # Calculate normalized distances
+    normalized_dists = dists / (2 * rad)
+    normalized_dists = np.clip(normalized_dists, -1, 1)  # Clamp values to avoid invalid input
+
+    # Calculate theta
+    theta = 2 * np.arccos(normalized_dists)
+
+    # Calculate area and IoU
+    A = ((rad * rad) / 2) * (theta - np.sin(theta))
+    I = 2 * A
+    U = 2 * np.pi * rad * rad - I
+
+    # Avoid division by zero for IoU calculation
+    if np.any(U == 0):
+        raise ValueError("The union area is zero, cannot compute IoU.")
+
+    iou = I / U
+    return iou
+
+
 def calciou(p1, p2, rad):
     dists = np.sqrt( np.sum( np.square(p1 - p2),0) )
     dists[dists > 2*rad] = 2*rad
