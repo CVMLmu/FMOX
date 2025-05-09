@@ -309,8 +309,10 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
             # if args.verbose:
             # seq_score_tracker.report(gt_gtp.seqname, kk)
 
-            white_img = vis_trajectory.write_trajectory(white_img, gt_traj, (0, 255, 0))
-            white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
+            # white_img = vis_trajectory.write_trajectory(white_img, gt_traj, (0, 255, 0))
+            white_img = vis_trajectory.write_trajectory(white_img, gt_traj, color=(0, 255, 0), zero_thresh=2)
+            white_img = vis_trajectory.write_trajectory(white_img, est_traj, color=(0, 0, 255), zero_thresh=2)
+            # white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
             white_img = vis_trajectory.draw_legend(white_img, (0, 255, 0), (0, 0, 255), pos=(10, 30), spacing=20)
 
         if kk == len(gt_bboxes) - 1:

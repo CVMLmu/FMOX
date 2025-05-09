@@ -80,7 +80,8 @@ for database in fmox_data["databases"]:
             fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
             print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
 
-            dataset_path = "../../../fmo_data_extracted_files/"
+            # dataset_path = "../../../fmo_data_extracted_files/"
+            dataset_path = "../Original_Dataset/"
             subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
             all_files = os.listdir(subseq_folder)
             image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
