@@ -50781,25 +50781,6 @@
                     "total_frame_num": 120,
                     "images": [
                         {
-                            "img_index": 9,
-                            "image_file_name": "00000010.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        257,
-                                        271,
-                                        264,
-                                        277
-                                    ],
-                                    "object_wh": [
-                                        7,
-                                        6
-                                    ],
-                                    "size_category": "extremely_tiny"
-                                }
-                            ]
-                        },
-                        {
                             "img_index": 26,
                             "image_file_name": "00000027.png",
                             "annotations": [
@@ -79943,230 +79924,62 @@
                         {
                             "img_index": 67,
                             "image_file_name": "00000068.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1337,
-                                        353,
-                                        1352,
-                                        362
-                                    ],
-                                    "object_wh": [
-                                        15,
-                                        9
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 68,
                             "image_file_name": "00000069.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1344,
-                                        361,
-                                        1354,
-                                        368
-                                    ],
-                                    "object_wh": [
-                                        10,
-                                        7
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 69,
                             "image_file_name": "00000070.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1346,
-                                        371,
-                                        1358,
-                                        379
-                                    ],
-                                    "object_wh": [
-                                        12,
-                                        8
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 70,
                             "image_file_name": "00000071.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1347,
-                                        375,
-                                        1355,
-                                        384
-                                    ],
-                                    "object_wh": [
-                                        8,
-                                        9
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 71,
                             "image_file_name": "00000072.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1352,
-                                        388,
-                                        1358,
-                                        396
-                                    ],
-                                    "object_wh": [
-                                        6,
-                                        8
-                                    ],
-                                    "size_category": "extremely_tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 72,
                             "image_file_name": "00000073.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1352,
-                                        394,
-                                        1361,
-                                        406
-                                    ],
-                                    "object_wh": [
-                                        9,
-                                        12
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 73,
                             "image_file_name": "00000074.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1357,
-                                        404,
-                                        1364,
-                                        415
-                                    ],
-                                    "object_wh": [
-                                        7,
-                                        11
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 75,
                             "image_file_name": "00000076.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1199,
-                                        707,
-                                        1205,
-                                        728
-                                    ],
-                                    "object_wh": [
-                                        6,
-                                        21
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 79,
                             "image_file_name": "00000080.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1194,
-                                        778,
-                                        1204,
-                                        799
-                                    ],
-                                    "object_wh": [
-                                        10,
-                                        21
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 80,
                             "image_file_name": "00000081.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1194,
-                                        798,
-                                        1204,
-                                        817
-                                    ],
-                                    "object_wh": [
-                                        10,
-                                        19
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 81,
                             "image_file_name": "00000082.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1194,
-                                        816,
-                                        1202,
-                                        840
-                                    ],
-                                    "object_wh": [
-                                        8,
-                                        24
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         },
                         {
                             "img_index": 87,
                             "image_file_name": "00000088.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        1191,
-                                        933,
-                                        1200,
-                                        958
-                                    ],
-                                    "object_wh": [
-                                        9,
-                                        25
-                                    ],
-                                    "size_category": "tiny"
-                                }
-                            ]
+                            "annotations": []
                         }
                     ]
                 }

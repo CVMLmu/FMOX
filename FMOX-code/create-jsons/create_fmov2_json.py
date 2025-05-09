@@ -1,6 +1,7 @@
 import os
 import cv2
 import json
+import numpy as np
 
 class JsonFMO:
 
@@ -10,7 +11,9 @@ class JsonFMO:
         self.db_owner_name = db_owner_name
         self.output_folder = output_folder
         self.fps = 5
-        self.object_size_labels = {"extremely_tiny": ((1, 1), (8, 8)),
+
+        # (0,0) because object could be a point as well. So it wont have w or height ....
+        self.object_size_labels = {"extremely_tiny": ((0, 0), (8, 8)),
                                    "tiny": ((8, 8), (16, 16)),
                                    "small": ((16, 16), (32, 32)),
                                    "medium": ((32, 32), (96, 96)),
@@ -29,6 +32,22 @@ class JsonFMO:
             else:
                 continue
         return obj_size_category
+
+    @staticmethod
+    def is_contour_inside_area(contour, area):
+        """  Check if the given contour is completely inside the specified area.
+        Parameters: contour (numpy.ndarray): The contour points (Nx2 array).
+                    area (tuple): The area defined by (x_min, y_min, x_max, y_max).
+        Returns:  bool: True if the contour is inside the area, False otherwise. """
+        x_min, y_min, x_max, y_max = area
+
+        # Check each point in the contour
+        for point in contour:
+            x, y = point
+            if not (x_min <= x <= x_max and y_min <= y <= y_max):
+                return False  # Point is outside the area
+
+        return True  # All points are inside the area
 
     def generate_video(self):
         self.images_path = self.images_path
@@ -55,6 +74,12 @@ class JsonFMO:
             image = cv2.imread(os.path.join(self.images_path, image_name))
             annotations = []
 
+            # ------------------------ specific processes ----------------------------------------
+            # extra mask from different object only frame in 00000010.png - do not count it
+            if  self.each_inner_folder_name == "ping_pong_paint" and image_name == "00000010.png":
+                continue
+            # ------------------------------------------------------------------------------------
+
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
             # Apply a binary threshold to get a binary image - adjust the threshold value (e.g., 200)
             _, thresh = cv2.threshold(gray, 70, 255, cv2.THRESH_BINARY)
@@ -72,6 +97,23 @@ class JsonFMO:
 
                 obj_width = int(x_max) - int(x_min)
                 obj_height = int(y_max) - int(y_min)
+
+                # ------------------------ specific processes ----------------------------------------
+                # extra masks out of target object - do not count masks from defined area
+                if self.each_inner_folder_name == "william_tell":
+                    current_contour = np.array([[int(x_min), int(y_min)],
+                                        [int(x_max), int(y_min)],
+                                        [int(x_max), int(y_max)],
+                                        [int(x_min), int(y_max)]], dtype=np.int32)
+
+                    do_not_count_area = (1105, 318, 1611, 1028)  # (x_min, y_min, x_max, y_max)
+
+                    result = self.is_contour_inside_area(current_contour, do_not_count_area)
+                    if result is True:   # True if the contour is inside the area
+                        print("Pass if the contour inside the area? ", result)
+                        continue
+
+                # ------------------------------------------------------------------------------------
 
                 annotations.append({
                     "bbox_xyxy": [int(x_min), int(y_min), int(x_max), int(y_max)],
@@ -99,9 +141,9 @@ class JsonFMO:
 
 
 def get_fmov2_json():
-    whole_images_folder = "./fmo_data_extracted_files/FMOv2/FMOv2_gt"
+    whole_images_folder = "../Original_Dataset/FMOv2/FMOv2_gt"
     db_owner = "fmov2"
-    out_folder = "./fmov2_outputs/contour_videos/"
+    out_folder = "../Videos/fmov2_outputs/contour_videos/"
     os.makedirs(out_folder, exist_ok=True)
 
     # Initialize the main data structure
@@ -128,6 +170,9 @@ def get_fmov2_json():
     data["databases"].append(db_entry)
 
     # Save the data to a JSON file
-    save_path = "./json_anns/fmov2_json_annotations.json"
+    save_path = "../FMOX-Jsons/FMOX_fmov2.json"
     with open(str(save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
+
+
+get_fmov2_json()

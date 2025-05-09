@@ -21,6 +21,6 @@ __pycache__/
 .mypy_cache/
 
 setup.py
-FMOX-code/fmo_data/
-FMOX-code/fmov2_outputs/contour_videos/
+FMOX-code/Original_Dataset/
+FMOX-code/Videos/
 FMOX-code/fmov2_outputs/rleTXT_to_video/

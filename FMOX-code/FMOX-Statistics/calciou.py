@@ -285,7 +285,8 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
     av_score_tracker = AverageScoreTracker(len(gt_bboxes))
 
     # for kkf, ff in enumerate(files):
-    for kkf in range(len(gt_bboxes)):
+    # for kkf in range(len(gt_bboxes)):
+    for kkf in range(1):
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes, start_ind)
         gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes, start_ind)
 

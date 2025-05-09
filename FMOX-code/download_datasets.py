@@ -34,7 +34,7 @@ urls = {
 
 def download_unzip_data():
     # Define the directories for downloading and extracting files
-    data_path = './fmo_data'
+    data_path = './Original_Dataset'
     # Create the directory if do not exist
     os.makedirs(data_path, exist_ok=True)
 
