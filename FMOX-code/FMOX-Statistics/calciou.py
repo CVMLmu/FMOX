@@ -119,11 +119,11 @@ class AverageScoreTracker:
         self.av_times.append(tm)
 
     def close(self):
-       print('AVERAGES')
+       # print('AVERAGES')
        means = np.nanmean(self.av_ious)
-       print("means", means)
-       print('TIoU {:.3f}'.format(means))
-       print('time {:.3f} seconds'.format(np.nanmean(np.array(self.av_times))))
+       # print("means", means)
+       # print('TIoU {:.3f}'.format(means))
+       # print('time {:.3f} seconds'.format(np.nanmean(np.array(self.av_times))))
        return means
 
 #######################################################################################################################
