@@ -3,7 +3,7 @@ import pandas as pd
 from collections import defaultdict
 
 
-def json_to_csv():
+def json_obj_size_count():
     column_names = ["Main Dataset", "Subsequence",
                     "Total Frame Number", "FMO Exists Frame Number",
                     "Average Object Size", "Object Size Levels"]
@@ -11,15 +11,16 @@ def json_to_csv():
     df = pd.DataFrame(columns=column_names)
 
     # Load the JSON data from the file
-    with open('../FMOX-Jsons/FMOX_fall_and_tbd3d.json', 'r') as json_file:
+    with open('../FMOX-Jsons/FMOX_All4.json', 'r') as json_file:
         data = json.load(json_file)
 
     # Iterate through the databases
     for database in data["databases"]:
 
+        print("\n",database["dataset_name"])
+
         # Iterate through the sub-datasets
         for sub_dataset in database["sub_datasets"]:
-            print(sub_dataset["subdb_name"])
             all_obj_size = []
 
             # note: some sequences does not have annotations (e.g. fmov2 swaying) so skip them.
@@ -45,7 +46,8 @@ def json_to_csv():
                 for category, count in category_count.items():
                     keep[category] = count
 
-                print(keep, "\n")
+                print(sub_dataset["subdb_name"], keep)
+                # print(keep, "\n")
 
 
-json_to_csv()
+json_obj_size_count()
