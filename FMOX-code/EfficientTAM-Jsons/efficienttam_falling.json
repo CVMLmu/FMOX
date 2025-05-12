@@ -642,11 +642,11 @@
                                         140,
                                         279,
                                         170,
-                                        334
+                                        333
                                     ],
                                     "object_wh": [
                                         30,
-                                        55
+                                        54
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -1065,13 +1065,13 @@
                                 {
                                     "bbox_xyxy": [
                                         172,
-                                        382,
+                                        383,
                                         192,
                                         425
                                     ],
                                     "object_wh": [
                                         20,
-                                        43
+                                        42
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -2111,11 +2111,11 @@
                                     "bbox_xyxy": [
                                         168,
                                         826,
-                                        191,
+                                        192,
                                         846
                                     ],
                                     "object_wh": [
-                                        23,
+                                        24,
                                         20
                                     ],
                                     "size_category": "small",
@@ -2314,13 +2314,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        173,
+                                        174,
                                         351,
                                         203,
                                         505
                                     ],
                                     "object_wh": [
-                                        30,
+                                        29,
                                         154
                                     ],
                                     "size_category": "medium",
@@ -2337,11 +2337,11 @@
                                         173,
                                         391,
                                         190,
-                                        545
+                                        544
                                     ],
                                     "object_wh": [
                                         17,
-                                        154
+                                        153
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -2397,11 +2397,11 @@
                                         146,
                                         552,
                                         210,
-                                        701
+                                        700
                                     ],
                                     "object_wh": [
                                         64,
-                                        149
+                                        148
                                     ],
                                     "size_category": "large",
                                     "out_obj_id": 2
@@ -2459,13 +2459,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        160,
+                                        162,
                                         298,
                                         204,
                                         346
                                     ],
                                     "object_wh": [
-                                        44,
+                                        42,
                                         48
                                     ],
                                     "size_category": "medium",
@@ -2500,13 +2500,13 @@
                                 {
                                     "bbox_xyxy": [
                                         168,
-                                        346,
-                                        189,
-                                        404
+                                        344,
+                                        190,
+                                        405
                                     ],
                                     "object_wh": [
-                                        21,
-                                        58
+                                        22,
+                                        61
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2

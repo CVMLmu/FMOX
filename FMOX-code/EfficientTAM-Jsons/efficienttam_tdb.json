@@ -75,13 +75,13 @@
                                 {
                                     "bbox_xyxy": [
                                         270,
-                                        344,
+                                        345,
                                         323,
                                         500
                                     ],
                                     "object_wh": [
                                         53,
-                                        156
+                                        155
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -1766,11 +1766,11 @@
                                     "bbox_xyxy": [
                                         840,
                                         493,
-                                        881,
+                                        880,
                                         533
                                     ],
                                     "object_wh": [
-                                        41,
+                                        40,
                                         40
                                     ],
                                     "size_category": "medium",
@@ -1809,14 +1809,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        679,
+                                        678,
                                         0,
                                         808,
-                                        107
+                                        108
                                     ],
                                     "object_wh": [
-                                        129,
-                                        107
+                                        130,
+                                        108
                                     ],
                                     "size_category": "large",
                                     "out_obj_id": 2
@@ -1854,13 +1854,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        661,
+                                        660,
                                         0,
                                         723,
                                         46
                                     ],
                                     "object_wh": [
-                                        62,
+                                        63,
                                         46
                                     ],
                                     "size_category": "medium",
@@ -1874,13 +1874,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
                                         734,
                                         47
                                     ],
                                     "object_wh": [
-                                        75,
+                                        76,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -1894,13 +1894,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        660,
+                                        659,
                                         0,
                                         733,
                                         47
                                     ],
                                     "object_wh": [
-                                        73,
+                                        74,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -1914,9 +1914,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
-                                        734,
+                                        733,
                                         47
                                     ],
                                     "object_wh": [
@@ -1934,9 +1934,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        661,
+                                        660,
                                         0,
-                                        732,
+                                        731,
                                         47
                                     ],
                                     "object_wh": [
@@ -1954,9 +1954,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        660,
+                                        659,
                                         0,
-                                        730,
+                                        729,
                                         47
                                     ],
                                     "object_wh": [
@@ -1974,9 +1974,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        660,
+                                        659,
                                         0,
-                                        730,
+                                        729,
                                         47
                                     ],
                                     "object_wh": [
@@ -1994,13 +1994,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        660,
+                                        659,
                                         0,
                                         730,
                                         47
                                     ],
                                     "object_wh": [
-                                        70,
+                                        71,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -2014,9 +2014,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
-                                        731,
+                                        730,
                                         48
                                     ],
                                     "object_wh": [
@@ -2034,13 +2034,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
                                         730,
                                         48
                                     ],
                                     "object_wh": [
-                                        71,
+                                        72,
                                         48
                                     ],
                                     "size_category": "medium",
@@ -2054,13 +2054,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
-                                        733,
+                                        731,
                                         48
                                     ],
                                     "object_wh": [
-                                        74,
+                                        73,
                                         48
                                     ],
                                     "size_category": "medium",
@@ -2074,13 +2074,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        660,
+                                        658,
                                         0,
-                                        733,
+                                        732,
                                         48
                                     ],
                                     "object_wh": [
-                                        73,
+                                        74,
                                         48
                                     ],
                                     "size_category": "medium",
@@ -2094,13 +2094,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
                                         733,
                                         48
                                     ],
                                     "object_wh": [
-                                        74,
+                                        75,
                                         48
                                     ],
                                     "size_category": "medium",
@@ -2134,9 +2134,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        659,
+                                        658,
                                         0,
-                                        734,
+                                        733,
                                         48
                                     ],
                                     "object_wh": [
@@ -2154,9 +2154,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        658,
+                                        657,
                                         0,
-                                        734,
+                                        733,
                                         48
                                     ],
                                     "object_wh": [
@@ -2174,13 +2174,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        661,
+                                        659,
                                         0,
                                         730,
                                         47
                                     ],
                                     "object_wh": [
-                                        69,
+                                        71,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -2194,13 +2194,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        662,
+                                        660,
                                         0,
                                         729,
                                         47
                                     ],
                                     "object_wh": [
-                                        67,
+                                        69,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -2214,9 +2214,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        662,
+                                        661,
                                         0,
-                                        729,
+                                        728,
                                         47
                                     ],
                                     "object_wh": [
@@ -2234,13 +2234,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        663,
+                                        662,
                                         0,
                                         729,
                                         47
                                     ],
                                     "object_wh": [
-                                        66,
+                                        67,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -2254,13 +2254,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        663,
+                                        661,
                                         0,
                                         726,
                                         47
                                     ],
                                     "object_wh": [
-                                        63,
+                                        65,
                                         47
                                     ],
                                     "size_category": "medium",
@@ -2274,9 +2274,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        663,
+                                        662,
                                         0,
-                                        726,
+                                        725,
                                         46
                                     ],
                                     "object_wh": [
@@ -2294,13 +2294,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        663,
+                                        662,
                                         0,
                                         727,
                                         46
                                     ],
                                     "object_wh": [
-                                        64,
+                                        65,
                                         46
                                     ],
                                     "size_category": "medium",
@@ -2314,9 +2314,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        664,
+                                        663,
                                         0,
-                                        726,
+                                        725,
                                         46
                                     ],
                                     "object_wh": [
@@ -2334,9 +2334,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        664,
+                                        663,
                                         0,
-                                        727,
+                                        726,
                                         46
                                     ],
                                     "object_wh": [
@@ -2351,6 +2351,26 @@
                         {
                             "img_index": 26,
                             "image_file_name": "00000026.png",
+                            "annotations": [
+                                {
+                                    "bbox_xyxy": [
+                                        663,
+                                        0,
+                                        725,
+                                        46
+                                    ],
+                                    "object_wh": [
+                                        62,
+                                        46
+                                    ],
+                                    "size_category": "medium",
+                                    "out_obj_id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "img_index": 27,
+                            "image_file_name": "00000027.png",
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
@@ -2369,34 +2389,14 @@
                             ]
                         },
                         {
-                            "img_index": 27,
-                            "image_file_name": "00000027.png",
-                            "annotations": [
-                                {
-                                    "bbox_xyxy": [
-                                        665,
-                                        0,
-                                        727,
-                                        46
-                                    ],
-                                    "object_wh": [
-                                        62,
-                                        46
-                                    ],
-                                    "size_category": "medium",
-                                    "out_obj_id": 2
-                                }
-                            ]
-                        },
-                        {
                             "img_index": 28,
                             "image_file_name": "00000028.png",
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        664,
+                                        663,
                                         0,
-                                        727,
+                                        726,
                                         46
                                     ],
                                     "object_wh": [
@@ -2414,14 +2414,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        665,
+                                        664,
                                         0,
                                         725,
-                                        45
+                                        46
                                     ],
                                     "object_wh": [
-                                        60,
-                                        45
+                                        61,
+                                        46
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -2454,13 +2454,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        665,
+                                        664,
                                         0,
                                         727,
                                         45
                                     ],
                                     "object_wh": [
-                                        62,
+                                        63,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2477,11 +2477,11 @@
                                         665,
                                         0,
                                         727,
-                                        45
+                                        46
                                     ],
                                     "object_wh": [
                                         62,
-                                        45
+                                        46
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -2556,11 +2556,11 @@
                                     "bbox_xyxy": [
                                         665,
                                         0,
-                                        726,
+                                        725,
                                         45
                                     ],
                                     "object_wh": [
-                                        61,
+                                        60,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2576,11 +2576,11 @@
                                     "bbox_xyxy": [
                                         665,
                                         0,
-                                        726,
+                                        725,
                                         45
                                     ],
                                     "object_wh": [
-                                        61,
+                                        60,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2636,11 +2636,11 @@
                                     "bbox_xyxy": [
                                         665,
                                         0,
-                                        726,
+                                        725,
                                         45
                                     ],
                                     "object_wh": [
-                                        61,
+                                        60,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2654,13 +2654,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         725,
                                         45
                                     ],
                                     "object_wh": [
-                                        59,
+                                        60,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2674,14 +2674,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         724,
-                                        44
+                                        45
                                     ],
                                     "object_wh": [
-                                        58,
-                                        44
+                                        59,
+                                        45
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -2694,13 +2694,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         724,
                                         45
                                     ],
                                     "object_wh": [
-                                        58,
+                                        59,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2714,13 +2714,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         725,
                                         44
                                     ],
                                     "object_wh": [
-                                        59,
+                                        60,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2734,14 +2734,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         724,
-                                        44
+                                        45
                                     ],
                                     "object_wh": [
-                                        58,
-                                        44
+                                        59,
+                                        45
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -2754,13 +2754,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        666,
+                                        665,
                                         0,
                                         724,
                                         45
                                     ],
                                     "object_wh": [
-                                        58,
+                                        59,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -2814,13 +2814,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2834,13 +2834,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2894,13 +2894,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2914,13 +2914,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2954,13 +2954,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         725,
                                         44
                                     ],
                                     "object_wh": [
-                                        58,
+                                        59,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2974,13 +2974,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -2997,11 +2997,11 @@
                                         666,
                                         0,
                                         725,
-                                        44
+                                        45
                                     ],
                                     "object_wh": [
                                         59,
-                                        44
+                                        45
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -3034,13 +3034,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3054,13 +3054,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3094,13 +3094,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         45
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         45
                                     ],
                                     "size_category": "medium",
@@ -3114,13 +3114,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3134,13 +3134,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3196,11 +3196,11 @@
                                     "bbox_xyxy": [
                                         666,
                                         0,
-                                        724,
+                                        723,
                                         44
                                     ],
                                     "object_wh": [
-                                        58,
+                                        57,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3234,13 +3234,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
                                         724,
                                         44
                                     ],
                                     "object_wh": [
-                                        57,
+                                        58,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3276,11 +3276,11 @@
                                     "bbox_xyxy": [
                                         667,
                                         0,
-                                        725,
+                                        724,
                                         44
                                     ],
                                     "object_wh": [
-                                        58,
+                                        57,
                                         44
                                     ],
                                     "size_category": "medium",
@@ -3314,9 +3314,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        667,
+                                        666,
                                         0,
-                                        725,
+                                        724,
                                         44
                                     ],
                                     "object_wh": [
@@ -3364,14 +3364,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1012,
-                                        303,
+                                        1013,
+                                        302,
                                         1060,
                                         332
                                     ],
                                     "object_wh": [
-                                        48,
-                                        29
+                                        47,
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -3586,11 +3586,11 @@
                                     "bbox_xyxy": [
                                         1017,
                                         307,
-                                        1060,
+                                        1061,
                                         337
                                     ],
                                     "object_wh": [
-                                        43,
+                                        44,
                                         30
                                     ],
                                     "size_category": "medium",
@@ -3744,13 +3744,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1012,
-                                        305,
-                                        1057,
-                                        335
+                                        1017,
+                                        306,
+                                        1060,
+                                        336
                                     ],
                                     "object_wh": [
-                                        45,
+                                        43,
                                         30
                                     ],
                                     "size_category": "medium",
@@ -3804,14 +3804,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1012,
-                                        305,
-                                        1057,
-                                        336
+                                        1017,
+                                        307,
+                                        1060,
+                                        337
                                     ],
                                     "object_wh": [
-                                        45,
-                                        31
+                                        43,
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -3846,11 +3846,11 @@
                                     "bbox_xyxy": [
                                         1016,
                                         306,
-                                        1059,
+                                        1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        43,
+                                        44,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -3866,11 +3866,11 @@
                                     "bbox_xyxy": [
                                         1016,
                                         306,
-                                        1059,
+                                        1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        43,
+                                        44,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -3985,13 +3985,13 @@
                                 {
                                     "bbox_xyxy": [
                                         1017,
-                                        306,
+                                        307,
                                         1059,
                                         337
                                     ],
                                     "object_wh": [
                                         42,
-                                        31
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4026,11 +4026,11 @@
                                     "bbox_xyxy": [
                                         1016,
                                         306,
-                                        1059,
+                                        1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        43,
+                                        44,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -4044,13 +4044,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1016,
+                                        1017,
                                         306,
                                         1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        44,
+                                        43,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -4085,13 +4085,13 @@
                                 {
                                     "bbox_xyxy": [
                                         1016,
-                                        306,
+                                        307,
                                         1060,
                                         337
                                     ],
                                     "object_wh": [
                                         44,
-                                        31
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4144,9 +4144,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1016,
+                                        1017,
                                         306,
-                                        1059,
+                                        1060,
                                         337
                                     ],
                                     "object_wh": [
@@ -4265,13 +4265,13 @@
                                 {
                                     "bbox_xyxy": [
                                         1019,
-                                        304,
+                                        303,
                                         1058,
                                         336
                                     ],
                                     "object_wh": [
                                         39,
-                                        32
+                                        33
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4325,13 +4325,13 @@
                                 {
                                     "bbox_xyxy": [
                                         1021,
-                                        308,
+                                        309,
                                         1057,
                                         341
                                     ],
                                     "object_wh": [
                                         36,
-                                        33
+                                        32
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4384,9 +4384,9 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1018,
+                                        1019,
                                         307,
-                                        1060,
+                                        1061,
                                         337
                                     ],
                                     "object_wh": [
@@ -4424,13 +4424,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1017,
+                                        1018,
                                         306,
                                         1060,
                                         336
                                     ],
                                     "object_wh": [
-                                        43,
+                                        42,
                                         30
                                     ],
                                     "size_category": "medium",
@@ -4447,11 +4447,11 @@
                                         1017,
                                         306,
                                         1061,
-                                        336
+                                        337
                                     ],
                                     "object_wh": [
                                         44,
-                                        30
+                                        31
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4647,11 +4647,11 @@
                                         1017,
                                         307,
                                         1060,
-                                        336
+                                        337
                                     ],
                                     "object_wh": [
                                         43,
-                                        29
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4704,14 +4704,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1012,
-                                        305,
-                                        1057,
-                                        336
+                                        1017,
+                                        307,
+                                        1060,
+                                        337
                                     ],
                                     "object_wh": [
-                                        45,
-                                        31
+                                        43,
+                                        30
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4764,14 +4764,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1016,
+                                        1017,
                                         306,
                                         1060,
-                                        336
+                                        337
                                     ],
                                     "object_wh": [
-                                        44,
-                                        30
+                                        43,
+                                        31
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -4784,13 +4784,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1016,
+                                        1017,
                                         307,
                                         1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        44,
+                                        43,
                                         30
                                     ],
                                     "size_category": "medium",
@@ -4804,13 +4804,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1016,
+                                        1017,
                                         306,
                                         1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        44,
+                                        43,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -4866,11 +4866,11 @@
                                     "bbox_xyxy": [
                                         1016,
                                         306,
-                                        1059,
+                                        1060,
                                         337
                                     ],
                                     "object_wh": [
-                                        43,
+                                        44,
                                         31
                                     ],
                                     "size_category": "medium",
@@ -4924,14 +4924,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1011,
-                                        304,
-                                        1057,
-                                        336
+                                        1016,
+                                        307,
+                                        1060,
+                                        338
                                     ],
                                     "object_wh": [
-                                        46,
-                                        32
+                                        44,
+                                        31
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -5069,14 +5069,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        832,
-                                        239,
-                                        862,
-                                        249
+                                        835,
+                                        237,
+                                        867,
+                                        255
                                     ],
                                     "object_wh": [
-                                        30,
-                                        10
+                                        32,
+                                        18
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5091,14 +5091,14 @@
                                     "bbox_xyxy": [
                                         778,
                                         234,
-                                        793,
-                                        250
+                                        795,
+                                        253
                                     ],
                                     "object_wh": [
-                                        15,
-                                        16
+                                        17,
+                                        19
                                     ],
-                                    "size_category": "tiny",
+                                    "size_category": "small",
                                     "out_obj_id": 2
                                 }
                             ]
@@ -5112,11 +5112,11 @@
                                         740,
                                         235,
                                         770,
-                                        246
+                                        247
                                     ],
                                     "object_wh": [
                                         30,
-                                        11
+                                        12
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5129,14 +5129,14 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        600,
-                                        251,
-                                        633,
-                                        264
+                                        599,
+                                        250,
+                                        634,
+                                        265
                                     ],
                                     "object_wh": [
-                                        33,
-                                        13
+                                        35,
+                                        15
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5190,13 +5190,13 @@
                                 {
                                     "bbox_xyxy": [
                                         523,
-                                        277,
+                                        278,
                                         554,
                                         297
                                     ],
                                     "object_wh": [
                                         31,
-                                        20
+                                        19
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5212,11 +5212,11 @@
                                         492,
                                         293,
                                         519,
-                                        313
+                                        312
                                     ],
                                     "object_wh": [
                                         27,
-                                        20
+                                        19
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5249,13 +5249,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        459,
+                                        460,
                                         314,
                                         486,
                                         333
                                     ],
                                     "object_wh": [
-                                        27,
+                                        26,
                                         19
                                     ],
                                     "size_category": "small",
@@ -5371,11 +5371,11 @@
                                     "bbox_xyxy": [
                                         388,
                                         398,
-                                        404,
+                                        403,
                                         419
                                     ],
                                     "object_wh": [
-                                        16,
+                                        15,
                                         21
                                     ],
                                     "size_category": "small",
@@ -5457,11 +5457,11 @@
                                         494,
                                         625,
                                         542,
-                                        650
+                                        649
                                     ],
                                     "object_wh": [
                                         48,
-                                        25
+                                        24
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -5575,13 +5575,13 @@
                                 {
                                     "bbox_xyxy": [
                                         280,
-                                        603,
+                                        604,
                                         318,
                                         624
                                     ],
                                     "object_wh": [
                                         38,
-                                        21
+                                        20
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -5694,13 +5694,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        480,
+                                        479,
                                         590,
                                         528,
                                         602
                                     ],
                                     "object_wh": [
-                                        48,
+                                        49,
                                         12
                                     ],
                                     "size_category": "small",
@@ -5734,13 +5734,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        572,
+                                        573,
                                         602,
                                         620,
                                         611
                                     ],
                                     "object_wh": [
-                                        48,
+                                        47,
                                         9
                                     ],
                                     "size_category": "small",
@@ -5996,11 +5996,11 @@
                                     "bbox_xyxy": [
                                         802,
                                         585,
-                                        844,
+                                        845,
                                         600
                                     ],
                                     "object_wh": [
-                                        42,
+                                        43,
                                         15
                                     ],
                                     "size_category": "small",
@@ -6256,11 +6256,11 @@
                                     "bbox_xyxy": [
                                         217,
                                         604,
-                                        266,
+                                        265,
                                         642
                                     ],
                                     "object_wh": [
-                                        49,
+                                        48,
                                         38
                                     ],
                                     "size_category": "medium",
@@ -6295,13 +6295,13 @@
                                 {
                                     "bbox_xyxy": [
                                         394,
-                                        615,
+                                        614,
                                         459,
                                         628
                                     ],
                                     "object_wh": [
                                         65,
-                                        13
+                                        14
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -6434,13 +6434,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        774,
+                                        775,
                                         646,
                                         821,
                                         661
                                     ],
                                     "object_wh": [
-                                        47,
+                                        46,
                                         15
                                     ],
                                     "size_category": "small",
@@ -6516,11 +6516,11 @@
                                     "bbox_xyxy": [
                                         902,
                                         598,
-                                        940,
+                                        939,
                                         613
                                     ],
                                     "object_wh": [
-                                        38,
+                                        37,
                                         15
                                     ],
                                     "size_category": "small",
@@ -6674,13 +6674,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        615,
+                                        614,
                                         574,
                                         671,
                                         586
                                     ],
                                     "object_wh": [
-                                        56,
+                                        57,
                                         12
                                     ],
                                     "size_category": "small",
@@ -7467,11 +7467,11 @@
                                         953,
                                         389,
                                         996,
-                                        424
+                                        423
                                     ],
                                     "object_wh": [
                                         43,
-                                        35
+                                        34
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -7787,11 +7787,11 @@
                                         559,
                                         438,
                                         583,
-                                        458
+                                        459
                                     ],
                                     "object_wh": [
                                         24,
-                                        20
+                                        21
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -7986,11 +7986,11 @@
                                     "bbox_xyxy": [
                                         809,
                                         241,
-                                        835,
+                                        834,
                                         261
                                     ],
                                     "object_wh": [
-                                        26,
+                                        25,
                                         20
                                     ],
                                     "size_category": "small",
@@ -8464,13 +8464,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1416,
+                                        1415,
                                         487,
                                         1436,
                                         513
                                     ],
                                     "object_wh": [
-                                        20,
+                                        21,
                                         26
                                     ],
                                     "size_category": "small",
@@ -8545,13 +8545,13 @@
                                 {
                                     "bbox_xyxy": [
                                         1458,
-                                        433,
+                                        432,
                                         1480,
                                         453
                                     ],
                                     "object_wh": [
                                         22,
-                                        20
+                                        21
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
@@ -8664,13 +8664,13 @@
                             "annotations": [
                                 {
                                     "bbox_xyxy": [
-                                        1510,
+                                        1511,
                                         402,
                                         1530,
                                         420
                                     ],
                                     "object_wh": [
-                                        20,
+                                        19,
                                         18
                                     ],
                                     "size_category": "small",
@@ -8790,13 +8790,13 @@
                                 {
                                     "bbox_xyxy": [
                                         881,
-                                        271,
+                                        272,
                                         924,
                                         320
                                     ],
                                     "object_wh": [
                                         43,
-                                        49
+                                        48
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -8910,13 +8910,13 @@
                                 {
                                     "bbox_xyxy": [
                                         718,
-                                        534,
+                                        535,
                                         753,
                                         574
                                     ],
                                     "object_wh": [
                                         35,
-                                        40
+                                        39
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -9012,11 +9012,11 @@
                                         746,
                                         290,
                                         776,
-                                        330
+                                        331
                                     ],
                                     "object_wh": [
                                         30,
-                                        40
+                                        41
                                     ],
                                     "size_category": "medium",
                                     "out_obj_id": 2
@@ -9091,11 +9091,11 @@
                                     "bbox_xyxy": [
                                         777,
                                         179,
-                                        808,
+                                        807,
                                         218
                                     ],
                                     "object_wh": [
-                                        31,
+                                        30,
                                         39
                                     ],
                                     "size_category": "medium",
@@ -9772,11 +9772,11 @@
                                         961,
                                         170,
                                         986,
-                                        204
+                                        203
                                     ],
                                     "object_wh": [
                                         25,
-                                        34
+                                        33
                                     ],
                                     "size_category": "small",
                                     "out_obj_id": 2
