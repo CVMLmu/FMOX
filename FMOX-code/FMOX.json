@@ -42,8 +42,14 @@
       "url": "https://example.com/metadata.json"
     },
     {
-      "name": "FMOX_three.json",
-      "file_definition": "Only Falling Object, TbD and TbD-3D dataset annotations in a JSON file.",
+      "name": "FMOX_tbd.json",
+      "file_definition": "Only TbD dataset annotations in a JSON file due to annotation format differences.",
+      "format": "JSON",
+      "url": "https://example.com/metadata.json"
+    },
+    {
+      "name": "FMOX_fall_and_tbd3d.json",
+      "file_definition": "Falling Object and TbD-3D dataset annotations in a JSON file.",
       "format": "JSON",
       "url": "https://example.com/metadata.json"
     },

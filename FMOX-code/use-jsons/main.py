@@ -31,13 +31,13 @@ def main():
     # ---------------------------------------------------------------------
     # Create JSON Annotation File For Falling Object, TbD, TbD-3D Datasets
     # ---------------------------------------------------------------------
-    """ - Acknowledgments: The code is provided (in "create_json_for_three_dataset" folder) adapted 
+    """ - Acknowledgments: The code is provided (in "dataset_loader" folder) adapted 
     from the [fmo-deblurring-benchmark](https://github.com/rozumden/fmo-deblurring-benchmark) and
     some modifications made to fit our specific use case. For more details, please visit the repository.
     - The json file called "three_fmo_data_annotations.json" saved in "json_anns" folder.
     - However if you want to regenerate it, please refer below file:"""
 
-    # json_ann.create_json_for_three_dataset()
+    # json_ann.dataset_loader()
 
     # ----------------------------------------------------------
     # JSON Annotation Analysis - Visualizations

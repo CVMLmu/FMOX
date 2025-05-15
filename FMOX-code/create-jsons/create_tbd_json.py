@@ -64,7 +64,7 @@ class JsonTbD:
         self.each_inner_folder_name = each_inner_folder_name
         self.images_path = images_path
         self.db_owner_name = db_owner_name
-        self.object_size_labels = {"extremely_tiny": ((1, 1), (8, 8)),
+        self.object_size_labels = {"extremely_tiny": ((0, 0), (8, 8)),
                                    "tiny": ((8, 8), (16, 16)),
                                    "small": ((16, 16), (32, 32)),
                                    "medium": ((32, 32), (96, 96)),
@@ -147,7 +147,7 @@ class JsonTbD:
 
 
 def get_tbd_json():
-    whole_images_folder = r"C:\Users\user\PycharmProjects\Datasets\data_public\TbD/imgs/"
+    whole_images_folder = "../Original_Dataset/TbD/imgs/"
     db_owner = "tbd"
 
     # Initialize the main data structure
@@ -173,11 +173,11 @@ def get_tbd_json():
     # Add the database entry to the main data structure
     data["databases"].append(db_entry)
 
-    # Save the data to a JSON file
-    save_path = "./tbd_annotations.json"
+    save_path = "../FMOX-Jsons/FMOX_tbd.json"   # Save the data to a JSON file
     with open(str(save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
+    print("Dataset path: {}, JSON saved in: {}".format(whole_images_folder, save_path))
 
-if __name__ == '__main__':
-    get_tbd_json()
+# if __name__ == '__main__':
+#     get_tbd_json()

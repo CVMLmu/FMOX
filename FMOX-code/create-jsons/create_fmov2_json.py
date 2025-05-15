@@ -49,7 +49,7 @@ class JsonFMO:
 
         return True  # All points are inside the area
 
-    def generate_video(self):
+    def get_sub_dataset_entry(self):
         self.images_path = self.images_path
         out_vid_name = os.path.basename(os.path.normpath(self.images_path))
         # video_name = self.output_folder + self.db_owner_name + "_" + str(out_vid_name) + "_fmov2_out.avi"
@@ -141,8 +141,8 @@ class JsonFMO:
 
 
 def get_fmov2_json():
-    whole_images_folder = "../Original_Dataset/FMOv2/FMOv2_gt"
     db_owner = "fmov2"
+    whole_images_folder = "../Original_Dataset/FMOv2/FMOv2_gt"
     out_folder = "../Videos/fmov2_outputs/contour_videos/"
     os.makedirs(out_folder, exist_ok=True)
 
@@ -161,7 +161,7 @@ def get_fmov2_json():
 
     for each_inner_folder_name in os.listdir(whole_images_folder):
         each_inner_folder_path = str(whole_images_folder) + "/" + str(each_inner_folder_name)
-        sub_dataset_entry = JsonFMO(each_inner_folder_name,each_inner_folder_path, db_owner, out_folder).generate_video()
+        sub_dataset_entry = JsonFMO(each_inner_folder_name,each_inner_folder_path, db_owner, out_folder).get_sub_dataset_entry()
 
         # Add the sub-dataset entry to the database
         db_entry["sub_datasets"].append(sub_dataset_entry)
@@ -169,10 +169,10 @@ def get_fmov2_json():
     # Add the database entry to the main data structure
     data["databases"].append(db_entry)
 
-    # Save the data to a JSON file
-    save_path = "../FMOX-Jsons/FMOX_fmov2.json"
+    save_path = "../FMOX-Jsons/FMOX_fmov2.json"   # Save the data to a JSON file
     with open(str(save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
+    print("Dataset path: {}, JSON saved in: {}, Videos saved in: {}".format(whole_images_folder, save_path, out_folder))
 
-get_fmov2_json()
+# get_fmov2_json()

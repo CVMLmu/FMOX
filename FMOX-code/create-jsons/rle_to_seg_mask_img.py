@@ -51,8 +51,8 @@ def create_combined_image(W, H, frame_data):
 
 def rle_to_mask_img():
 
-    input_folder = "./fmo_data/FMOv2/"
-    output_folder = "./fmov2_outputs/rleTXT_to_video/"
+    input_folder = "../Original_Dataset/FMOv2/"
+    output_folder = "../Videos/fmov2_outputs/rleTXT_to_video/"
 
     # Iterate through the files in the specified directory
     for filename in os.listdir(input_folder):
@@ -90,3 +90,5 @@ def rle_to_mask_img():
                 print(f"An error occurred: {e}")
 
     print("done...")
+
+

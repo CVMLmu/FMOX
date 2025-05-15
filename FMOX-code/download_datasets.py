@@ -32,11 +32,8 @@ urls = {
     "TbD-3D": [tbd3d_imgs]
 }
 
-def download_unzip_data():
-    # Define the directories for downloading and extracting files
-    data_path = './Original_Dataset'
-    # Create the directory if do not exist
-    os.makedirs(data_path, exist_ok=True)
+def download_unzip_data(data_path):
+    os.makedirs(data_path, exist_ok=True)   # Create the directory if do not exist
 
     # Download and unzip each file
     for folder_name, file_urls in urls.items():
@@ -93,3 +90,10 @@ def download_unzip_data():
             except Exception as e:
                 print(f"An unexpected error occurred with the file {filename}: {e}")
 
+
+# Define the directories for downloading and extracting files
+data_path = './Original_Dataset'
+if os.listdir(data_path):  # folder has files, so pass
+    pass
+else:
+    download_unzip_data(data_path)

@@ -78,7 +78,7 @@ some modifications made to fit our specific use case. For more details, please v
 - However if you want to regenerate it, please refer below file:
 
 ```bash 
-# create_json_for_three_dataset.py
+# dataset_loader.py
 json_ann.create_json_for_three_dataset() 
 ```
 

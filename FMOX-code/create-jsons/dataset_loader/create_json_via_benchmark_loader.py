@@ -5,7 +5,7 @@ from .reporters import *
 import numpy as np
 
 
-object_size_labels = {"extremely_tiny":((1,1), (8,8)),
+object_size_labels = {"extremely_tiny":((0,0), (8,8)),
 					  "tiny":((8,8),(16,16)),
 					  "small":((16,16),(32,32)),
 					  "medium":((32,32),(96,96)),
@@ -52,10 +52,10 @@ def get_obj_size_category2(obj_width, obj_height):
 	return obj_size_category
 
 
-def create_json_for_three_dataset():
-	falling_path = './fmo_data_extracted_files/Falling_Object'
-	tbd_path = './fmo_data_extracted_files/TbD'
-	tbd3d_path = './fmo_data_extracted_files/TbD-3D'
+def create_json():
+	falling_path = '../Original_Dataset/Falling_Object'
+	tbd_path = '../Original_Dataset/TbD'
+	tbd3d_path = '../Original_Dataset/TbD-3D'
 
 	# Initialize the main data structure
 	data = {
@@ -69,9 +69,12 @@ def create_json_for_three_dataset():
 	# files = get_tbd_dataset(tbd_path)   # fall_coin ping_wall not inside the annotation ....
 	# data3 = evaluate_on(data2, files)
 
-	# Save the data to a JSON file
-	with open('./json_anns/three_fmo_data_annotations.json', 'w') as json_file:
+	save_path = "../FMOX-Jsons/FMOX_fall_and_tbd3d.json"  # Save the data to a JSON file
+	with open(save_path, 'w') as json_file:
 		json.dump(data2, json_file, indent=4)  # indent for pretty printing
+
+	print("Falling Object dataset path: {}, TbD-3D dataset path: {}, "
+		  "JSON saved in: {}".format(falling_path, tbd3d_path, save_path))
 
 	
 def evaluate_on(data, files, callback=None):
@@ -169,5 +172,5 @@ def evaluate_on(data, files, callback=None):
 
 
 # if __name__ == "__main__":
-# 	create_json_for_three_dataset()
+# 	dataset_loader()
 
