@@ -24,6 +24,8 @@ import create_fmov2_json
 import create_tbd_json
 import dataset_loader.create_json_via_benchmark_loader as fmo_data_loader
 import rle_to_seg_mask_img
+import combine_all_mask_to_single_img
+import tbd_visualize_bboxes
 
 
 def main():
@@ -105,6 +107,8 @@ def main():
     print(f"Combined FMOX JSON saved to: {fmox_all4_json_path}")
     """
 
+    # ------------------------- OTHER OPTIONAL CODES ------------------------------------#
+
     # -----------------------------------------------------------------------
     # Convert FMOv2 Run-Length Encoded (RLE) Text Files to Mask Images
     #   (Already shared as png image - could be useful if needed)
@@ -113,6 +117,23 @@ def main():
     Run-Length Encoding (RLE) data compression technique. The following code can be used to convert these
     compressed files back into black and white segmentation images. """
     # rle_to_seg_mask_img.rle_to_mask_img()
+
+    # ----------------------------------------------------------
+    # Merge Mask Images to Visualize Trajectories
+    # ----------------------------------------------------------
+    """ Below code could be utilized to visualize the trajectories of the object(s) on a single image. 
+    Since the FMOv2 dataset directly shares segmentation mask images, the path related to this dataset 
+    is provided below as input. Each single mask image corresponding to a subsequence will be saved in 
+    the "Videos/fmov2_outputs" directory as "{subfolder}_combined_segmentation_image.png". """
+
+    # input_directory = '../Original_Dataset/FMOv2/FMOv2_gt'
+    # combine_all_mask_to_single_img.combine_segmentation_images(input_directory)
+
+    # ----------------------------------------------------------
+    # TbD Dataset Bounding Box Visualization from gt.txt files
+    # ----------------------------------------------------------
+    # input_dir = "../Original_Dataset/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2, fall_cube etc.
+    # tbd_visualize_bboxes.tbd_vis_bbox(input_dir)
 
 
 if __name__ == "__main__":

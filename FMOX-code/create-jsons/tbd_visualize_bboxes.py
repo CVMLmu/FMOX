@@ -63,34 +63,27 @@ def draw_bounding_box(img, bbox, color=(0, 255, 0), thickness=2):
     return img
 
 
-def main():
-    input_dir = "../../../fmo_data_extracted_files/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2  fall_cube
-    output_dir = "../../../fmo_data_extracted_files/TbD-3D/output"
+def tbd_vis_bbox(input_dir):
+    # input_dir = "../Original_Dataset/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2  fall_cube
+    output_dir = "../Videos//TbD-3D/output"
     gt_file = os.path.join(input_dir, 'gt.txt')
 
-    # Create output directory if it doesn't exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    # Read ground truth data
-    gt_data = read_ground_truth(gt_file)
+    gt_data = read_ground_truth(gt_file)  # Read ground truth data
 
-    # Process each image
-    for i in range(len(gt_data)):
+    for i in range(len(gt_data)):       # Process each image
         img_path = os.path.join(input_dir, f'{i:08d}.png')
         if os.path.exists(img_path):
-            # Read image
             img = cv2.imread(img_path)
 
             if img is not None:
-                # Draw bounding box
                 img_annotated = draw_bounding_box(img.copy(), gt_data[i])
-
-                # Save annotated image
                 output_path = os.path.join(output_dir, f'{i:08d}_annotated.png')
-                cv2.imshow("img_annotated", img_annotated)
-                cv2.waitKey(0)
-                cv2.imwrite(output_path, img_annotated)
+                # cv2.imshow("img_annotated", img_annotated)
+                # cv2.waitKey(0)
+                cv2.imwrite(output_path, img_annotated)    # Save annotated image
                 print(f"Processed image {i+1}/{len(gt_data)}: {output_path}")
             else:
                 print(f"Could not read image: {img_path}")
@@ -98,5 +91,5 @@ def main():
             print(f"Image does not exist: {img_path}")
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     tbd_vis_bbox()

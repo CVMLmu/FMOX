@@ -37,7 +37,8 @@ def combine_segmentation_images(input_directory):
                 combined_image = cv2.bitwise_or(combined_image, img)  # Combine using bitwise OR
 
             # Save the combined image in the main directory with the subfolder name
-            output_image_path = os.path.join(input_directory, f"{subfolder}_combined_segmentation_image.png")
+            output_dir = "../Videos/fmov2_outputs/"
+            output_image_path = os.path.join(output_dir, f"{subfolder}_combined_segmentation_image.png")
             cv2.imwrite(output_image_path, combined_image)
             print(f"Combined image saved to {output_image_path}")
 

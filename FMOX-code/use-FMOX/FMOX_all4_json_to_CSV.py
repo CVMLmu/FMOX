@@ -2,38 +2,15 @@ import json
 import pandas as pd
 from collections import defaultdict
 
-def combine_and_save_jsons(json1,json2):
-    try:
-        # data1 = json.loads(json1)
-        # data2 = json.loads(json2)
-        with open(json1, 'r') as file:
-            data1 = json.load(file)
 
-        with open(json2, 'r') as file:
-            data2 = json.load(file)
-
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-        return
-
-    # Combine the databases
-    combined_databases = data1['databases'] + data2['databases']
-    # Create a new combined structure
-    combined_data = {"databases": combined_databases}
-
-    with open('./json_anns/fmo_all4_annotations.json', 'w') as json_file:
-        json.dump(combined_data, json_file, indent=4)
-
-
-def json_to_csv():
-    column_names = ["Main Dataset", "Subsequence",
-                    "Total Frame Number", "FMO Exists Frame Number",
-                    "Average Object Size", "Object Size Levels"]
+def json_to_csv(fmox_json_path, fmox_csv_path):
+    column_names = ["Main Dataset", "Subsequence", "Total Frame Number",
+                    "FMO Exists Frame Number", "Average Object Size", "Object Size Levels"]
 
     df = pd.DataFrame(columns=column_names)
 
     # Load the JSON data from the file
-    with open('./json_anns/fmo_all4_annotations.json', 'r') as json_file:
+    with open(fmox_json_path, 'r') as json_file:
         data = json.load(json_file)
 
     # Iterate through the databases
@@ -83,7 +60,7 @@ def json_to_csv():
                 df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
 
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
-    df.to_csv('./json_anns/json_annotation_analysis_output.csv', index=False)
+    df.to_csv(fmox_csv_path, index=False)
     # Save the DataFrame to an Excel file  df.to_excel('output.xlsx', index=False)
 
 
