@@ -328,7 +328,7 @@ def evaluate_on(df,dataset_name, seqname, original_I, fmox_bboxes, efficienttam_
         row_data = {}  # Store the row values in a dictionary
         row_data["Main Dataset"] = str(dataset_name)
         row_data["Subsequence"] = str(seqname)
-        row_data["Sequence Average TIoU"] = float(avg_TIoU)
+        row_data["Sequence Average TIoU"] = round(float(avg_TIoU), 3)
         new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
         df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
 

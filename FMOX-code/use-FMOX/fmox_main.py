@@ -36,7 +36,6 @@ def main():
     data_folder = "../Original_Dataset/"
     fmox_json_path = "../FMOX-Jsons/FMOX_All4.json"  # fmox json annotations
     fmox_csv_path = "./FMOX_All4_statistics.csv"
-    obj_size_distribution_path = "./FMOX_Object_size_Distribution.csv"
     efficienttam_json_path = "../EfficientTAM-Jsons/efficienttam_All4.json"
     averageTIoU_path = "./EfficientTAM_averageTIoU.csv"
 
@@ -73,22 +72,18 @@ def main():
     # access_json_bboxes.access_bboxes(data_folder, fmox_json_path)
 
     # ----------------------------------------------------------
-    # Size Label Count
-    # ----------------------------------------------------------
-    """Get the number of object levels for each sequence e.g.
-    {’extremely_tiny’:1,’large’:2,’medium’: 22,’small’:5,’tiny’:8}"""
-    # size_label_count.fmox_obj_size_count(fmox_json_path, obj_size_distribution_path)
-
-    # ----------------------------------------------------------
     # Evaluate EfficientTAM JSON results with FMOX JSON
     # ----------------------------------------------------------
-    efficientam_evaluation.evaluate_efficienttam(data_folder, fmox_json_path, efficienttam_json_path, averageTIoU_path)
+    # efficientam_evaluation.evaluate_efficienttam(data_folder, fmox_json_path, efficienttam_json_path, averageTIoU_path)
 
     # ----------------------------------------------------------
     # Create CSV from FMOX All4 JSON
     # ----------------------------------------------------------
     """ Create csv file to save information e.g. "Main Dataset", "Subsequence", "Total Frame Number",
-    "FMO Exists Frame Number", "Average Object Size", "Object Size Levels" for table and graphs."""
+    "FMO Exists Frame Number", "Average Object Size", "Object Size Levels" for table and graphs.
+    Get the number of object levels for each sequence e.g.
+    {’extremely_tiny’:1,’large’:2,’medium’: 22,’small’:5,’tiny’:8} 
+    Note: For tbd whole image sequence need to run """
     # FMOX_all4_json_to_CSV.json_to_csv(fmox_json_path, fmox_csv_path)
 
     # ----------------------------------------------------------
@@ -101,9 +96,7 @@ def main():
     """Stacked bar chart for visualization object size levels for each dataset and subsequences."""
     # csv_to_graphics.visualize_object_size_levels(fmox_csv_data)
 
-    # ----------------------------------------------------------
-    # ----------------------------------------------------------
-
 
 if __name__ == "__main__":
     main()
+
