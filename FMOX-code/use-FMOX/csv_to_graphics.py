@@ -3,12 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import ast
 
-file_path = './json_anns/json_annotation_analysis_output.csv'
-data = pd.read_csv(file_path)
 
-print(data.head())
-
-def cvs_viz1():
+def cvs_viz1(data):
     # Bar plot of "Average Object Size" by "Main Dataset"
     plt.figure(figsize=(10, 6))
     sns.barplot(data=data, x='Main Dataset', y='Average Object Size', ci=None)
@@ -20,7 +16,7 @@ def cvs_viz1():
     plt.show()
 
 
-def cvs_viz2():
+def cvs_viz2(data):
     # Scatter plot of "Total Frame Number" vs "FMO Exists Frame Number"
     plt.figure(figsize=(10, 6))
     sns.scatterplot(data=data, x='Total Frame Number', y='FMO Exists Frame Number', hue='Main Dataset')
@@ -32,7 +28,7 @@ def cvs_viz2():
     plt.show()
 
 
-def cvs_viz3():
+def cvs_viz3(data):
     # Box plot of "Average Object Size" by "Object Size Levels"
     plt.figure(figsize=(10, 6))
     sns.boxplot(data=data, x='Object Size Levels', y='Average Object Size')
@@ -44,7 +40,7 @@ def cvs_viz3():
     plt.show()
 
 
-def visualize_object_size_levels():
+def visualize_object_size_levels(data):
     # Initialize a list to store the processed data
     processed_data = []
 
@@ -52,15 +48,17 @@ def visualize_object_size_levels():
     for index, row in data.iterrows():
         main_dataset = row['Main Dataset']
         subsequence = row['Subsequence']
-        levels_dict = ast.literal_eval(row['Object Size Levels'])
 
-        for size, count in levels_dict.items():
-            processed_data.append({
-                'Main Dataset': main_dataset,
-                'Subsequence': subsequence,
-                'Size Level': size,
-                'Count': count
-            })
+        if subsequence != "more_balls":   # too much value to visualize
+            levels_dict = ast.literal_eval(row['Object Size Levels'])
+
+            for size, count in levels_dict.items():
+                processed_data.append({
+                    'Main Dataset': main_dataset,
+                    'Subsequence': subsequence,
+                    'Size Level': size,
+                    'Count': count
+                })
 
     # Create a DataFrame from the processed data
     processed_df = pd.DataFrame(processed_data)

@@ -91,10 +91,10 @@ def download_unzip_data(data_path):
                 print(f"An unexpected error occurred with the file {filename}: {e}")
 
 
-# Define the directories for downloading and extracting files
-data_path = './Original_Dataset'
-if os.listdir(data_path):  # folder has files, so pass
-    pass
-else:
-    download_unzip_data(data_path)
-
+# # Define the directories for downloading and extracting files
+# data_path = './Original_Dataset'
+# if os.listdir(data_path):  # folder has files, so pass
+#     pass
+# else:
+#     download_unzip_data(data_path)
+#

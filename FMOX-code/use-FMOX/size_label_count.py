@@ -3,22 +3,16 @@ import pandas as pd
 from collections import defaultdict
 
 
-def json_obj_size_count():
-    column_names = ["Main Dataset", "Subsequence",
-                    "Total Frame Number", "FMO Exists Frame Number",
-                    "Average Object Size", "Object Size Levels"]
+def fmox_obj_size_count(fmox_json_path, obj_size_distribution_path):
+    column_names = ["Main Dataset", "Subsequence", "Object Size Distributions"]
 
     df = pd.DataFrame(columns=column_names)
 
-    # Load the JSON data from the file
-    with open('../FMOX-Jsons/FMOX_All4.json', 'r') as json_file:
+    with open(fmox_json_path, 'r') as json_file:  # Load the JSON data from the file
         data = json.load(json_file)
 
     # Iterate through the databases
     for database in data["databases"]:
-
-        print("\n",database["dataset_name"])
-
         # Iterate through the sub-datasets
         for sub_dataset in database["sub_datasets"]:
             all_obj_size = []
@@ -42,12 +36,24 @@ def json_obj_size_count():
                         # Increment the count for this category
                         category_count[category_name] += 1
 
-                keep = {}
+                obj_size_distribution = {}
                 for category, count in category_count.items():
-                    keep[category] = count
+                    obj_size_distribution[category] = count
 
-                print(sub_dataset["subdb_name"], keep)
-                # print(keep, "\n")
+                # print(database["dataset_name"], sub_dataset["subdb_name"], obj_size_distribution)
 
+                row_data = {}  # Store the row values in a dictionary
+                row_data["Main Dataset"] = database["dataset_name"]
+                row_data["Subsequence"] = sub_dataset["subdb_name"]
+                row_data["Object Size Distributions"] = obj_size_distribution
 
-json_obj_size_count()
+                new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
+                df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
+                print("Object Size Distributions Samples:", df.head())
+
+    # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
+    df.to_csv(obj_size_distribution_path, index=False)
+
+# fmox_json_path = " "
+# json_obj_size_count(fmox_json_path)
+

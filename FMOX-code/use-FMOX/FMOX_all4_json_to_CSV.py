@@ -5,7 +5,7 @@ from collections import defaultdict
 
 def json_to_csv(fmox_json_path, fmox_csv_path):
     column_names = ["Main Dataset", "Subsequence", "Total Frame Number",
-                    "FMO Exists Frame Number", "Average Object Size", "Object Size Levels"]
+                    "FMO Exists Frame Number", "Object Size Levels"]
 
     df = pd.DataFrame(columns=column_names)
 
@@ -53,14 +53,14 @@ def json_to_csv(fmox_json_path, fmox_csv_path):
                 row_data["Subsequence"] = sub_dataset["subdb_name"]
                 row_data["Total Frame Number"] = sub_dataset["total_frame_num"]
                 row_data["FMO Exists Frame Number"] = fmo_exists_frame_number
-                row_data["Average Object Size"] = average_obj_size
+                # row_data["Average Object Size"] = average_obj_size
                 row_data["Object Size Levels"] = dict(sorted(category_count.items()))
 
                 new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
                 df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
+                print("FMOX CSV Samples:", df.head())
 
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
     df.to_csv(fmox_csv_path, index=False)
     # Save the DataFrame to an Excel file  df.to_excel('output.xlsx', index=False)
-
 

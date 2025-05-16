@@ -3,35 +3,9 @@ import cv2
 import json
 import time
 import numpy as np
+import pandas as pd
 import scipy
 
-"""
-def example_usage_with_bboxes():
-    # Example bounding boxes (x_min, y_min, x_max, y_max)
-    bbox1 = np.array([10, 20, 30, 40])
-    bbox2 = np.array([25, 35, 45, 55])
-
-    # Calculate centers of the bounding boxes
-    center1 = np.array([(bbox1[0] + bbox1[2]) / 2, (bbox1[1] + bbox1[3]) / 2])
-    center2 = np.array([(bbox2[0] + bbox2[2]) / 2, (bbox2[1] + bbox2[3]) / 2])
-
-    # Calculate radius as half the diagonal length of bbox1 (assuming both bboxes have approximately same size)
-    def bbox_to_radius(bbox):
-        width = bbox[2] - bbox[0]
-        height = bbox[3] - bbox[1]
-        return np.sqrt(width ** 2 + height ** 2) / 2
-
-    radius1 = bbox_to_radius(bbox1)
-    radius2 = bbox_to_radius(bbox2)
-
-    # For this calciou function we need one radius value, you could take average or max if radii differ
-    avg_radius = (radius1 + radius2) / 2
-
-    # Calculate IoU for the circles approximating bbox1 and bbox2
-    iou = calciou(center1, center2, avg_radius)
-
-    print(f"Approximate IoU of bounding boxes using calciou circles: {iou:.4f}")
-"""
 
 def calc_tiou(gt_traj, traj, rad):
     ns = gt_traj.shape[1]
@@ -113,7 +87,10 @@ class AverageScoreTracker:
     def next(self, seqname, means):
         self.av_ious[self.seqi] = means
         print('AverageScoreTracker, Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
+        average_TIoU= self.av_ious[self.seqi]
         self.seqi += 1
+        return seqname, average_TIoU
+
 
     def next_time(self, tm):
         self.av_times.append(tm)
@@ -244,15 +221,12 @@ class GroundTruthProcessorX:
         bboxes = np.array(bboxes)
         bboxes = bboxes.astype(float)
 
-        # Calculate center coordinates from bounding boxes
         centers = []
         for bbox in bboxes:
             x_center = bbox[0] + bbox[2] / 2  # x_min + width/2
             y_center = bbox[1] + bbox[3] / 2  # y_min + height/2
             centers.append((x_center, y_center))
-        # Output the estimated trajectory
-        # print("Estimated Trajectory (centers):")
-        # Convert to standard Python floats
+
         centers_as_floats = [[float(center[0]), float(center[1])] for center in centers]
         centers_as_floats = np.array(centers_as_floats)
 
@@ -266,13 +240,11 @@ class GroundTruthProcessorX:
         # rads = np.reshape(np.max(0.5 * bboxes[:, 2:], 1), (-1, self.nsplits))  # original
 
         rads = np.max(0.5 * bboxes[:, 2:], 1)  # == np.maximum(bboxes[:, 2], bboxes[:, 3]) / 2.0
-        # radii = np.array([32.0, 32.0, 31.5, 32.5, 32.5, 32.5, 37.5, 41.0, 33.0, 48.0, 46.0, 47.0, 37.0, 36.0,
-        #                   35.5, 35.0, 33.0, 32.0, 32.5, 32.0, 31.0, 31.0])
         interpolated_radii = interpolate_radii1(rads, num_intermediate=(self.nsplits-2))
 
-        if seqname == "HighFPS_GT_depth2":
-            np.savetxt('HighFPS_GT_depth2_interpolated_radii.txt', interpolated_radii, fmt='%.3f', delimiter=' ')
-            np.savetxt('HighFPS_GT_depth2_pars.txt', pars, fmt='%.3f', delimiter=' ')
+        # if seqname == "HighFPS_GT_depth2":
+        #     np.savetxt('HighFPS_GT_depth2_interpolated_radii.txt', interpolated_radii, fmt='%.3f', delimiter=' ')
+        #     np.savetxt('HighFPS_GT_depth2_pars.txt', pars, fmt='%.3f', delimiter=' ')
 
         pars = np.r_[np.zeros((start_ind * 2, self.nsplits)), pars]
         rads = np.r_[np.zeros((start_ind, self.nsplits)), interpolated_radii]
@@ -309,15 +281,14 @@ class GroundTruthProcessorX:
 
 import vis_trajectory
 
-def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
+def evaluate_on(df,dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
+
     gt_bboxes = fmox_bboxes
     est_bboxes = efficienttam_bboxes
 
     # av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
     av_score_tracker = AverageScoreTracker(len(gt_bboxes))
 
-    # for kkf, ff in enumerate(files):
-    # for kkf in range(len(gt_bboxes)):
     for kkf in range(1):
         est_gtp = GroundTruthProcessorX(seqname, est_bboxes, start_ind)
         gt_gtp = GroundTruthProcessorX(seqname, gt_bboxes, start_ind)
@@ -338,28 +309,32 @@ def evaluate_on(dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bbo
             if not est_traj is None:
                 iou = seq_score_tracker.next_traj(kk, gt_traj, est_traj, radius)
 
-            # if args.verbose:
-            # seq_score_tracker.report(gt_gtp.seqname, kk)
-
             # white_img = vis_trajectory.write_trajectory(white_img, gt_traj, (0, 255, 0))
             white_img = vis_trajectory.write_trajectory(white_img, gt_traj, color=(0, 255, 0), zero_thresh=2)
             white_img = vis_trajectory.write_trajectory(white_img, est_traj, color=(0, 0, 255), zero_thresh=2)
             # white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
             white_img = vis_trajectory.draw_legend(white_img, (0, 255, 0), (0, 0, 255), pos=(10, 30), spacing=20)
 
+        efficientTAM_traj_vis_path = "./efficientTAM_traj_vis/"
         if kk == len(gt_bboxes) - 1:
-            folder_path = "./efficientTAM_traj_vis/"
-            cv2.imwrite(folder_path + "efficientTAM_traj_" + str(dataset_name) + "_" + str(seqname) + ".jpg", white_img)
+            cv2.imwrite(efficientTAM_traj_vis_path + "efficientTAM_traj_" + str(dataset_name) + "_" + str(seqname) + ".jpg", white_img)
         # cv2.imshow("white_img", white_img)
         # cv2.imshow("original_I", original_I)
         # cv2.waitKey(0)
 
         means = seq_score_tracker.close()
-        # print("gt_gtp.seqname, means", gt_gtp.seqname, means)
-        av_score_tracker.next(gt_gtp.seqname, means)
+        seqname, avg_TIoU = av_score_tracker.next(gt_gtp.seqname, means)
 
+        row_data = {}  # Store the row values in a dictionary
+        row_data["Main Dataset"] = str(dataset_name)
+        row_data["Subsequence"] = str(seqname)
+        row_data["Sequence Average TIoU"] = float(avg_TIoU)
+        new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
+        df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
+
+        print("EfficientTAM trajectory Estimations Saved in: ", efficientTAM_traj_vis_path)
         if callback:
             callback(kkf, means)
 
-    return av_score_tracker.close()
+    return df
 

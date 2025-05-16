@@ -1,0 +1,48 @@
+Main Dataset,Subsequence,Object Size Distributions
+Falling_Object,v_box_GTgamma,{'medium': 22}
+Falling_Object,v_cell_GTgamma,{'medium': 14}
+Falling_Object,v_key_GTgamma,{'medium': 19}
+Falling_Object,v_marker_GTgamma,{'medium': 11}
+Falling_Object,v_pen_GTgamma,"{'medium': 5, 'large': 8}"
+Falling_Object,v_rubber_GTgamma,{'medium': 15}
+TbD-3D,HighFPS_GT_depth2,"{'large': 2, 'medium': 46}"
+TbD-3D,HighFPS_GT_depthb2,{'medium': 81}
+TbD-3D,HighFPS_GT_depthf1,{'medium': 46}
+TbD-3D,HighFPS_GT_depthf2,{'medium': 50}
+TbD-3D,HighFPS_GT_depthf3,{'medium': 37}
+TbD-3D,HighFPS_GT_out1,"{'medium': 56, 'large': 1}"
+TbD-3D,HighFPS_GT_out2,{'medium': 50}
+TbD-3D,HighFPS_GT_outa1,"{'large': 14, 'medium': 33}"
+TbD-3D,HighFPS_GT_outb1,{'medium': 41}
+TbD-3D,HighFPS_GT_outf1,{'medium': 60}
+TbD,fall_cube,"{'medium': 4, 'small': 2, 'tiny': 5, 'extremely_tiny': 17}"
+TbD,hit_tennis,"{'extremely_tiny': 47, 'tiny': 9, 'small': 1}"
+TbD,hit_tennis2,"{'extremely_tiny': 4, 'tiny': 14, 'small': 5, 'medium': 3}"
+TbD,throw_floor,"{'medium': 15, 'large': 1, 'small': 6, 'tiny': 7, 'extremely_tiny': 44}"
+TbD,throw_soft,"{'small': 16, 'large': 1, 'medium': 13, 'tiny': 7, 'extremely_tiny': 38}"
+TbD,throw_tennis,"{'medium': 16, 'small': 19, 'tiny': 9, 'extremely_tiny': 27}"
+TbD,VS_badminton_white_GX010058-8,"{'tiny': 56, 'extremely_tiny': 36, 'small': 27, 'medium': 6}"
+TbD,VS_badminton_yellow_GX010060-8,"{'tiny': 63, 'extremely_tiny': 36, 'small': 19, 'medium': 7}"
+TbD,VS_pingpong_GX010051-8,"{'small': 36, 'tiny': 46, 'extremely_tiny': 13}"
+TbD,VS_roll_golf-gc-12,"{'small': 3, 'medium': 5, 'tiny': 3, 'extremely_tiny': 5}"
+TbD,VS_tennis_GX010073-8,"{'small': 66, 'tiny': 32, 'extremely_tiny': 20}"
+TbD,VS_volleyball_GX010068-12,"{'small': 11, 'medium': 5, 'tiny': 25, 'extremely_tiny': 31}"
+FMOv2,atp_serves,"{'tiny': 383, 'small': 79, 'extremely_tiny': 1}"
+FMOv2,blue,"{'medium': 20, 'large': 1}"
+FMOv2,darts1,"{'medium': 33, 'large': 3}"
+FMOv2,darts_window1,{'medium': 5}
+FMOv2,frisbee,"{'medium': 4, 'large': 16}"
+FMOv2,hockey,"{'small': 6, 'tiny': 7, 'extremely_tiny': 48}"
+FMOv2,more_balls,"{'small': 1112, 'medium': 129, 'tiny': 49}"
+FMOv2,ping_pong_paint,"{'medium': 68, 'small': 6, 'tiny': 1}"
+FMOv2,ping_pong_side,"{'medium': 172, 'small': 183, 'tiny': 79, 'extremely_tiny': 2}"
+FMOv2,ping_pong_top,"{'medium': 242, 'small': 59, 'extremely_tiny': 1, 'tiny': 148, 'large': 2}"
+FMOv2,softball,"{'small': 13, 'tiny': 1, 'medium': 14}"
+FMOv2,squash,"{'extremely_tiny': 129, 'tiny': 5}"
+FMOv2,tennis1,"{'extremely_tiny': 63, 'tiny': 1}"
+FMOv2,tennis2,"{'tiny': 62, 'extremely_tiny': 151, 'small': 6}"
+FMOv2,tennis_serve_back,"{'small': 10, 'tiny': 18, 'extremely_tiny': 31}"
+FMOv2,tennis_serve_side,"{'small': 12, 'tiny': 5, 'medium': 1}"
+FMOv2,volleyball1,"{'large': 12, 'medium': 1}"
+FMOv2,volleyball_passing,"{'medium': 62, 'large': 4}"
+FMOv2,william_tell,"{'small': 5, 'tiny': 1, 'medium': 7, 'large': 7}"

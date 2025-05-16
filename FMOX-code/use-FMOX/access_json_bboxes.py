@@ -3,15 +3,14 @@ import json
 import cv2
 
 
-def access_bboxes():
+def access_bboxes(data_folder, fmox_json_path):
 
-    data_folder = "./fmo_data/"
     dataset_paths = {"Falling_Object" : "Falling_Object/imgs/",
-                     "FMOv2" : "FMOv2/FMOv2/",
+                     "FMOv2" : "FMOv2/imgs/",
                      "TbD" : "TbD/imgs/",
                      "TbD-3D" : "TbD-3D/imgs/"}
 
-    with open('./json_anns/fmo_all4_annotations.json', 'r') as json_file:
+    with open(fmox_json_path, 'r') as json_file:
         data = json.load(json_file)
 
     # Iterate through the databases
@@ -39,10 +38,10 @@ def access_bboxes():
 
                         img = cv2.imread(image_path)
 
-                        # Check if the image was loaded successfully
-                        if img is None:
-                            print(f"Could not load image: {image_path}")
-                            continue
+                        # # Check if the image was loaded successfully
+                        # if img is None:
+                        #     print(f"Could not load image: {image_path}")
+                        #     continue
 
                         # Check if the current file name matches any in the dataset
                         if file_name in image_file_names:
@@ -56,15 +55,15 @@ def access_bboxes():
 
                                         # Draw bounding box on the image -  red color with thickness 2
                                         cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
-                                # visualize only frames that has bounding boxes
-                                cv2.imshow("Image with Bounding Boxes", img)
-                                cv2.waitKey(0)
+                            # visualize only frames that has bounding boxes
+                            cv2.imshow("Image with Bounding Boxes", img)
+                            cv2.waitKey(0)
 
                         # # visualize all frames - iff there is box you will see bounding box
                         # cv2.imshow("Image with Bounding Boxes", img)
                         # cv2.waitKey(0)
-            cv2.destroyAllWindows()
 
-
-# access_bboxes()
+# data_folder = ""
+# fmox_json_path  = ""
+# access_bboxes(data_folder, fmox_json_path)
 

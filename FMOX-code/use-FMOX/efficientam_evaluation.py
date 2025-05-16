@@ -1,7 +1,7 @@
 import os
 import json
-
 import cv2
+import pandas as pd
 
 
 def find_correspondence_in_json(search_json, db_name, subdb_name, image_file_name):
@@ -24,76 +24,83 @@ def convert_bbox_xyxy_to_xywh(bbox_xyxy):
     height = y_max - y_min
     return [x_min, y_min, width, height]
 
-fmox_json_path = "../FMOX-Jsons/FMOX_All4.json"
-efficienttam_json_path = "../EfficientTAM-Jsons/efficienttam_All4.json"
 
-# Open both JSON files simultaneously
-with open(efficienttam_json_path, 'r') as file1, open(fmox_json_path, 'r') as file2:
-    efficienttam_data = json.load(file1)
-    fmox_data = json.load(file2)
+def evaluate_efficienttam(dataset_path, fmox_json_path, efficienttam_json_path, averageTIoU_path):
 
-# keep both data as [[fmox_data_bboxes][efficienttam_data_bboxes]] according to image base match
-fmox_plus_efficienttam_bbox = []
+    # Open both JSON files simultaneously
+    with open(efficienttam_json_path, 'r') as file1, open(fmox_json_path, 'r') as file2:
+        efficienttam_data = json.load(file1)
+        fmox_data = json.load(file2)
 
-# Iterate through the databases - on fmox_data
-for database in fmox_data["databases"]:
-    # Iterate through the sub-datasets
-    for sub_dataset in database["sub_datasets"]:
+    # keep both data as [[fmox_data_bboxes][efficienttam_data_bboxes]] according to image base match
+    fmox_plus_efficienttam_bbox = []
 
-        fmox_bboxes = []
-        efficienttam_bboxes = []
+    # save the average TIoU for each sequence - each dataset wil have a csv file
+    column_names = ["Main Dataset", "Subsequence", "Sequence Average TIoU"]
+    df = pd.DataFrame(columns=column_names)
 
-        # one object initialization in effcicienttam - it is possible to initilaze others as well
-        # but no ID in gt to compare-calculate IoU ...
-        if sub_dataset["subdb_name"] == "more_balls":
-            continue  # Skip this iteration
-        else:
-            # note: some sequences does not have annotations (e.g. fmov2 swaying) so skip them.
-            if len(sub_dataset["images"]) != 0:
-                first_img_name = sub_dataset["images"][0]["image_file_name"]
-                start_ind = int(first_img_name.split('.')[0])
-                for image in sub_dataset["images"]:
+    # Iterate through the databases - on fmox_data
+    for database in fmox_data["databases"]:
+        # Iterate through the sub-datasets
+        for sub_dataset in database["sub_datasets"]:
 
-                    # ==============================================================================================
-                    db_name = database["dataset_name"]
-                    subdb_name = sub_dataset["subdb_name"]
-                    image_file_name = image["image_file_name"]
-                    img_name, effcientbbox = find_correspondence_in_json(efficienttam_data, db_name,
-                                                                         subdb_name, image_file_name)
+            fmox_bboxes = []
+            efficienttam_bboxes = []
 
-                    # if efficienttam_data does not have bbox for corresponding frame bbox value will be 1,1,1,1 ?
-                    # there will not be any intersection' just to keep index ....
-                    effcientbbox = effcientbbox if effcientbbox is not None else [1, 1, 1, 1]
-                    # ==============================================================================================
+            # one object initialization in effcicienttam - it is possible to initilaze others as well
+            # but no ID in gt to compare-calculate IoU ...
+            if sub_dataset["subdb_name"] == "more_balls":
+                continue  # Skip this iteration
+            else:
+                # note: some sequences does not have annotations (e.g. fmov2 swaying) so skip them.
+                if len(sub_dataset["images"]) != 0:
+                    first_img_name = sub_dataset["images"][0]["image_file_name"]
+                    start_ind = int(first_img_name.split('.')[0])
+                    for image in sub_dataset["images"]:
 
-                    for annotation in image["annotations"]:
-                        bboxes = annotation["bbox_xyxy"]
+                        # ==============================================================================================
+                        db_name = database["dataset_name"]
+                        subdb_name = sub_dataset["subdb_name"]
+                        image_file_name = image["image_file_name"]
+                        img_name, effcientbbox = find_correspondence_in_json(efficienttam_data, db_name,
+                                                                             subdb_name, image_file_name)
 
-                        bboxes = convert_bbox_xyxy_to_xywh(bboxes)
-                        effcientbbox = convert_bbox_xyxy_to_xywh(effcientbbox)
+                        # if efficienttam_data does not have bbox for corresponding frame bbox value will be 1,1,1,1 ?
+                        # there will not be any intersection' just to keep index ....
+                        effcientbbox = effcientbbox if effcientbbox is not None else [1, 1, 1, 1]
+                        # ==============================================================================================
 
-                        fmox_bboxes.append(bboxes)
-                        efficienttam_bboxes.append(effcientbbox)
+                        for annotation in image["annotations"]:
+                            bboxes = annotation["bbox_xyxy"]
 
-        # call TIoU ......
-        if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
-            fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
-            print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
+                            bboxes = convert_bbox_xyxy_to_xywh(bboxes)
+                            effcientbbox = convert_bbox_xyxy_to_xywh(effcientbbox)
 
-            # dataset_path = "../../../fmo_data_extracted_files/"
-            dataset_path = "../Original_Dataset/"
-            subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
-            all_files = os.listdir(subseq_folder)
-            image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
-            image_files = [f for f in all_files if f.lower().endswith(image_extensions)]
-            original_first_Img = None
-            if image_files:
-                first_image = image_files[0]  # Get the first image file name
-                first_image_path = os.path.join(subseq_folder, first_image)  # Full path to the first image
+                            fmox_bboxes.append(bboxes)
+                            efficienttam_bboxes.append(effcientbbox)
 
-                original_first_Img = cv2.imread(first_image_path)
+            # call TIoU ......
+            if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
+                fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
+                print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
 
-            import calciou
-            calciou.evaluate_on(database["dataset_name"], sub_dataset["subdb_name"], original_first_Img, fmox_bboxes, efficienttam_bboxes, start_ind)
+                subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
+                all_files = os.listdir(subseq_folder)
+                image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp')
+                image_files = [f for f in all_files if f.lower().endswith(image_extensions)]
+                original_first_Img = None
+                if image_files:
+                    first_image = image_files[0]  # Get the first image file name
+                    first_image_path = os.path.join(subseq_folder, first_image)  # Full path to the first image
 
+                    original_first_Img = cv2.imread(first_image_path)
+
+                import calciou
+                df_updated = calciou.evaluate_on(df, database["dataset_name"], sub_dataset["subdb_name"],
+                                                 original_first_Img, fmox_bboxes, efficienttam_bboxes, start_ind)
+                df = df_updated
+
+    print("Average TIoU Samples: ", df.head())
+    # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
+    df.to_csv(averageTIoU_path, index=False)
 
