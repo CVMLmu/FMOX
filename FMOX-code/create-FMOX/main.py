@@ -54,7 +54,7 @@ def main():
     """ Contour detection is applied to the segmentation mask images to obtain bounding boxes. 
      While obtaining the bounding boxes, object size labels are calculated and saved in a JSON file. """
 
-    # create_fmov2_json.get_fmov2_json()
+    create_fmov2_json.get_fmov2_json()
 
     # ----------------------------------------------------------
     # Create TbD JSON Annotation File

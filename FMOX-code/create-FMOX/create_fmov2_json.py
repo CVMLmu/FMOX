@@ -110,7 +110,7 @@ class JsonFMO:
 
                     result = self.is_contour_inside_area(current_contour, do_not_count_area)
                     if result is True:   # True if the contour is inside the area
-                        print("Pass if the contour inside the area? ", result)
+                        # print("Pass if the contour inside the area? ", result)
                         continue
 
                 # ------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ class JsonFMO:
             video.write(image)
         cv2.destroyAllWindows()
         video.release()
-        print("done...")
+        # print("done...")
 
         return sub_dataset_entry
 
@@ -173,6 +173,7 @@ def get_fmov2_json():
     with open(str(save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
-    print("Dataset path: {}, JSON saved in: {}, Videos saved in: {}".format(whole_images_folder, save_path, out_folder))
+    # print("Dataset path: {}, JSON saved in: {}, Videos saved in: {}".format(whole_images_folder, save_path, out_folder))
+    print("JSON saved in: {}, Videos saved in: {}".format(save_path, out_folder))
 
 # get_fmov2_json()
