@@ -59,8 +59,9 @@ def json_to_csv(fmox_json_path, fmox_csv_path):
                 new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
                 df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
 
-    print("FMOX CSV Samples:", df.head())
+    # print("FMOX CSV Samples:", df.head())
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
     df.to_csv(fmox_csv_path, index=False)
+    print("FMOX_All4_statistics CSV  saved in : ", fmox_csv_path)
     # Save the DataFrame to an Excel file  df.to_excel('output.xlsx', index=False)
 

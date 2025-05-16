@@ -100,9 +100,11 @@ def evaluate_efficienttam(dataset_path, fmox_json_path, efficienttam_json_path, 
                                                  original_first_Img, fmox_bboxes, efficienttam_bboxes, start_ind)
                 df = df_updated
 
-    print("Average TIoU Samples: ", df.head())
+    # print("Average TIoU Samples: ", df.head())
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
     df.to_csv(averageTIoU_path, index=False)
 
     efficientTAM_traj_vis_path = "./efficientTAM_traj_vis/"
     print("EfficientTAM trajectory Estimations Saved in: ", efficientTAM_traj_vis_path)
+    print("EfficientTAM TIOU Saved in: ", averageTIoU_path)
+
