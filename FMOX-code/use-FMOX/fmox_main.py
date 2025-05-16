@@ -82,7 +82,7 @@ def main():
     # ----------------------------------------------------------
     # Evaluate EfficientTAM JSON results with FMOX JSON
     # ----------------------------------------------------------
-    # efficientam_evaluation.evaluate_efficienttam(data_folder, fmox_json_path, efficienttam_json_path, averageTIoU_path)
+    efficientam_evaluation.evaluate_efficienttam(data_folder, fmox_json_path, efficienttam_json_path, averageTIoU_path)
 
     # ----------------------------------------------------------
     # Create CSV from FMOX All4 JSON
