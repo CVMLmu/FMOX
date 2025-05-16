@@ -82,7 +82,7 @@ def evaluate_efficienttam(dataset_path, fmox_json_path, efficienttam_json_path, 
             # call TIoU ......
             if len(efficienttam_bboxes) and len(fmox_bboxes) != 0:
                 fmox_plus_efficienttam_bbox.append([fmox_bboxes, efficienttam_bboxes])
-                print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
+                # print("\nDataset Name", database["dataset_name"], "Subsequence Name", sub_dataset["subdb_name"])
 
                 subseq_folder = dataset_path + database["dataset_name"] + "/imgs/" + sub_dataset["subdb_name"] + "/"
                 all_files = os.listdir(subseq_folder)
@@ -104,3 +104,5 @@ def evaluate_efficienttam(dataset_path, fmox_json_path, efficienttam_json_path, 
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
     df.to_csv(averageTIoU_path, index=False)
 
+    efficientTAM_traj_vis_path = "./efficientTAM_traj_vis/"
+    print("EfficientTAM trajectory Estimations Saved in: ", efficientTAM_traj_vis_path)

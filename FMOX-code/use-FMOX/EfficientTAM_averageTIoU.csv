@@ -37,8 +37,8 @@ FMOv2,ping_pong_paint,0.036
 FMOv2,ping_pong_side,0.629
 FMOv2,ping_pong_top,0.396
 FMOv2,softball,0.009
-FMOv2,squash,NAN
-FMOv2,tennis1,NAN
+FMOv2,squash,
+FMOv2,tennis1,
 FMOv2,tennis2,0.005
 FMOv2,tennis_serve_back,0.312
 FMOv2,tennis_serve_side,0.821

@@ -41,9 +41,9 @@ def json_to_csv(fmox_json_path, fmox_csv_path):
 
                 average_obj_size = int(sum(all_obj_size) / len(all_obj_size))
 
-                print("Category Counts:")
-                for category, count in category_count.items():
-                    print(f"{category}: {count}")
+                # print("Category Counts:")
+                # for category, count in category_count.items():
+                #     print(f"{category}: {count}")
 
                 # get the total FMO exist frame number
                 fmo_exists_frame_number = sub_dataset["images"][(len(sub_dataset["images"])-1)]["img_index"] - sub_dataset["images"][0]["img_index"] + 1
@@ -58,8 +58,8 @@ def json_to_csv(fmox_json_path, fmox_csv_path):
 
                 new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
                 df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
-                print("FMOX CSV Samples:", df.head())
 
+    print("FMOX CSV Samples:", df.head())
     # Save the DataFrame to a CSV file - Set index=False to avoid saving the index as a column
     df.to_csv(fmox_csv_path, index=False)
     # Save the DataFrame to an Excel file  df.to_excel('output.xlsx', index=False)

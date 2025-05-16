@@ -86,7 +86,7 @@ class AverageScoreTracker:
 
     def next(self, seqname, means):
         self.av_ious[self.seqi] = means
-        print('AverageScoreTracker, Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
+        # print('AverageScoreTracker, Finished seq {}, avg. TIoU {:.3f}'.format(seqname, self.av_ious[self.seqi]))
         average_TIoU= self.av_ious[self.seqi]
         self.seqi += 1
         return seqname, average_TIoU
@@ -117,7 +117,8 @@ class SequenceScoreTracker:
         return iou
 
     def report(self, seqname, kk):
-        print('Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
+        # print('Seq {}, frm {}, TIoU {:.3f}'.format(seqname, kk, self.all_ious.get(kk, 0)))
+        print("")
 
     def close(self):
         return np.mean(list(self.all_ious.values())) if self.all_ious else 0
@@ -254,7 +255,7 @@ class GroundTruthProcessorX:
         self.start_ind = start_ind
         self.nfrms = nfrms
         self.seqname = seqname
-        print('Sequence {} has {} frames'.format(seqname, nfrms))
+        # print('Sequence {} has {} frames'.format(seqname, nfrms))
 
     def get_trajgt(self, kk):
         par = self.pars[2 * (kk + self.start_ind):2 * (kk + self.start_ind + 1), :].T
@@ -282,7 +283,7 @@ class GroundTruthProcessorX:
 import vis_trajectory
 
 def evaluate_on(df,dataset_name, seqname, original_I, fmox_bboxes, efficienttam_bboxes, start_ind, callback=None):
-
+    efficientTAM_traj_vis_path = "./efficientTAM_traj_vis/"
     gt_bboxes = fmox_bboxes
     est_bboxes = efficienttam_bboxes
 
@@ -315,7 +316,7 @@ def evaluate_on(df,dataset_name, seqname, original_I, fmox_bboxes, efficienttam_
             # white_img = vis_trajectory.write_trajectory(white_img, est_traj, (0, 0, 255))
             white_img = vis_trajectory.draw_legend(white_img, (0, 255, 0), (0, 0, 255), pos=(10, 30), spacing=20)
 
-        efficientTAM_traj_vis_path = "./efficientTAM_traj_vis/"
+
         if kk == len(gt_bboxes) - 1:
             cv2.imwrite(efficientTAM_traj_vis_path + "efficientTAM_traj_" + str(dataset_name) + "_" + str(seqname) + ".jpg", white_img)
         # cv2.imshow("white_img", white_img)
@@ -332,9 +333,8 @@ def evaluate_on(df,dataset_name, seqname, original_I, fmox_bboxes, efficienttam_
         new_row = pd.DataFrame([row_data])  # Create a DataFrame from the dictionary for the new row
         df = pd.concat([df, new_row], ignore_index=True)  # Concatenate the new row to the existing DataFrame
 
-        print("EfficientTAM trajectory Estimations Saved in: ", efficientTAM_traj_vis_path)
+
         if callback:
             callback(kkf, means)
-
     return df
 
