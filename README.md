@@ -76,10 +76,7 @@ A total of five distinct level defined as below:
 }
 ```
 
-### Result 
-
-
-# Average TIoU Performance Comparison
+### Average TIoU Performance Comparison
 
 This table compares the average TIoU $(\uparrow)$ performance of various studies on FMO datasets with FMOX metadata. The best results are indicated with $^*$ and the second-best results with $^{**}$.
 
@@ -88,6 +85,7 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 | Falling Object    | 0.684$^{**}$     | N/A              | 0.539            | 0.539            | 0.7093$^{*}$       |
 | TbD               | 0.550$^{**}$     | (a) 0.519 (b) 0.715$^{*}$ | 0.542            | 0.542            | 0.4546             |
 | TbD-3D           | 0.879$^{*}$      | N/A              | 0.598            | 0.598            | 0.8604$^{**}$      |
+
 (a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. N/A: Not defined.
 
 ### Metadata File
