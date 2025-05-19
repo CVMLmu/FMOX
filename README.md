@@ -39,8 +39,45 @@ A total of five distinct level defined as below:
 
 *Table: FMOX object size categories.*
 
+### Structure of FMOX
 
-To use FMOX refer to : xx and xxx
+This section describes the structure of the FMOX dataset in JSON format.
+
+```json
+{
+  "databases": [
+    {
+      "dataset_name": "Falling_Object",
+      "version": "1.0",
+      "description": "Falling_Object annotations.",
+      "sub_datasets": [
+        {
+          "subdb_name": "v_box_GTgamma",
+          "images": [
+            {
+              "img_index": 1,
+              "image_file_name": "00000027.png",
+              "annotations": [
+                {
+                  "bbox_xyxy": [161, 259, 245, 333],
+                  "object_wh": [84, 74],
+                  "size_category": "medium"
+                }
+              ]
+            },
+            {
+              "img_index": 2,
+              "image_file_name": "00000028.png",
+              "annotations": [ /* additional annotations here */ ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+### To use FMOX refer to : xx and xxx
 
 
 <!-- 
