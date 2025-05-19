@@ -146,8 +146,8 @@ class JsonTbD:
         return sub_dataset_entry
 
 
-def get_tbd_json():
-    whole_images_folder = "../Original_Dataset/TbD/imgs/"
+def get_tbd_json(whole_images_folder, json_save_path):
+    # whole_images_folder = "../Original_Dataset/TbD/imgs/"
     db_owner = "tbd"
 
     # Initialize the main data structure
@@ -173,11 +173,11 @@ def get_tbd_json():
     # Add the database entry to the main data structure
     data["databases"].append(db_entry)
 
-    save_path = "../FMOX-Jsons/FMOX_tbd.json"   # Save the data to a JSON file
-    with open(str(save_path), 'w') as json_file:
+    # json_save_path = "../FMOX-Jsons/FMOX_tbd.json"   # Save the data to a JSON file
+    with open(str(json_save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
-    print("Dataset path: {}, JSON saved in: {}".format(whole_images_folder, save_path))
+    print("Dataset path: {}, JSON saved in: {}".format(whole_images_folder, json_save_path))
 
 # if __name__ == '__main__':
 #     get_tbd_json()

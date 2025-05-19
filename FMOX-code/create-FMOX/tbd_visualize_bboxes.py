@@ -63,9 +63,9 @@ def draw_bounding_box(img, bbox, color=(0, 255, 0), thickness=2):
     return img
 
 
-def tbd_vis_bbox(input_dir):
+def tbd_vis_bbox(input_dir, output_dir):
     # input_dir = "../Original_Dataset/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2  fall_cube
-    output_dir = "../Videos//TbD-3D/output"
+    # output_dir = "../Videos//TbD-3D/output"
     gt_file = os.path.join(input_dir, 'gt.txt')
 
     if not os.path.exists(output_dir):

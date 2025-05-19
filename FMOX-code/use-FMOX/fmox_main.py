@@ -32,7 +32,7 @@ import efficientam_evaluation
 def main():
     # ----------------------------------------------
     # File Paths
-    # ---------------------------------------------
+    # ----------------------------------------------
     data_folder = "../Original_Dataset/"
     fmox_json_path = "../FMOX-Jsons/FMOX_All4.json"  # fmox json annotations
     fmox_csv_path = "./FMOX_All4_statistics.csv"
@@ -56,15 +56,15 @@ def main():
     # """Change "FMOv2/FMOv2" to "FMOv2/imgs" because other dataset has "imgs" - to run the code """
     # current_folder_name = "../Original_Dataset/FMOv2/FMOv2"
     # new_folder_name = "../Original_Dataset/FMOv2/imgs"
-    # try:
-    #     os.rename(current_folder_name, new_folder_name)
-    #     print(f"Folder renamed from '{current_folder_name}' to '{new_folder_name}'")
-    # except FileNotFoundError:
-    #     print(f"Error: The folder '{current_folder_name}' does not exist.")
-    # except FileExistsError:
-    #     print(f"Error: The folder '{new_folder_name}' already exists.")
-    # except Exception as e:
-    #     print(f"An error occurred: {e}")
+    # Check if the new folder already exists
+    # if os.path.exists(new_folder_name):
+    #     print(f"The folder '{new_folder_name}' already exists. Skipping rename.")
+    # else:
+    #     try:
+    #         os.rename(current_folder_name, new_folder_name)
+    #         print(f"Folder renamed from '{current_folder_name}' to '{new_folder_name}'")
+    #     except Exception as e:
+    #         print(f"An error occurred: {e}")
 
     # ----------------------------------------------------------
     # Access Bounding Boxes from a JSON Annotation File

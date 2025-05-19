@@ -49,10 +49,10 @@ def create_combined_image(W, H, frame_data):
 
     return combined_image
 
-def rle_to_mask_img():
+def rle_to_mask_img(input_folder,output_folder):
 
-    input_folder = "../Original_Dataset/FMOv2/"
-    output_folder = "../Videos/fmov2_outputs/rleTXT_to_video/"
+    # input_folder = "../Original_Dataset/FMOv2/"
+    # output_folder = "../Videos/fmov2_outputs/rleTXT_to_video/"
 
     # Iterate through the files in the specified directory
     for filename in os.listdir(input_folder):
@@ -82,9 +82,8 @@ def rle_to_mask_img():
                     video_writer.write(image)
 
                 cv2.imwrite(output_image_file, combined_image)
-                print(f"Saved combined image as {output_image_file}")
                 video_writer.release()
-                print(f"Video saved as {output_video_file}")
+                print(f"Saved combined image as {output_image_file} Video saved as {output_video_file}")
 
             except Exception as e:
                 print(f"An error occurred: {e}")

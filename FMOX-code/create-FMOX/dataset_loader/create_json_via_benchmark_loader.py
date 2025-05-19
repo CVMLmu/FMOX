@@ -23,12 +23,12 @@ def get_obj_size_category1(obj_width,obj_height):
 			obj_size_category = str(label_name)
 
 		elif obj_width > obj_height:
-			print(f"Width is greater: {obj_width}")
+			#print(f"Width is greater: {obj_width}")
 			if w1 <= obj_width < w2:
 				obj_size_category = str(label_name)
 
 		elif obj_height > obj_width:
-			print(f"Height is greater: {obj_height}")
+			# print(f"Height is greater: {obj_height}")
 			if h1 <= obj_height < h2:
 				obj_size_category = str(label_name)
 		else:
@@ -52,10 +52,10 @@ def get_obj_size_category2(obj_width, obj_height):
 	return obj_size_category
 
 
-def create_json():
-	falling_path = '../Original_Dataset/Falling_Object'
-	tbd_path = '../Original_Dataset/TbD'
-	tbd3d_path = '../Original_Dataset/TbD-3D'
+def create_json(falling_path, tbd_path, tbd3d_path, json_save_path):
+	# falling_path = '../Original_Dataset/Falling_Object'
+	# tbd_path = '../Original_Dataset/TbD'
+	# tbd3d_path = '../Original_Dataset/TbD-3D'
 
 	# Initialize the main data structure
 	data = {
@@ -68,13 +68,14 @@ def create_json():
 	data2 = evaluate_on(data1, files)
 	# files = get_tbd_dataset(tbd_path)   # fall_coin ping_wall not inside the annotation ....
 	# data3 = evaluate_on(data2, files)
+	data3 = data2
 
-	save_path = "../FMOX-Jsons/FMOX_fall_and_tbd3d.json"  # Save the data to a JSON file
-	with open(save_path, 'w') as json_file:
-		json.dump(data2, json_file, indent=4)  # indent for pretty printing
+	# json_save_path = "../FMOX-Jsons/FMOX_fall_and_tbd3d.json"  # Save the data to a JSON file
+	with open(json_save_path, 'w') as json_file:
+		json.dump(data3, json_file, indent=4)  # indent for pretty printing
 
 	print("Falling Object dataset path: {}, TbD-3D dataset path: {}, "
-		  "JSON saved in: {}".format(falling_path, tbd3d_path, save_path))
+		  "JSON saved in: {}".format(falling_path, tbd3d_path, json_save_path))
 
 	
 def evaluate_on(data, files, callback=None):
@@ -98,7 +99,7 @@ def evaluate_on(data, files, callback=None):
 		total_frame_num = len([f for f in os.listdir(ff) if f.endswith('.png')])
 		# 'TbD-3D' has gt.txt, gtr.txt and TbD has gt.txt some videos also
 
-		print("sub dataset path", ff, "total frame number", total_frame_num)
+		# print("sub dataset path", ff, "total frame number", total_frame_num)
 		gtp = GroundTruthProcessor(ff,kkf,medn)
 
 		# Loop to fill in the sub-datasets

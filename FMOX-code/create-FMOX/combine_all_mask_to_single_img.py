@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-def combine_segmentation_images(input_directory):
+def combine_segmentation_images(input_directory, output_dir):
     # Iterate through each subfolder in the main directory
     for subfolder in os.listdir(input_directory):
         subfolder_path = os.path.join(input_directory, subfolder)
@@ -37,12 +37,10 @@ def combine_segmentation_images(input_directory):
                 combined_image = cv2.bitwise_or(combined_image, img)  # Combine using bitwise OR
 
             # Save the combined image in the main directory with the subfolder name
-            output_dir = "../Videos/fmov2_outputs/"
+            # output_dir = "../Videos/fmov2_outputs/"
             output_image_path = os.path.join(output_dir, f"{subfolder}_combined_segmentation_image.png")
             cv2.imwrite(output_image_path, combined_image)
-            print(f"Combined image saved to {output_image_path}")
+            # print(f"Combined image saved to {output_image_path}")
 
-
-# # Example usage
-# input_directory = 'FMOv2_gt'  # Replace with your main directory
+# input_directory = 'FMOv2_gt'
 # combine_segmentation_images(input_directory)

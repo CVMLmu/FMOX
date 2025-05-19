@@ -135,15 +135,13 @@ class JsonFMO:
             video.write(image)
         cv2.destroyAllWindows()
         video.release()
-        # print("done...")
-
         return sub_dataset_entry
 
 
-def get_fmov2_json():
+def get_fmov2_json(whole_images_folder, out_folder, json_save_path):
     db_owner = "fmov2"
-    whole_images_folder = "../Original_Dataset/FMOv2/FMOv2_gt"
-    out_folder = "../Videos/fmov2_outputs/contour_videos/"
+    # whole_images_folder = "../Original_Dataset/FMOv2/FMOv2_gt"
+    # out_folder = "../Videos/fmov2_outputs/contour_videos/"
     os.makedirs(out_folder, exist_ok=True)
 
     # Initialize the main data structure
@@ -169,11 +167,10 @@ def get_fmov2_json():
     # Add the database entry to the main data structure
     data["databases"].append(db_entry)
 
-    save_path = "../FMOX-Jsons/FMOX_fmov2.json"   # Save the data to a JSON file
-    with open(str(save_path), 'w') as json_file:
+    # json_save_path = "../FMOX-Jsons/FMOX_fmov2.json"   # Save the data to a JSON file
+    with open(str(json_save_path), 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
-    # print("Dataset path: {}, JSON saved in: {}, Videos saved in: {}".format(whole_images_folder, save_path, out_folder))
-    print("JSON saved in: {}, Videos saved in: {}".format(save_path, out_folder))
+    print("JSON saved in: {}, Videos saved in: {}".format(json_save_path, out_folder))
 
 # get_fmov2_json()
