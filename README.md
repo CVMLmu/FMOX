@@ -68,7 +68,7 @@ This section describes the structure of the FMOX dataset in JSON format.
             {
               "img_index": 2,
               "image_file_name": "00000028.png",
-              "annotations": [ /* additional annotations here */ ]
+              "annotations": ["bbox_xyxy": [.....], "object_wh": [.....], "size_category": "...." ]
             }
           ]
         }
