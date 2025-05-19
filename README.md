@@ -80,11 +80,11 @@ A total of five distinct level defined as below:
 
 This table compares the average TIoU $(\uparrow)$ performance of various studies on FMO datasets with FMOX metadata. The best results are indicated with $^*$ and the second-best results with $^{**}$.
 
-| Datasets        | Defmo [Rozumnyi et al., 2021]       | FmoDetect [Rozumnyi et al., 2021]    | TbD [Kotera et al., 2019]          | TbD-3D [Rozumnyi et al., 2020]       | EfficientTAM [Xiong et al., 2024]  |
-|------------------|------------------|------------------|------------------|------------------|--------------------|
-| Falling Object    | 0.684$^{**}$     | N/A              | 0.539            | 0.539            | 0.7093$^{*}$       |
-| TbD               | 0.550$^{**}$     | (a) 0.519 (b) 0.715$^{*}$ | 0.542            | 0.542            | 0.4546             |
-| TbD-3D           | 0.879$^{*}$      | N/A              | 0.598            | 0.598            | 0.8604$^{**}$      |
+| Datasets        | Defmo [Rozumnyi et al., 2021] | FmoDetect [Rozumnyi et al., 2021] | TbD [Kotera et al., 2019]          | TbD-3D [Rozumnyi et al., 2020]       | EfficientTAM [Xiong et al., 2024] |
+|------------------|--------|------------------|------------------|------------------|----------|
+| Falling Object    | 0.684** | N/A              | 0.539            | 0.539            | 0.7093*  |
+| TbD               | 0.550** | (a) 0.519 (b) 0.715* | 0.542            | 0.542            | 0.4546   |
+| TbD-3D           | 0.879* | N/A              | 0.598            | 0.598            | 0.8604** |
 
 (a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. N/A: Not defined.
 
@@ -96,13 +96,13 @@ The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that c
 ##### If you are using this repo in your research or applications, please cite using this BibTeX:
 ```bibtex
 @article{xxxxxxxxxxxxxxxxxxxx,
-  title={FMOX:Extending the ground truth labels associated with FMO datasets},
-  author={Senem Aktas, Rozenn Dahyot, John McDonald, Charles Markham},
+  title={Benchmarking EfficientTAM on FMO datasets},
+  author={Senem Aktas, Charles Markham, John McDonald, Rozenn Dahyot},
   conference={xxxxxxxxx},
   year={2025}
 }
 ```
-# Thank You Message for the Matas Team Regarding the Dataset ? something like below
+####  Thank You Message for the Matas Team Regarding the Dataset ? something like below
 ### Acknowledgments
 
 I would like to thank the following sources for providing the datasets used in this project:
