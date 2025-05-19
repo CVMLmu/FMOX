@@ -1,21 +1,18 @@
 # FMOX: Extending the ground truth labels associated with FMO datasets
 
 [[`Paper`](https://xxxxxxxxxxxxx)] 
-[[`Create FMOx Notebook`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)] 
-[[`Use FMOx Notebook`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
+[[`Create FMOX Notebook`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)] 
+[[`Use FMOX Notebook`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
 [[`FMOX JSONS`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)] 
 [[`FMOX Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
 [[`FMOX All4 Statistics CSV`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)] 
 [[`EfficientTAM TIoU CSV`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
 [[`BibTex`](#citing-imagebind)]
 
-This repository is dedicated to enhancing a dataset by adding detailed labels and providing
-structured JSON annotations for easy integration and usage in machine learning projects. 
-The primary goal is to facilitate the labeling process, ensuring that each data point is
-accurately annotated with relevant information, such as object categories and bounding box
-coordinates. The JSON format allows for seamless compatibility with various machine learning
-frameworks, making it easier for developers and researchers to utilize the dataset in their 
-applications.
+This repository is dedicated to enhancing a dataset by adding detailed labels such as object categories and bounding box
+coordinates. and providing structured JSON annotations for easy integration and usage in machine learning projects. 
+The JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
+and researchers to utilize the dataset in their applications.
 
 <!--  purpose of this repo
 FMO VS NON-FMO LABELING
