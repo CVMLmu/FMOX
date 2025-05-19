@@ -6,7 +6,7 @@
 [[`FMOX JSONS`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)] 
 [[`BibTex`](#citing-imagebind)]
 
-Analysis: [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)] 
+Result of Analysis: [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)] 
 [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
 
 Notebooks : [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)] 
@@ -40,8 +40,6 @@ A total of five distinct level defined as below:
 *Table: FMOX object size categories.*
 
 ### Structure of FMOX
-
-This section describes the structure of the FMOX dataset in JSON format.
 
 ```json
 {
@@ -78,9 +76,7 @@ This section describes the structure of the FMOX dataset in JSON format.
 }
 ```
 
-### To use FMOX refer to : xx and xxx
-
-        
+  
 
 ### Metadata File
 
