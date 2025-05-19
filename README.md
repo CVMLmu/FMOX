@@ -76,130 +76,11 @@ This section describes the structure of the FMOX dataset in JSON format.
     }
   ]
 }
+```
 
 ### To use FMOX refer to : xx and xxx
 
-
-<!-- 
-### Installation  
-
-```bash
-git clone https://github.com/CVMLmu/FMOX.git branch main
-cd FMOX
-# for conda, create the environment using:
-conda env create -n fmox_env -f environment.yml
-conda activate fmo_data_env
-```
-
-
-### Download Datasets 
-
-The dataset is downloaded and extracted into a folder named "fmo_data".
-
-```bash 
-# download_datasets_zip_files.py 
-download_datasets_zip_files.download_unzip_data()
-```
-
-### Object Size Category Assignment
-
-The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
-A total of five distinct level definitions were illustrated as figure below and established as follows: 
-* extremely tiny ([1x1 - 8x8)), 
-* tiny ([8X8,16X16)), 
-* small ([16X16,32X32)),
-* medium ([32x32-96x96))
-* large ([96x96,&#8734;)
-
-
-<img src="ExistingFMODataAnalysis/figures/proof_of_consept_obj_size.png" alt="object size image"	width="700" height="300" /> 
-
-
-### Create FMOv2 JSON Annotation File 
-
-Contour detection is applied to the segmentation images located in "./fmo_data/FMOv2/FMOv2_gt" to obtain bounding boxes. 
-The outputs of this process are saved as a video in "fmov2_outputs" folder. While obtaining the bounding boxes,
-object size labels are calculated and saved in a JSON file as "fmov2_json_annotations.json" in "jsons_anns" folder. 
-
-```bash 
-# create_fmov2_json.py
-create_fmov2_json.get_fmov2_json()
-```
-
-### Create JSON Annotation File For Falling Object, TbD, TbD-3D Datasets
-- Acknowledgments: The code is provided (in "create_json_for_three_dataset" folder) adapted from the
-[fmo-deblurring-benchmark](https://github.com/rozumden/fmo-deblurring-benchmark) and
-some modifications made to fit our specific use case. For more details, please visit the repository.
-- The json file called "three_fmo_data_annotations.json" saved in "json_anns" folder.
-- However if you want to regenerate it, please refer below file:
-
-```bash 
-# dataset_loader.py
-json_ann.create_json_for_three_dataset() 
-```
-
-### Access Bounding Boxes from a JSON Annotation File
-
-```bash 
-
-# access_json_bboxes.py
-access_json_bboxes.access_bboxes()
-```
-<img src="ExistingFMODataAnalysis/figures/json_to_bbox.png" alt="json_to_bbox" width="700" height="500" /> 
-
-
-### JSON Annotation Analysis - Visualizations
-
-Combine the 2 json annotation files created.
-```bash 
-    # if you create json files again combine with:
-    json1 = "./json_anns/three_fmo_data_annotations.json"
-    json2 = "./json_anns/fmov2_json_annotations.json"
-    json_annotation_analysis.combine_and_save_jsons(json1, json2)   
-```
-Create [CSV](ExistingFMODataAnalysis/json_anns/json_annotation_analysis_output.csv) file from json annotation file. 
-
-
-```bash 
-    # Create csv file to save information e.g. "Main Dataset", "Subsequence", "Total Frame Number",
-    # "FMO Exists Frame Number", "Average Object Size", "Object Size Levels" for table and graphs.
-    # It will saved in "json_anns". Similar to table below ..
-    json_annotation_analysis.json_to_csv()
-```
-
-#### Stacked bar chart for visualization object size levels for each dataset and subsequences.
-```bash 
-# csv_to_graphics.py
-csv_to_graphics.visualize_object_size_levels() 
-```
-
-#### Scatter plot for comparing "Number of FMO exist frame" vs. "Number of total frame"
-```bash 
-# csv_to_graphics.py
-csv_to_graphics.cvs_viz2() 
-```
-
-
-### Merge Mask Images to Visualize Trajectories
-
-Below code could be utilized to visualize the trajectories of the object(s) on a single image. Since the FMOv2 dataset directly shares segmentation mask images, the path related to this dataset 
-is provided below as input. Each single mask image corresponding to a subsequence will be saved in the "fmov2_outputs" directory as "{subfolder}_combined_segmentation_image.png". 
-
-```bash  
-#  combine_all_mask_to_single_img.py 
-input_directory = './fmo_data/FMOv2/FMOv2_gt' 
-combine_all_mask_to_single_img.combine_segmentation_images(input_directory)
-```
-
-### Convert FMOv2 Run-Length Encoded (RLE) Text Files to Mask Images
-
-The segmentation mask images for the FMOv2 dataset have been compressed into text files using the Run-Length Encoding (RLE) data compression technique. The following code can be used to convert these compressed files back into black and white segmentation images.
-
-```bash 
-# rle_to_seg_mask_img.py
-rle_to_seg_mask_img.rle_to_mask_img()
-```
--->
+        
 
 ### Metadata File
 
@@ -215,7 +96,6 @@ The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that c
   year={2025}
 }
 ```
-
 # Thank You Message for the Matas Team Regarding the Dataset ? something like below
 ### Acknowledgments
 
