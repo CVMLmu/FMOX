@@ -1,4 +1,5 @@
-# FMOX: Extending the ground truth labels associated with FMO datasets
+# Benchmarking EfficientTAM on FMO datasets
+<!-- # FMOX: Extending the ground truth labels associated with FMO datasets -->
 
 [[`Paper`](https://xxxxxxxxxxxxx)] 
 [[`FMOX Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
