@@ -72,6 +72,18 @@
       "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv"
     },
     {
+      "name": "create_jsons_main.ipynb",
+      "file_definition": "To create JSONS file you could prefer this notebook or https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/main.py.",
+      "format": "NOTEBOOK",
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb"
+    },
+    {
+      "name": "fmox_main.ipynb",
+      "file_definition": "To use FMOX JSONS you could prefer this notebook or https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.py.",
+      "format": "NOTEBOOK",
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb"
+    },
+    {
       "name": "download_datasets.py",
       "file_definition": "The dataset is downloaded and extracted into a folder named \"Original_Dataset\".",
       "format": "python",
@@ -96,34 +108,40 @@
       "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/dataset_loader/create_json_via_benchmark_loader.py"
     },
     {
-      "name": "json_annotation_analysis.py",
-      "file_definition": "Combine the 2 json annotation files created. Create csv file to save information.",
+      "name": "FMOX_all4_json_to_CSV.py",
+      "file_definition": "Use this file to create FMOX_All4_statistics.csv .",
       "format": "python",
-      "url": "https://example.com/metadata.json"
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_all4_json_to_CSV.py"
     },
     {
-      "name": "csv_to_graphics.py",
-      "file_definition": "Different kind of visualization functions : Bar plot, Scatter plot, Box plot etc.",
+      "name": "efficientam_evaluation.py",
+      "file_definition": "Use this file to create EfficientTAM_averageTIoU.csv.",
       "format": "python",
-      "url": "https://example.com/metadata.json"
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/efficientam_evaluation.py"
     },
     {
       "name": "access_json_bboxes.py",
-      "file_definition": "Access bounding boxes from a JSON annotation file.",
+      "file_definition": "Access bounding boxes from FMOX JSON annotation file.",
       "format": "python",
-      "url": "https://example.com/metadata.json"
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/access_json_bboxes.py"
     },
     {
       "name": "combine_all_mask_to_single_img.py",
       "file_definition": "To analysis the segmentation masks (FMOv2 dataset) (e.g. trajectory) combine all into single mask image.",
       "format": "python",
-      "url": "https://example.com/metadata.json"
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/combine_all_mask_to_single_img.py"
     },
     {
       "name": "rle_to_seg_mask_img.py",
       "file_definition": "Convert FMOv2 Run-Length Encoded (RLE) text files to mask images",
       "format": "python",
-      "url": "https://example.com/metadata.json"
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/rle_to_seg_mask_img.py"
+    },
+    {
+      "name": "csv_to_graphics.py",
+      "file_definition": "Various kind of visualization functions : Bar plot, Scatter plot, Box plot etc.",
+      "format": "python",
+      "url": "https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/csv_to_graphics.py"
     }
   ],
   "object_size_labels" : {"extremely_tiny": [[1, 1], [8, 8]],
