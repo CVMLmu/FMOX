@@ -88,18 +88,7 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 | Falling Object    | 0.684$^{**}$     | N/A              | 0.539            | 0.539            | 0.7093$^{*}$       |
 | TbD               | 0.550$^{**}$     | (a) 0.519 (b) 0.715$^{*}$ | 0.542            | 0.542            | 0.4546             |
 | TbD-3D           | 0.879$^{*}$      | N/A              | 0.598            | 0.598            | 0.8604$^{**}$      |
-
-Notes:
-- (a) Real-time with trajectories estimated by the network.
-- (b) With the proposed deblurring.
-- N/A: Not defined.
-
-*References:*
-1. Rozumnyi et al., 2021, Defmo
-2. Rozumnyi et al., 2021, FmoDetect
-3. Kotera et al., 2019, TbD
-4. Rozumnyi et al., 2020, TbD-3D
-5. Xiong et al., 2024, EfficientTAM
+(a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. N/A: Not defined.
 
 ### Metadata File
 
