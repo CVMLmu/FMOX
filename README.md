@@ -28,6 +28,22 @@ To appear at IMVIP 2025. For details, see the paper:
 datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 -->
 
+### FMOX Object Size Categories
+
+The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
+A total of five distinct level defined as below: 
+
+| Extremely Tiny        | Tiny                 | Small                | Medium               | Large               |
+|----------------------|----------------------|----------------------|----------------------|---------------------|
+| [1 × 1, 8 × 8)       | [8 × 8, 16 × 16)     | [16 × 16, 32 × 32)   | [32 × 32, 96 × 96)   | [96 × 96, ∞)        |
+
+*Table: FMOX object size categories.*
+
+
+To use FMOX refer to : xx and xxx
+
+
+<!-- 
 ### Installation  
 
 ```bash
@@ -146,6 +162,7 @@ The segmentation mask images for the FMOv2 dataset have been compressed into tex
 # rle_to_seg_mask_img.py
 rle_to_seg_mask_img.rle_to_mask_img()
 ```
+-->
 
 ### Metadata File
 
