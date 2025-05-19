@@ -78,7 +78,7 @@ A total of five distinct level defined as below:
 
 ### Average TIoU Performance Comparison
 
-This table compares the average TIoU $(\uparrow)$ performance of various studies on FMO datasets. Evaluation of the EfficientTAM has been done with FMOX Json. The best results are indicated with $^*$ and the second-best results with $^{**}$. N/A indicates "Not defined".
+This table compares the average TIoU $(\uparrow)$ performance of various studies on FMO datasets. Evaluation of the EfficientTAM has been done with FMOX Json. The best results are indicated with $^*$ and the second-best results with $^{**}$. 
 
 | Datasets        | Defmo [Rozumnyi et al., 2021] | FmoDetect [Rozumnyi et al., 2021] | TbD [Kotera et al., 2019]          | TbD-3D [Rozumnyi et al., 2020]       | EfficientTAM [Xiong et al., 2024] |
 |------------------|--------|------------------|------------------|------------------|----------|
@@ -86,7 +86,7 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 | TbD               | 0.550** | (a) 0.519 (b) 0.715* | 0.542            | 0.542            | 0.4546   |
 | TbD-3D           | 0.879* | N/A              | 0.598            | 0.598            | 0.8604** |
 
-(a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. 
+(a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. N/A indicates "Not defined".
 
 ### FMOX Metadata
 
