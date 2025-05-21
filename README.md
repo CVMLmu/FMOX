@@ -28,6 +28,16 @@ To appear at IMVIP 2025. For details, see the paper:
 datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 -->
 
+### Installation 
+
+```bash
+git clone https://github.com/CVMLmu/FMOX.git branch main
+cd FMOX
+# for conda, create the environment using:
+conda env create -n fmo_data_env -f environment.yml
+conda activate fmo_data_env
+```
+
 ### FMOX Object Size Categories
 
 The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
