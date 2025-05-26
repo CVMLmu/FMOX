@@ -165,17 +165,9 @@ The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that c
   year={2025}
 }
 ```
-####  Thank You Message for the Matas Team Regarding the Dataset ? something like below
-### Acknowledgments
 
-I would like to thank the following sources for providing the datasets used in this project:
-
-- **[Dataset Name](URL)**: A brief description of the dataset and its significance.
-- **[Another Dataset Name](URL)**: A brief description of this dataset as well.
-
-Your contributions have been invaluable to the success of this project!
 
 ## License:
 
-This code is available under the MIT License.
+This code is available under the [MIT](https://choosealicense.com/licenses/mit/) License.
 
