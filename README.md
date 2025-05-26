@@ -6,29 +6,23 @@
 [[`FMOX JSONS`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)] 
 [[`BibTex`](#citing-imagebind)]
 
-Result of Analysis: [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)] 
-[[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
-
-Notebooks : [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)] 
-[[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
-
 
 This repository is dedicated to enhancing a dataset by adding detailed labels such as object categories and bounding box
 coordinates. and providing structured JSON annotations for easy integration and usage in machine learning projects. 
 The JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
 and researchers to utilize the dataset in their applications.
 
-<!--  purpose of this repo
-FMO VS NON-FMO LABELING
-OBJECT SIZE LABELLING
-Make easy TO USE ....
+- **Result of Analysis:**
+  - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
+  - [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
 
-To appear at IMVIP 2025. For details, see the paper: 
-**[FMOX : Extending the ground truth labels associated with FMO
-datasets](https://facebookresearch.github.io/ImageBind/paper)**.
--->
+- **Notebooks:**
+  - [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)]
+  - [[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
 
-### Installation 
+
+
+## Installation 
 
 
 ```bash
