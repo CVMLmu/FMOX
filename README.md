@@ -31,12 +31,71 @@ datasets](https://facebookresearch.github.io/ImageBind/paper)**.
 
 ### Installation 
 
+
 ```bash
 git clone https://github.com/CVMLmu/FMOX.git branch main
 cd FMOX
 # for conda, create the environment using:
 conda env create -n fmo_data_env -f environment.yml
 conda activate fmo_data_env
+```
+
+```
+  environment.yml
+│   LICENSE
+│   README.md
+│
+└───FMOX-code
+    │   download_datasets.py
+    │   FMOX.json
+    │   __init__.py
+    │
+    ├───create-FMOX
+    │   │   combine_all_mask_to_single_img.py
+    │   │   create_fmov2_json.py
+    │   │   create_jsons_main.ipynb
+    │   │   create_tbd_json.py
+    │   │   main.py
+    │   │   rle_to_seg_mask_img.py
+    │   │   tbd_visualize_bboxes.py
+    │   │
+    │   └───dataset_loader
+    │           create_json_via_benchmark_loader.py
+    │           loaders_helpers.py
+    │           reporters.py
+    │
+    ├───EfficientTAM-Jsons
+    │       efficienttam_All4.json
+    │       efficienttam_falling.json
+    │       efficientTam_fmov2.json
+    │       efficienttam_tbd3d.json
+    │       efficienttam_tdb.json
+    │
+    ├───FMOX-Jsons
+    │       FMOX_All4.json
+    │       FMOX_fall_and_tbd3d.json
+    │       FMOX_fmov2.json
+    │       FMOX_tbd.json
+    │       FMOX_tbd_whole_sequence.json
+    │
+    └───use-FMOX
+        │   access_json_bboxes.py
+        │   calciou.py
+        │   csv_to_graphics.py
+        │   efficientam_evaluation.py
+        │   EfficientTAM_averageTIoU.csv
+        │   FMOX_all4_json_to_CSV.py
+        │   FMOX_All4_statistics.csv
+        │   fmox_main.ipynb
+        │   fmox_main.py
+        │   size_label_bar.png
+        │   size_label_count.py
+        │   vis_trajectory.py
+        │   __init__.py
+        │
+        └───efficientTAM_traj_vis
+                efficientTAM_traj_Falling_Object_v_box_GTgamma.jpg
+                ...
 ```
 
 ### FMOX Object Size Categories
