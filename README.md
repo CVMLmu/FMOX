@@ -1,5 +1,4 @@
 # Benchmarking EfficientTAM on FMO datasets
-<!-- # FMOX: Extending the ground truth labels associated with FMO datasets -->
 
 [[`Paper`](https://xxxxxxxxxxxxx)] 
 [[`Code`](https://github.com/CVMLmu/FMOX/)] 
