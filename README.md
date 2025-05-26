@@ -18,7 +18,7 @@ With FMOX, we test a recently proposed foundational model for tracking ([Efficie
 ```bibtex
 @techreport{FMOX_AKTAS2025,
   title={Benchmarking EfficientTAM on FMO datasets},
-  author={Senem Aktas, Charles Markham, John McDonald, Rozenn Dahyot},
+  author={Senem Aktas and Charles Markham and John McDonald and Rozenn Dahyot},
   doi={upcoming},
   url={upcoming},
   month={June},
