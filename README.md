@@ -175,3 +175,7 @@ I would like to thank the following sources for providing the datasets used in t
 
 Your contributions have been invaluable to the success of this project!
 
+## License:
+
+This code is available under the MIT License.
+
