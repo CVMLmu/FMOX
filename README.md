@@ -4,7 +4,7 @@
 [[`Code`](https://github.com/CVMLmu/FMOX/)] 
 [[`FMOX Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
 [[`FMOX JSONS`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)] 
-[[`BibTex`](#citing-imagebind)]
+
 
 
 In this repo, we extend Fast Moving Object (FMO) datasets (available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
