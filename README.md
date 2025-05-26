@@ -7,10 +7,25 @@
 [[`BibTex`](#citing-imagebind)]
 
 
-This repository is dedicated to enhancing a dataset by adding detailed labels such as object categories and bounding box
-coordinates. and providing structured JSON annotations for easy integration and usage in machine learning projects. 
-The JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
+In this repo, we extend Fast Moving Object (FMO) datasets (available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
+in JSON format (our new metadata is called FMOX). 
+The provided FMOX JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
 and researchers to utilize the dataset in their applications.
+With FMOX, we test a recently proposed foundational model for tracking ([EfficientTAM](https://yformer.github.io/efficient-track-anything/))  showing that its performance compares well with the pipelines originally  developed for these FMO datasets.
+
+**If you are using this repo in your research or applications, please cite our paper related to this work:** 
+
+```bibtex
+@techreport{FMOX_AKTAS2025,
+  title={Benchmarking EfficientTAM on FMO datasets},
+  author={Senem Aktas, Charles Markham, John McDonald, Rozenn Dahyot},
+  doi={upcoming},
+  url={upcoming},
+  month={June},
+  institution={Maynooth University Ireland},
+  year={2025},
+}
+```
 
 - **Result of Analysis:**
   - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
@@ -155,16 +170,6 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 
 The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that contains essential information for understanding the work context, including its attributes, original dataset papers, and other relevant details.  Please refer to the JSON metadata file for more information.
 
-### Citing 
-##### If you are using this repo in your research or applications, please cite using this BibTeX:
-```bibtex
-@article{xxxxxxxxxxxxxxxxxxxx,
-  title={Benchmarking EfficientTAM on FMO datasets},
-  author={Senem Aktas, Charles Markham, John McDonald, Rozenn Dahyot},
-  conference={xxxxxxxxx},
-  year={2025}
-}
-```
 
 
 ## License:
