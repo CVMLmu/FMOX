@@ -43,7 +43,7 @@ conda activate fmo_data_env
 The following **Notebooks** can be run in that environment:
  - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb) for creating FMOX: this is slow as all datasets are downloaded (~24GB)
  - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) to test efficientTAM  on FMOX
- - [`FMOX.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json): FMOX Metadata
+
 
    
 ### Repo tree structure
@@ -111,8 +111,7 @@ The following **Notebooks** can be run in that environment:
 The following results  are shared in this repo (created with `fmox_main.ipynb`):
  - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): This describes all the sequences from  the 4 FMO datasets. 
  - [`EfficientTAM_averageTIoU.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv): This provides the TIoU obtained with [EfficientTAM](https://yformer.github.io/efficient-track-anything/).  
-
-- [FMOX.json](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json) provides the metadata in JSON format for all 4 datasets. In addition,  an individual JSON is provided for each FMO dataset in folder  [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)
+ - [FMOX.json](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json) provides the metadata in `json` format for all 4 datasets. In addition,  an individual `json` is provided for each FMO dataset in folder  [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)
 
 ### FMOX Object Size Categories
 
