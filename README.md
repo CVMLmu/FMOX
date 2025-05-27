@@ -4,10 +4,7 @@
 [[`Code`](https://github.com/CVMLmu/FMOX/)] 
 [[`FMOX JSON Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
  
-
-
-
-In this repo, we extend Fast Moving Object (FMO) datasets (available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
+In this repo, we extend Fast Moving Object (FMO) datasets (`FMOv2`, `TbD-3D`, `TbD` and `Falling Objects`, all available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
 in JSON format (our new metadata is called FMOX). 
 The provided FMOX JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
 and researchers to utilize the dataset in their applications.
