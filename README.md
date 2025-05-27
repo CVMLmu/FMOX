@@ -31,10 +31,6 @@ With FMOX, we test a recently proposed foundational model for tracking ([Efficie
   - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
   - [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
 
-- **Notebooks:**
-  - [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)]
-  - [[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
-
 
 
 ## Installation 
@@ -47,6 +43,11 @@ cd FMOX
 conda env create -n fmo_data_env -f environment.yml
 conda activate fmo_data_env
 ```
+
+- The following **Notebooks** can be run in that environment:
+  - [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)]
+  - [[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
+
 
 ```
   environment.yml
