@@ -44,10 +44,6 @@ The following **Notebooks** can be run in that environment:
  - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb) for creating FMOX: this is slow as all datasets are downloaded (~24GB)
  - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) to test efficientTAM  on FMOX
 
-The following  **Results of Analysis** are shared:
- - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
- - [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
-
 ### Repo tree structure
 
 ```
@@ -108,7 +104,15 @@ The following  **Results of Analysis** are shared:
                 ...
 ```
 
-## FMOX Object Size Categories
+## Results
+
+The following results  are shared in this repo (created with `fmox_main.ipynb`):
+ - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): FMOX All4 Statistics
+ - [`EfficientTAM_averageTIoU.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv): EfficientTAM TIoU 
+
+## Additional Information
+
+### FMOX Object Size Categories
 
 The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
 A total of five distinct level defined as below: 
