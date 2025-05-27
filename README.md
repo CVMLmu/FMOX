@@ -103,6 +103,9 @@ The following **Notebooks** can be run in that environment:
                 efficientTAM_traj_Falling_Object_v_box_GTgamma.jpg
                 ...
 ```
+- [`FMOX.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json): A metadata file contains detailed information about each files in this repo and the original datasets.      
+- [`EfficientTAM-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): This folder contains the evaluation results of EfficientTAM saved in FMOX JSON format. After installing the EfficientTAM repository, the first box coordinates from the FMOX JSON files for each sequence are provided to initialize the tracker.   
+- [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons): The JSON files include the ground truth bounding boxes for the four datasets examined. There are two ways to create the TbD JSON. The first method involves creating "FMOX_tbd.json", which is obtained using the same code ([`create-FMOX/dataset_loader`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/create-FMOX/dataset_loader)) as fall_and_tbd3d.json.  The second method involves creating "FMOX_tbd_whole_sequence.json", which is contains bounding boxes for the entire sequence, not just for the FMOs and obtained directly from the provided ground truth text files.
 
 ## Result files
 
