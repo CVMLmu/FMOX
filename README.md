@@ -8,7 +8,9 @@ In this repo, we extend Fast Moving Object (FMO) datasets (`FMOv2`, `TbD-3D`, `T
 in JSON format (our new metadata is called FMOX). 
 The provided FMOX JSON format allows for seamless compatibility with various machine learning frameworks, making it easier for developers
 and researchers to utilize the dataset in their applications.
-With FMOX, we test a recently proposed foundational model for tracking ([EfficientTAM](https://yformer.github.io/efficient-track-anything/))  showing that its performance compares well with the [pipelines originally  developed for these FMO datasets](https://cmp.felk.cvut.cz/fmo/) .
+With FMOX, we test a recently proposed foundational model for tracking ([EfficientTAM](https://yformer.github.io/efficient-track-anything/))  showing that its performance compares well with the [pipelines originally  developed for these FMO datasets](https://cmp.felk.cvut.cz/fmo/).
+
+Scripts provided in this repo allow to download all FMO datasets,  create `json` metadata, and assess object tracking with EfficientTAM  using with TIoU metric.  
 
 **If you are using this repo in your research or applications, please cite our paper related to this work:** 
 
