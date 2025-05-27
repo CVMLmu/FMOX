@@ -41,8 +41,8 @@ conda activate fmo_data_env
 ### Notebooks
 
 The following **Notebooks** can be run in that environment:
- - [`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb) : this is slow as all datasets are downloaded (~24GB)
- - [[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
+ - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb) for creating FMOX: this is slow as all datasets are downloaded (~24GB)
+ - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) to test efficientTAM  on FMOX
 
 The following  **Results of Analysis** are shared:
  - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
