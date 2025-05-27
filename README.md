@@ -2,8 +2,8 @@
 
 [[`Paper`](https://xxxxxxxxxxxxx)] 
 [[`Code`](https://github.com/CVMLmu/FMOX/)] 
-[[`FMOX Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
-[[`FMOX JSONS`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)] 
+[[`FMOX JSON Metadata`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json)] 
+ 
 
 
 
@@ -111,7 +111,8 @@ The following **Notebooks** can be run in that environment:
 The following results  are shared in this repo (created with `fmox_main.ipynb`):
  - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): This describes all the sequences from  the 4 FMO datasets. 
  - [`EfficientTAM_averageTIoU.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv): This provides the TIoU obtained with [EfficientTAM](https://yformer.github.io/efficient-track-anything/).  
-- 
+
+- [FMOX.json](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX.json) provides the metadata in JSON format for all 4 datasets. In addition,  an individual JSON is provided for each FMO dataset in folder  [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)
 
 ### FMOX Object Size Categories
 
