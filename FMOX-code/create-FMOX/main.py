@@ -142,7 +142,7 @@ def main():
     compressed files back into black and white mask images. """
     fmov2_path = "../Original_Dataset/FMOv2/"
     fmov2_rle_to_mask_img_path = "../Videos/fmov2_outputs/rleTXT_to_video/"
-    # rle_to_seg_mask_img.rle_to_mask_img(fmov2_path, fmov2_rle_to_mask_img_path)
+    rle_to_seg_mask_img.rle_to_mask_img(fmov2_path, fmov2_rle_to_mask_img_path)
 
     # ----------------------------------------------------------
     # Merge Mask Images to Visualize Trajectories
@@ -150,16 +150,16 @@ def main():
     """ Below code could be utilized to visualize the trajectories of the object(s) on a single image. 
     Since the FMOv2 dataset directly shares segmentation mask images, the path related to this dataset 
     is provided below as input. """
-    fmov2_gt_path = '../Original_Dataset/FMOv2/FMOv2_gt'
-    fmov2_mask_traj_save_path = "../Videos/fmov2_outputs/"
-    combine_all_mask_to_single_img.combine_segmentation_images(fmov2_gt_path, fmov2_mask_traj_save_path)
+    # fmov2_gt_path = '../Original_Dataset/FMOv2/FMOv2_gt'
+    # fmov2_mask_traj_save_path = "../Videos/fmov2_outputs/"
+    # combine_all_mask_to_single_img.combine_segmentation_images(fmov2_gt_path, fmov2_mask_traj_save_path)
 
     # ----------------------------------------------------------
     # TbD Dataset Bounding Box Visualization from gt.txt files
     # ----------------------------------------------------------
-    tbd_single_seq_path = "../Original_Dataset/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2, fall_cube etc.
-    tbd_single_seq_output_path = "../Videos//TbD-3D/bbox_drawings"
-    tbd_visualize_bboxes.tbd_vis_bbox(tbd_single_seq_path, tbd_single_seq_output_path)
+    # tbd_single_seq_path = "../Original_Dataset/TbD-3D/imgs/HighFPS_GT_depth2/"  # HighFPS_GT_depth2, fall_cube etc.
+    # tbd_single_seq_output_path = "../Videos//TbD-3D/bbox_drawings"
+    # tbd_visualize_bboxes.tbd_vis_bbox(tbd_single_seq_path, tbd_single_seq_output_path)
 
 
 if __name__ == "__main__":
