@@ -107,10 +107,9 @@ The following **Notebooks** can be run in that environment:
 ## Results
 
 The following results  are shared in this repo (created with `fmox_main.ipynb`):
- - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): FMOX All4 Statistics
- - [`EfficientTAM_averageTIoU.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv): EfficientTAM TIoU 
+ - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): This describes all the sequences from  the 4 FMO datasets. 
+ - [`EfficientTAM_averageTIoU.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv): This provides the TIoU obtained with [EfficientTAM](https://yformer.github.io/efficient-track-anything/).  
 
-## Additional Information
 
 ### FMOX Object Size Categories
 
