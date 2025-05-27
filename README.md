@@ -27,15 +27,9 @@ With FMOX, we test a recently proposed foundational model for tracking ([Efficie
 }
 ```
 
-- **Result of Analysis:**
-  - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
-  - [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
-
-
-
 ## Installation 
 
-
+### Getting started
 ```bash
 git clone https://github.com/CVMLmu/FMOX.git branch main
 cd FMOX
@@ -44,6 +38,8 @@ conda env create -n fmo_data_env -f environment.yml
 conda activate fmo_data_env
 ```
 
+### Notebooks
+
 The following **Notebooks** can be run in that environment:
  - [[`Create FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)] : this is slow as all datasets are downloaded (~24GB)
  - [[`Use FMOX`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb)] 
@@ -51,6 +47,8 @@ The following **Notebooks** can be run in that environment:
 The following  **Results of Analysis** are shared:
  - [[`FMOX All4 Statistics`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv)]
  - [[`EfficientTAM TIoU`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/EfficientTAM_averageTIoU.csv)] 
+
+### Repo tree structure
 
 ```
   environment.yml
@@ -110,7 +108,7 @@ The following  **Results of Analysis** are shared:
                 ...
 ```
 
-### FMOX Object Size Categories
+## FMOX Object Size Categories
 
 The sizes of the objects in the public FMO datasets were calculated and "object size levels" were assigned. 
 A total of five distinct level defined as below: 
