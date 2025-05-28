@@ -103,11 +103,11 @@ The following notebooks can be run in that environment:
                 (...)
 ```
 - [`FMOX-Jsons Folder`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons): Contains all  metadata files contains for the FMO datasets:
-   - [`FMOX_All4.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_All4.json) : All `Falling Object`, `FMOV2`, `TbD` and `TbD-3D` dataset annotations are in that JSON file.
-   - `FMOX_fall_and_tbd3d.json` :  Falling Object and TbD-3D dataset annotations in a JSON file.
-   - `FMOX_fmov2.json` : Only FMOV2 dataset annotations in a JSON file due to annotation format differences
-   -  `FMOX_tbd.json`: TbD annotations in a JSON file, annotations obtained with fall_and_tbd3d datasets.
-   -  `FMOX_tbd_whole_sequence.json` : Only TbD dataset annotations in a JSON file due to annotation format differences.
+   - [`FMOX_All4.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_All4.json): All `Falling Object`, `FMOV2`, `TbD` and `TbD-3D` dataset annotations are in that JSON file.
+   - [`FMOX_fall_and_tbd3d.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_fall_and_tbd3d.json):  `Falling Object` and `TbD-3D` dataset annotations are in that JSON file.
+   - [`FMOX_fmov2.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_fmov2.json) : Only `FMOV2` dataset annotations in a JSON file due to annotation format differences
+   -  [`FMOX_tbd.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_tbd.json): `TbD` annotations in a JSON file, annotations obtained with `fall_and_tbd3d` datasets.
+   -  [`FMOX_tbd_whole_sequence.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_tbd_whole_sequence.json) : Only `TbD` dataset annotations in a JSON file due to annotation format differences.
              
 - [`EfficientTAM-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): This folder contains the evaluation results of EfficientTAM saved in FMOX JSON format. After installing the EfficientTAM repository, the first box coordinates from the FMOX JSON files for each sequence are provided to initialize the tracker.   
 - [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons): The JSON files include the ground truth bounding boxes for the four datasets examined. There are two ways to create the TbD JSON. The first method involves creating "FMOX_tbd.json", which is obtained using the same code ([`create-FMOX/dataset_loader`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/create-FMOX/dataset_loader)) as fall_and_tbd3d.json.  The second method involves creating "FMOX_tbd_whole_sequence.json", which is contains bounding boxes for the entire sequence, not just for the FMOs and obtained directly from the provided ground truth text files.
