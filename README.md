@@ -181,11 +181,11 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that contains essential information for understanding the work context, including its attributes, original dataset papers, and other relevant details.  Please refer to the JSON metadata file for more information.
 
 
-## Authors
+## Acknowledgments
 
-This repo is created and maintained by [Senem Aktas](https://orcid.org/0000-0002-3996-2771) supported by Hume scholarship in Maynooth University Ireland.  
-This repo was also tested by Rozenn Dahyot.  
-The authors would like to thanks [the authors of the FMO datasets](https://cmp.felk.cvut.cz/fmo/)  for making their work available.  
+This Github repo was created and developped  by [Senem Aktas](https://orcid.org/0000-0002-3996-2771), and in addition it was tested by [Rozenn Dahyot](https://roznn.github.io/).  . 
+This research was supported by funding through the [Maynooth University Hume Doctoral Awards](https://www.maynoothuniversity.ie/graduate-research-academy/john-pat-hume-doctoral-awards).  
+We  would like to thank [the authors of the FMO datasets](https://cmp.felk.cvut.cz/fmo/)  for making their datasets available.  
 
 ## License:
 
