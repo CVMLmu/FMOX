@@ -103,7 +103,7 @@ The following notebooks can be run in that environment:
                 (...)
 ```
 - [`FMOX-Jsons` directory](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons): Contains all  metadata files contains for the FMO datasets:
-   - `FMOX_All4.json` : All Falling Object, FMOV2, TbD and TbD-3D dataset annotations in a JSON file.
+   - [FMOX_All4.json](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_All4.json) : All `Falling Object`, `FMOV2`, `TbD` and `TbD-3D` dataset annotations are in that JSON file.
    - `FMOX_fall_and_tbd3d.json` :  Falling Object and TbD-3D dataset annotations in a JSON file.
    - `FMOX_fmov2.json` : Only FMOV2 dataset annotations in a JSON file due to annotation format differences
    -  `FMOX_tbd.json`: TbD annotations in a JSON file, annotations obtained with fall_and_tbd3d datasets.
