@@ -41,7 +41,7 @@ conda activate fmo_data_env
 
 The following **Notebooks** can be run in that environment:
  - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)  or [`main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/main.py) for creating FMOX: this is slow as all datasets are downloaded (~24GB)
- - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) to test efficientTAM  on FMOX
+ - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) or [`fmox_main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.py) to test efficientTAM  on FMOX taking advantage of EfficientTAM results that are already computed and provided in JSON in the folder []().
 
    
 ### Repo tree structure
