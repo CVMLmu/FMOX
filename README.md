@@ -39,7 +39,7 @@ conda activate fmo_data_env
 
 ### Notebooks
 
-The following **Notebooks** can be run in that environment:
+The following notebooks can be run in that environment:
  - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)  or [`main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/main.py) for creating FMOX: this is slow as all datasets are downloaded (~24GB)
  - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) or [`fmox_main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.py) to test efficientTAM  on FMOX.  EfficientTAM results are provided in JSON in the folder [EfficientTAM-Jsons](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): we have used  the pretrained model [EfficientTAM-S](https://github.com/yformer/EfficientTAM)  with its default parameters.
 
