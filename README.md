@@ -100,7 +100,7 @@ The following notebooks can be run in that environment:
         │
         └───efficientTAM_traj_vis
                 efficientTAM_traj_Falling_Object_v_box_GTgamma.jpg
-                ...
+                (...)
 ```
 - [`FMOX-Jsons` directory](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons): Contains all  metadata files contains for the FMO datasets:
    - `FMOX_All4.json` : All Falling Object, FMOV2, TbD and TbD-3D dataset annotations in a JSON file.
