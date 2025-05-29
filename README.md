@@ -102,7 +102,7 @@ The following notebooks can be run in that environment:
                 efficientTAM_traj_Falling_Object_v_box_GTgamma.jpg
                 (...)
 ```
-- [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)  folder Contains all  metadata files contains for the FMO datasets:
+- [`FMOX-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/FMOX-Jsons)  folder contains all  metadata files contains for the FMO datasets (created with `create_jsons_main.ipynb`):
    - [`FMOX_All4.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_All4.json): All `Falling Object`, `FMOV2`, `TbD` and `TbD-3D` dataset annotations are in that JSON file.
    - [`FMOX_fall_and_tbd3d.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_fall_and_tbd3d.json):  `Falling Object` and `TbD-3D` dataset annotations are in that JSON file.
    - [`FMOX_fmov2.json`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/FMOX-Jsons/FMOX_fmov2.json) : Only `FMOV2` dataset annotations in a JSON file due to annotation format differences
