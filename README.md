@@ -40,8 +40,9 @@ conda activate fmo_data_env
 ### Notebooks
 
 The following notebooks can be run in that environment:
- - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)  or [`main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/main.py) for creating FMOX JSON files in folder `FMOX-Jsons` (these are already provided in this Github): this is slow as all datasets are downloaded (~24GB)
- - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) or [`fmox_main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.py) to evaluate efficientTAM  on FMOX with TiOU (i.e. all 4 FMO datasets using our JSON metadata files).  EfficientTAM results are already computed and are provided in JSON in the folder [EfficientTAM-Jsons](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): we have used  the pretrained model `EfficientTAM-S`  with its default parameters.
+ - [`create_jsons_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/create_jsons_main.ipynb)  or [`main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/create-FMOX/main.py) for creating FMOX JSON files in folder `FMOX-Jsons` (these are already provided in this Github).
+ - [`fmox_main.ipynb`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.ipynb) or [`fmox_main.py`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/fmox_main.py) to evaluate efficientTAM  on FMOX with TIOU (i.e. all 4 FMO datasets using our JSON metadata files).  EfficientTAM results are already computed and are provided in JSON in the folder [EfficientTAM-Jsons](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): we have used  the pretrained model `EfficientTAM-S`  with its default parameters.
+ - Note: Downloading the dataset (except MATLAB files) may take some time, as all downloads are approximately 24 GB in size. If the dataset already exists in the specified location, the code will automatically skip this step.
 
    
 ### Repo tree structure
