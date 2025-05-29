@@ -182,14 +182,10 @@ This table compares the average TIoU $(\uparrow)$ performance of various studies
 
 (a) Real-time with trajectories estimated by the network. (b) With the proposed deblurring. N/A indicates "Not defined".
 
-### FMOX Metadata
-
-The project includes a **JSON metadata file** [here](FMOX-code/FMOX.json) that contains essential information for understanding the work context, including its attributes, original dataset papers, and other relevant details.  Please refer to the JSON metadata file for more information.
-
 
 ## Acknowledgments
 
-This Github repo was created and developped  by [Senem Aktas](https://orcid.org/0000-0002-3996-2771), and in addition it was tested by [Rozenn Dahyot](https://roznn.github.io/).  . 
+This Github repo was created and developped  by [Senem Aktas](https://orcid.org/0000-0002-3996-2771), and in addition it was tested by [Rozenn Dahyot](https://roznn.github.io/).  
 This research was supported by funding through the [Maynooth University Hume Doctoral Awards](https://www.maynoothuniversity.ie/graduate-research-academy/john-pat-hume-doctoral-awards).  
 We  would like to thank [the authors of the FMO datasets](https://cmp.felk.cvut.cz/fmo/)  for making their datasets available.  
 
