@@ -114,7 +114,7 @@ The following notebooks can be run in that environment:
 - [`EfficientTAM-Jsons`](https://github.com/CVMLmu/FMOX/tree/main/FMOX-code/EfficientTAM-Jsons): This folder contains the evaluation results of EfficientTAM saved in FMOX JSON format. After installing the EfficientTAM repository, the first bounding box coordinates from the FMOX JSON files for each sequence are provided to initialize the EfficientTAM tracker.   
 
 
-## Result files
+## Additional Information
 
 The following results  are shared in this repo (created with `fmox_main.ipynb`):
  - [`FMOX_All4_statistics.csv`](https://github.com/CVMLmu/FMOX/blob/main/FMOX-code/use-FMOX/FMOX_All4_statistics.csv): This describes all the sequences from  the 4 FMO datasets. 
