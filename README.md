@@ -1,6 +1,6 @@
 # Benchmarking EfficientTAM on FMO datasets
 
-[[`Paper`]()] 
+[[`Paper`](FMOXimvip2025.pdf)] 
 [[`Code`](https://github.com/CVMLmu/FMOX/)] 
 
  
