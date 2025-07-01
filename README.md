@@ -15,13 +15,14 @@ Scripts provided in this repo allow to download all FMO datasets,  create `json`
 **If you are using this repo in your research or applications, please cite our paper related to this work:** 
 
 ```bibtex
-@techreport{FMOX_AKTAS2025,
+@inproceedings{FMOX_AKTAS2025,
   title={Benchmarking EfficientTAM on FMO datasets},
   author={Senem Aktas and Charles Markham and John McDonald and Rozenn Dahyot},
+  booktitle={Irish Machine Vision and Image Processing},
   doi={upcoming},
   url={upcoming},
-  month={June},
-  institution={Maynooth University Ireland},
+  month={September},
+  address={Londonderry, UK},
   year={2025},
 }
 ```
