@@ -22,7 +22,8 @@ Scripts provided in this repo allow to download all FMO datasets,  create `json`
   doi={10.48550/arXiv.2509.06536},
   url={upcoming},
   month={September},
-  address={Londonderry, UK},
+  pages={59-66},
+  address={Ulster University, Derry-Londonderry, Northern Ireland},
   year={2025},
 }
 ```
