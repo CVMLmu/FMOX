@@ -20,7 +20,7 @@ Scripts provided in this repo allow to download all FMO datasets,  create `json`
   author={Senem Aktas and Charles Markham and John McDonald and Rozenn Dahyot},
   booktitle={Irish Machine Vision and Image Processing},
   doi={10.48550/arXiv.2509.06536},
-  url={upcoming},
+  url={https://cvmlmu.github.io/FMOX/},
   month={September},
   pages={59-66},
   address={Ulster University, Derry-Londonderry, Northern Ireland},
