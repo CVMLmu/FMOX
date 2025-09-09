@@ -1,7 +1,7 @@
 # Benchmarking EfficientTAM on FMO datasets
 
 [[`Paper`](FMOXimvip2025.pdf)] 
-[[`Code`](https://github.com/CVMLmu/FMOX/)] 
+[[`Code`](https://github.com/CVMLmu/FMOX/)] [[`Arxiv`](https://arxiv.org/abs/2509.06536)]
 
  
 In this repo, we extend Fast Moving Object (FMO) datasets (`FMOv2`, `TbD-3D`, `TbD` and `Falling Objects`, all available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
@@ -19,7 +19,7 @@ Scripts provided in this repo allow to download all FMO datasets,  create `json`
   title={Benchmarking EfficientTAM on FMO datasets},
   author={Senem Aktas and Charles Markham and John McDonald and Rozenn Dahyot},
   booktitle={Irish Machine Vision and Image Processing},
-  doi={upcoming},
+  doi={10.48550/arXiv.2509.06536},
   url={upcoming},
   month={September},
   address={Londonderry, UK},
