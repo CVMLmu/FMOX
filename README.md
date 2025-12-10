@@ -6,9 +6,15 @@ in JSON format (our new metadata is called FMOX) are provided and used for bench
 :newspaper: **If you are using this repo in your research or applications, please cite our papers related to this work (published in IMVIP 2025 and AICS 2025).** 
 
 
-# Benchmarking SAM2 based trackers on FMOX (AICS 2025)
+# Benchmarking SAM2-based trackers on FMOX (AICS 2025)
 
-[[`Paper`](FMOXaics2025.pdf)] [[`Code`](https://github.com/CVMLmu/FMOX/)]
+[[`Paper AICS 2025`](FMOXaics2025.pdf)] [[`Code`](https://github.com/CVMLmu/FMOX/)]
+
+
+Several object tracking pipelines extending Segment Anything Model 2 (SAM2) have been proposed in the past year, where the approach is to follow and segment the object from a single exemplar
+template provided by the user on a initialization frame. We propose to benchmark these high performing trackers (SAM2, EfficientTAM, DAM4SAM and SAMURAI) on datasets containing fast moving objects
+(FMO) specifically designed to be challenging for tracking approaches. The goal is to understand better current limitations in state-of-the-art trackers by providing more detailed insights on the behavior of these
+trackers. We show that overall the trackers DAM4SAM and SAMURAI perform well on more challenging sequences.
 
 ```bibtex
 @inproceedings{AICS2025-Aktas,
@@ -29,7 +35,7 @@ note={},
 
 # Benchmarking EfficientTAM on FMO datasets (IMVIP 2025)
 
-[[`Paper`](FMOXimvip2025.pdf)] 
+[[`Paper IMVIP 2025`](FMOXimvip2025.pdf)] 
 [[`Code`](https://github.com/CVMLmu/FMOX/)] [[`Arxiv`](https://arxiv.org/abs/2509.06536)]
 
  
