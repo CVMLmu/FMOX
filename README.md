@@ -1,5 +1,11 @@
 # Introduction
 
+In this repo, Fast Moving Object (FMO) datasets (`FMOv2`, `TbD-3D`, `TbD` and `Falling Objects`, all available at [https://cmp.felk.cvut.cz/fmo/](https://cmp.felk.cvut.cz/fmo/)) with additional ground truth information 
+in JSON format (our new metadata is called FMOX) are provided and used for benchmarking trackers.
+
+**If you are using this repo in your research or applications, please cite our papers related to this work.** 
+
+
 # Benchmarking SAM2 based trackers on FMOX (AICS 2025)
 
 ```bibtex
@@ -33,7 +39,7 @@ With FMOX, we test a recently proposed foundational model for tracking ([Efficie
 
 Scripts provided in this repo allow to download all FMO datasets,  create `json` metadata, and assess object tracking with EfficientTAM  using with TIoU metric.  
 
-**If you are using this repo in your research or applications, please cite our paper related to this work:** 
+
 
 ```bibtex
 @inproceedings{FMOX_AKTAS2025,
