@@ -1,4 +1,25 @@
-# Benchmarking EfficientTAM on FMO datasets
+# Introduction
+
+# Benchmarking SAM2 based trackers on FMOX (AICS 2025)
+
+```bibtex
+@inproceedings{AICS2025-Aktas,
+title={Benchmarking SAM2-based Trackers on FMOX},
+author={Senem Aktas and Charles Markham and John McDonald and Rozenn Dahyot},
+booktitle={33rd International Conference on Artificial Intelligence and Cognitive Science (AICS 2025)},
+address={Dublin, Ireland},
+year={2025},
+month={December},
+pages={},
+doi={},
+url={web=https://aicsconf.org/},
+abstract={},
+keywords={},
+note={},
+}
+```
+
+# Benchmarking EfficientTAM on FMO datasets (IMVIP 2025)
 
 [[`Paper`](FMOXimvip2025.pdf)] 
 [[`Code`](https://github.com/CVMLmu/FMOX/)] [[`Arxiv`](https://arxiv.org/abs/2509.06536)]
