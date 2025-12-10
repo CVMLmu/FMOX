@@ -8,7 +8,7 @@ in JSON format (our new metadata is called FMOX) are provided and used for bench
 
 # Benchmarking SAM2 based trackers on FMOX (AICS 2025)
 
-[[`Paper`](FMOXaics2025.pdf)] 
+[[`Paper`](FMOXaics2025.pdf)] [[`Code`](https://github.com/CVMLmu/FMOX/)]
 
 ```bibtex
 @inproceedings{AICS2025-Aktas,
