@@ -24,9 +24,10 @@ booktitle={33rd International Conference on Artificial Intelligence and Cognitiv
 address={Dublin, Ireland},
 year={2025},
 month={December},
-pages={},
-doi={},
-url={web=https://aicsconf.org/},
+pages={1-12},
+doi={10.48550/arXiv.2512.09633},
+url={Paper=https://cvmlmu.github.io/FMOX/FMOXaics2025.pdf ArXiv=https://arxiv.org/abs/2512.09633 
+Code=https://cvmlmu.github.io/FMOX/},
 abstract={},
 keywords={},
 note={},
