@@ -16,6 +16,7 @@ template provided by the user on a initialization frame. We propose to benchmark
 (FMO) specifically designed to be challenging for tracking approaches. The goal is to understand better current limitations in state-of-the-art trackers by providing more detailed insights on the behavior of these
 trackers. We show that overall the trackers DAM4SAM and SAMURAI perform well on more challenging sequences.
 
+
 ```bibtex
 @inproceedings{AICS2025-Aktas,
 title={Benchmarking SAM2-based Trackers on FMOX},
@@ -33,6 +34,10 @@ keywords={},
 note={},
 }
 ```
+
+R code [AICS2025.qmd](AICS2025.qmd) (that creates [AICS2025.html](AICS2025.html)) used for drawing some figures in the paper is also provided in this repo.
+
+
 
 # Benchmarking EfficientTAM on FMO datasets (IMVIP 2025)
 
