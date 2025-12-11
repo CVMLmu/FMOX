@@ -8,7 +8,7 @@ in JSON format (our new metadata is called FMOX) are provided and used for bench
 
 # Benchmarking SAM2-based trackers on FMOX (AICS 2025)
 
-[[`Paper AICS 2025`](FMOXaics2025.pdf)] [[`Code`](https://github.com/CVMLmu/FMOX/)]   [[`Arxiv`] (https://arxiv.org/pdf/2512.09633)]
+[[`Paper AICS 2025`](FMOXaics2025.pdf)] [[`Code`](https://github.com/CVMLmu/FMOX/)]   [[`Arxiv`](https://arxiv.org/pdf/2512.09633)]
 
 
 Several object tracking pipelines extending Segment Anything Model 2 (SAM2) have been proposed in the past year, where the approach is to follow and segment the object from a single exemplar
